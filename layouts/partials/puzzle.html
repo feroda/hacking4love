@@ -1,0 +1,61 @@
+{{/* Il puzzle. Parametri: .mode = "gioca" | "replay" */}}
+{{ $p := site.Data.puzzle }}
+{{ $cfg := dict "immagine" ($p.immagine | relURL) "colonne" $p.colonne "righe" $p.righe }}
+{{ $sigilli := slice }}
+{{ range $p.sigilli }}
+  {{ $sigilli = $sigilli | append (dict "lettera" .lettera "nome" .nome "hash" .hash "racconto" .racconto) }}
+{{ end }}
+{{ $cfg = merge $cfg (dict "sigilli" $sigilli) }}
+<div class="puzzle" data-puzzle data-mode="{{ .mode }}">
+  <script type="application/json" class="puzzle-cfg">{{ $cfg | jsonify | safeJS }}</script>
+
+  <div class="sigilli" role="list">
+    {{ range $i, $s := $p.sigilli }}
+    <article class="sigillo" role="listitem" data-sigillo="{{ $i }}">
+      <div class="sigillo-lettera" aria-hidden="true"><span>{{ $s.lettera }}</span></div>
+      <h3>{{ $s.nome }}</h3>
+      {{ if eq $.mode "gioca" }}
+      <p class="sigillo-domanda">{{ $s.domanda }}</p>
+      <p class="sigillo-fonte">Indizio: <a href="{{ $s.url }}" target="_blank" rel="noopener">{{ $s.articolo }} ↗</a></p>
+      <form class="sigillo-form" autocomplete="off">
+        <label class="sr" for="chiave-{{ $i }}">Parola-chiave per {{ $s.nome }}</label>
+        <input id="chiave-{{ $i }}" name="chiave" type="text" placeholder="parola-chiave" spellcheck="false" autocapitalize="off">
+        <button type="submit">Apri</button>
+      </form>
+      {{ else }}
+      <p class="sigillo-fonte">Indizio: <em>{{ $s.articolo }}</em></p>
+      <div class="sigillo-form finta"><span class="finto-input" aria-hidden="true"></span><span class="finto-bottone">Apri</span></div>
+      {{ end }}
+      <p class="sigillo-stato" aria-live="polite"></p>
+    </article>
+    {{ end }}
+  </div>
+
+  <div class="tavolo">
+    <div class="tavola-cornice">
+      <div class="tavola" style="--col: {{ $p.colonne }}; --righe: {{ $p.righe }}" aria-label="Tavola del puzzle"></div>
+      <img class="immagine-intera" src="{{ $p.immagine | relURL }}" alt="L'UOMO al centro dell'uroboro: il puzzle composto" width="1200" height="800" loading="lazy">
+      <div class="rivelazione" aria-live="polite">
+        <p class="riv-sopra">Il serpente si è morso la coda</p>
+        <p class="riv-uomo"><span>U</span><span>O</span><span>M</span><span>O</span></p>
+        <p class="riv-sotto">Uroboro è chiuso. Al centro resta l'UOMO.</p>
+      </div>
+    </div>
+    <div class="vassoio-box">
+      <p class="vassoio-titolo">Pezzi liberati <span class="contatore">0 / {{ mul $p.colonne $p.righe }}</span></p>
+      <div class="vassoio" aria-label="Pezzi da sistemare"><p class="vassoio-vuoto">Apri un sigillo: i suoi pezzi compariranno qui. Tocca un pezzo, poi tocca la casella dove va.</p></div>
+    </div>
+  </div>
+
+  {{ if eq .mode "replay" }}
+  <div class="replay-barra">
+    <button class="btn oro replay-play">▶ Riproduci la mia soluzione</button>
+    <p class="replay-didascalia" aria-live="polite">Premi play: ti mostro, passo per passo, come ho composto il puzzle.</p>
+  </div>
+  {{ else }}
+  <div class="puzzle-azioni">
+    <button class="btn vuoto puzzle-reset" type="button">Ricomincia da capo</button>
+    <a class="btn vuoto" href="{{ "/come-l-ho-risolto/" | relURL }}">Guarda come l'ho risolto io</a>
+  </div>
+  {{ end }}
+</div>

@@ -1,0 +1,92 @@
+{{ define "bodyclass" }}home{{ end }}
+{{ define "main" }}
+<section class="eroe">
+  <div class="eroe-anello" aria-hidden="true">
+    <svg viewBox="0 0 600 600" class="testo-rotante">
+      <defs><path id="giro" d="M300,300 m-250,0 a250,250 0 1,1 500,0 a250,250 0 1,1 -500,0"/></defs>
+      <text><textPath href="#giro">HACKING 4 LOVE · CHIUDERE UROBORO · TIME STOP · RULES CHANGE · L'UOMO AL CENTRO · </textPath></text>
+    </svg>
+    <svg viewBox="0 0 600 600" class="serpente">
+      <defs>
+        <linearGradient id="squame" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9be071"/><stop offset=".55" stop-color="#4f8a3c"/><stop offset="1" stop-color="#1f4a1c"/></linearGradient>
+      </defs>
+      <circle cx="300" cy="300" r="205" fill="none" stroke="url(#squame)" stroke-width="30" stroke-linecap="round" pathLength="100" stroke-dasharray="95 5" transform="rotate(-80 300 300)" class="serpente-corpo"/>
+      <circle cx="300" cy="300" r="205" fill="none" stroke="#06140a" stroke-opacity=".45" stroke-width="30" stroke-dasharray="3 9" transform="rotate(-80 300 300)"/>
+    </svg>
+    <div class="eroe-volto"><img src="{{ "img/uomo-uroboro.jpg" | relURL }}" alt="" width="1200" height="800"></div>
+  </div>
+  <div class="eroe-testo">
+    <p class="occhiello">hacking4love.it</p>
+    <h1>Ritrovare l'<span class="oro">UOMO</span><br>al centro dell'Universo</h1>
+    <p class="lead">Sono Luca, Lucafero da Fabriano. Mi metto a disposizione per <strong>chiudere Uroboro</strong>. Ho composto un puzzle: se lo componi anche tu, vedi quello che ho visto io.</p>
+    <div class="cta">
+      <a class="btn oro" href="#puzzle">Componi il puzzle</a>
+      <a class="btn vuoto" href="{{ "/come-l-ho-risolto/" | relURL }}">Guarda come l'ho risolto</a>
+    </div>
+  </div>
+  <a class="scendi" href="#manifesto" aria-label="Scorri al manifesto"><span></span></a>
+</section>
+
+<div class="nastro" aria-hidden="true"><div>{{ range seq 6 }}<span>Time Stop</span><i>✦</i><span>Rules Change</span><i>✦</i>{{ end }}</div></div>
+
+<section id="manifesto" class="sezione">
+  <header class="sez-testa">
+    <p class="occhiello">Il manifesto</p>
+    <h2>Perché sono qui</h2>
+  </header>
+  <div class="carte">
+    <article class="carta rivela">
+      <span class="num">I</span>
+      <h3>Mi offro per chiudere Uroboro</h3>
+      <p>Uroboro è il serpente che si morde la coda: un cerchio che gira su se stesso da sempre. Io mi metto a disposizione per chiuderlo, perché il giro finisca e ne cominci uno nuovo. <em>Time stop. Rules change.</em></p>
+    </article>
+    <article class="carta rivela">
+      <span class="num">II</span>
+      <h3>L'UOMO al centro dell'Universo</h3>
+      <p>Sono qui alla riscoperta dell'Uomo. Non la macchina, non il mercato, non l'algoritmo: l'Uomo, con il suo desiderio e la scintilla che porta con sé. Unire il cielo e la terra.</p>
+    </article>
+    <article class="carta rivela">
+      <span class="num">III</span>
+      <h3>I cantanti sono i nuovi sacerdoti</h3>
+      <p>Oggi la parola sacra passa dalle canzoni. Chi canta parla a milioni di persone, e spesso dice quello che nessun altro ha il coraggio di dire. Per questo voglio entrare in contatto con loro.</p>
+    </article>
+    <article class="carta rivela">
+      <span class="num">IV</span>
+      <h3>A chi scrivo</h3>
+      <ul class="destinatari">
+        <li>Ai cantanti</li><li>Agli influencer</li><li>Alle BigTech</li><li>Alle persone importanti</li><li>Al Papa</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="papa-nero sezione" aria-labelledby="pn-titolo">
+  <div class="pn-dentro rivela">
+    <p class="occhiello">Un'opinione mia</p>
+    <h2 id="pn-titolo">Per me Vasco Rossi<br>è il <span>Papa Nero</span></h2>
+    <p class="pn-testo">È una lettura personale e simbolica. Da quarant'anni le sue canzoni fanno quello che fa un sacerdote: parlano dell'anima a chi in chiesa non ci entra. E il cerchio che cerco di chiudere, secondo me, lo sta cercando di chiudere anche lui.</p>
+    <p class="pn-nota">Non parlo a nome di Vasco Rossi né della Chiesa, e non ho alcun ruolo ufficiale con loro.</p>
+  </div>
+</section>
+
+<section id="puzzle" class="sezione">
+  <header class="sez-testa">
+    <p class="occhiello">Il puzzle</p>
+    <h2>Componi l'UOMO</h2>
+    <p class="sez-lead">Quattro sigilli, quattro lettere: <b>U · O · M · O</b>. Ogni sigillo si apre con una parola, e la parola sta in un articolo. Apri i sigilli, rimetti i pezzi al loro posto, chiudi il cerchio.</p>
+  </header>
+  {{ partial "puzzle.html" (dict "mode" "gioca") }}
+</section>
+
+<section id="contatti" class="sezione contatti">
+  <div class="rivela">
+    <p class="occhiello">Contatti</p>
+    <h2>Se questa cosa deve arrivare a qualcuno, aiutami</h2>
+    <p class="sez-lead">Se sei un cantante, un sacerdote, una persona che parla a tante persone, o conosci qualcuno che può far arrivare questo messaggio a chi deve arrivare: scrivimi.</p>
+    <div class="cta centro">
+      <a class="btn oro" href="mailto:{{ site.Params.email }}?subject=Hacking%204%20Love">Scrivimi</a>
+      {{ with site.Params.telegram }}<a class="btn vuoto" href="{{ . }}">Canale Telegram</a>{{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

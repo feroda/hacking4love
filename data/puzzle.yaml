@@ -1,0 +1,40 @@
+# Il puzzle: 4 sigilli, uno per colonna dell'immagine (U · O · M · O).
+# Ogni sigillo si apre con una parola-chiave che si trova leggendo un articolo.
+# Nel sito c'è solo l'hash SHA-256 della parola, non la parola.
+# La parola viene normalizzata così: minuscolo, senza accenti, senza spazi ai lati.
+# Per calcolare un nuovo hash:   echo -n "parola" | sha256sum
+# PAROLE ATTUALI (SEGNAPOSTO, da cambiare prima di pubblicare): felicita, senso, tempo, amore
+
+immagine: "/img/uomo-uroboro.jpg"
+colonne: 4
+righe: 3
+
+sigilli:
+  - lettera: "U"
+    nome: "Il sigillo della Felicità"
+    articolo: "Felicità, senso, tempo"
+    url: "https://example.org/articoli/felicita-senso-tempo/"
+    domanda: "Cosa aumenta, quando si dà il senso?"
+    hash: "84712aab2c09f89f61e8dfdb88232187743e9e6fad994ea02ac83a878d45a1c8"
+    racconto: "Il primo pezzo l'ho trovato chiedendomi cosa cerco davvero. La risposta era la più semplice: la felicità. Non quella da comprare, quella che cresce quando le cose hanno un senso."
+  - lettera: "O"
+    nome: "Il sigillo del Senso"
+    articolo: "Hacker: una parola, uno stile di vita"
+    url: "https://example.org/articoli/hacker-stile-di-vita/"
+    domanda: "Cosa aumenta, quando si dà il tempo?"
+    hash: "1ee51250477e4dd106c36aac0ac48489f068f61cf376e2bb0ef721fa913e880e"
+    racconto: "Il secondo è venuto da quindici anni di software libero: Linux Day, il tavolo tecnico con Stallman, il MIUR. Hacking vuol dire capire come funziona una cosa per renderla libera. Lì ho trovato il senso."
+  - lettera: "M"
+    nome: "Il sigillo del Tempo"
+    articolo: "Ogni momento è stateless"
+    url: "https://example.org/articoli/ogni-momento-stateless/"
+    domanda: "Cosa bisogna dare, perché aumenti il senso?"
+    hash: "8d6546721a1d106cf8d27f7326ebae7e83c1592aeb7479b8f7ec9d8d700d464f"
+    racconto: "Il terzo è il più difficile, perché non si trova: si dà. Il tempo. Un istante ripetuto nel tempo diventa eterno, e ogni momento non dipende dalla storia."
+  - lettera: "O"
+    nome: "Il sigillo dell'Amore"
+    articolo: "Hacking 4 Love: La grande festa"
+    url: "https://example.org/articoli/la-grande-festa/"
+    domanda: "Per cosa si fa hacking, qui?"
+    hash: "4c270de06fa61f16d7bff0eaabdd5511ab1d5109cfd754e94b570df7b7d74412"
+    racconto: "L'ultimo pezzo chiude il cerchio. Le canzoni, le lettere, la Lettera al Papa: tutto portava allo stesso posto. Si fa hacking per amore. E quando il serpente si morde la coda, al centro resta l'UOMO."
