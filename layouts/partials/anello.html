@@ -1,0 +1,14 @@
+{{/* Piccolo uroboro in SVG: serpente che si morde la coda */}}
+<svg class="anello" width="{{ .size }}" height="{{ .size }}" viewBox="0 0 100 100" aria-hidden="true">
+  <defs>
+    <linearGradient id="sg-{{ .id }}" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8fd16a"/><stop offset="1" stop-color="#2f6b2a"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="36" fill="none" stroke="url(#sg-{{ .id }})" stroke-width="11" stroke-linecap="round" stroke-dasharray="210 16" transform="rotate(-62 50 50)"/>
+  <circle cx="50" cy="50" r="36" fill="none" stroke="#0b1a08" stroke-opacity=".35" stroke-width="11" stroke-dasharray="2 5" transform="rotate(-62 50 50)"/>
+  <path d="M62 11 l13 3 l-7 10 z" fill="#8fd16a"/>
+  <circle cx="68" cy="14" r="1.8" fill="#e2b25a"/>
+  <circle cx="50" cy="38" r="6" fill="#e2b25a"/>
+  <path d="M50 45 v18 M38 50 l12 4 l12 -4 M43 74 l7 -11 l7 11" stroke="#e2b25a" stroke-width="4" stroke-linecap="round" fill="none"/>
+</svg>

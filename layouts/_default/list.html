@@ -1,0 +1,22 @@
+{{ define "bodyclass" }}pagina{{ end }}
+{{ define "main" }}
+<section class="pagina-testa">
+  <p class="occhiello">Gli articoli</p>
+  <h1>{{ .Title }}</h1>
+  <p class="lead">{{ .Params.sottotitolo }}</p>
+</section>
+<section class="sezione stretta">
+  <ul class="indizi">
+    {{ range $i, $s := site.Data.puzzle.sigilli }}
+    <li class="rivela">
+      <a href="{{ $s.url }}" target="_blank" rel="noopener">
+        <span class="indizio-lettera">{{ $s.lettera }}</span>
+        <span class="indizio-testo"><small>{{ $s.nome }}</small><strong>{{ $s.articolo }}</strong></span>
+        <span class="indizio-freccia" aria-hidden="true">↗</span>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  <p class="nota-centro">Gli articoli sono sul mio sito personale. Leggili con calma: la parola giusta non è sempre la più evidente.</p>
+</section>
+{{ end }}

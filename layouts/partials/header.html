@@ -1,0 +1,12 @@
+<header class="testata">
+  <a class="marchio" href="{{ "/" | relURL }}" aria-label="Hacking 4 Love, home">
+    {{ partial "anello.html" (dict "size" 34 "id" "logo") }}
+    <span>Hacking<b>4</b>Love</span>
+  </a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Apri il menu"><span></span><span></span></button>
+  <nav id="menu" aria-label="Principale">
+    <ul>
+      {{ range site.Menus.main }}<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>{{ end }}
+    </ul>
+  </nav>
+</header>
