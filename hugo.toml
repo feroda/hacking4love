@@ -11,7 +11,11 @@ disableKinds = ["taxonomy", "term"]
   email = "luca@befair.it"
   # Il tuo sito personale: gli articoli-indizio vivranno lì
   sitoPersonale = "https://example.org/"
-  telegram = ""
+  # Canale Telegram del progetto. Vuoto = pulsante nascosto.
+  telegram = "https://t.me/my_uroboro"
+  # Codice GoatCounter: la parte prima di .goatcounter.com (es. "hacking4love").
+  # Vuoto = nessuno script di statistiche. SEGNAPOSTO: da compilare.
+  goatcounter = ""
 
 [markup.goldmark.renderer]
   unsafe = true

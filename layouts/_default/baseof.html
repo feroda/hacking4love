@@ -15,5 +15,6 @@
   <script src="{{ $js.RelPermalink }}" defer></script>
   {{ $pz := resources.Get "js/puzzle.js" | minify | fingerprint }}
   <script src="{{ $pz.RelPermalink }}" defer></script>
+  {{ partial "statistiche.html" . }}
 </body>
 </html>
