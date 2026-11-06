@@ -51,3 +51,24 @@
     el.addEventListener('pointermove', function (e) { var r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
   });
 })();
+// Uroboro della home: anelli a 3px dal serpente sullo schermo, testo che gira in senso opposto alle tacche
+(function () {
+  var svg = document.querySelector('svg.uroboro'); if (!svg) return;
+  var CX = 575.4, CY = 392.2, A = 292.2, B = 266.5, W = 694, MARGINE = 3, TESTO = 21;
+  var ridotto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var anelli = svg.querySelectorAll('.anello-1 ellipse'), giro = svg.querySelector('#giro-testo'), tp = svg.querySelector('textPath'), meta = 0;
+  function misura() {
+    var px = svg.getBoundingClientRect().width / W; if (!px) return;
+    var g = MARGINE / px;
+    anelli.forEach(function (e) { var o = g + parseFloat(e.dataset.off); e.setAttribute('rx', A + o); e.setAttribute('ry', B + o); });
+    var rx = A + g + TESTO, ry = B + g + TESTO, sx = CX - rx, dx = CX + rx, arco = ' A' + rx + ' ' + ry + ' 0 1 1 ';
+    giro.setAttribute('d', 'M' + sx + ' ' + CY + arco + dx + ' ' + CY + arco + sx + ' ' + CY + arco + dx + ' ' + CY + arco + sx + ' ' + CY);
+    var tot = giro.getTotalLength(); meta = tot / 2;
+    tp.setAttribute('textLength', meta); tp.setAttribute('startOffset', meta);
+  }
+  misura(); addEventListener('resize', misura);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(misura);
+  if (ridotto) return;
+  function gira(t) { if (meta) tp.setAttribute('startOffset', meta * (1 - (t / 80000) % 1)); requestAnimationFrame(gira); }
+  requestAnimationFrame(gira);
+})();

@@ -70,18 +70,16 @@ h3{font-size:clamp(19px,2vw,23px)}
 /* eroe */
 .eroe{position:relative;overflow-x:clip;min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:clamp(20px,4vw,60px);
   max-width:var(--max);margin:0 auto;padding:110px clamp(16px,4vw,40px) 80px}
-.eroe-anello{position:relative;aspect-ratio:1;width:100%;max-width:560px;justify-self:center;order:2}
-.eroe-anello svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.testo-rotante{animation:gira 60s linear infinite}
-.testo-rotante text{font:700 21px var(--display);letter-spacing:.42em;fill:var(--oro)}
-.serpente{animation:gira 90s linear infinite reverse;filter:drop-shadow(0 0 22px rgba(95,160,70,.35))}
-.serpente-corpo{stroke-dashoffset:100;animation:disegna 3s 0.3s cubic-bezier(.6,.1,.2,1) forwards}
-@keyframes disegna{to{stroke-dashoffset:0}}
+.eroe-anello{position:relative;width:100%;max-width:600px;justify-self:center;order:2}
+.uroboro{display:block;width:100%;height:auto;overflow:visible}
+.uroboro .alone{animation:respira 7s ease-in-out infinite;transform-origin:575.4px 392.2px}
+@keyframes respira{50%{opacity:.55;transform:scale(1.04)}}
+.uroboro-img{filter:drop-shadow(0 0 10px rgba(0,0,0,.6))}
+.anello-1 .filo{fill:none;stroke:var(--oro);stroke-width:1.5;opacity:.9}
+.anello-1 .tacche{fill:none;stroke:var(--oro-chiaro);stroke-width:7;stroke-dasharray:.5 2.5;animation:tacche 90s linear infinite}
+@keyframes tacche{to{stroke-dashoffset:-360}}
+.anello-2{font:700 20px var(--display);letter-spacing:.3em;fill:var(--oro)}
 @keyframes gira{to{transform:rotate(360deg)}}
-.eroe-volto{position:absolute;inset:24%;border-radius:50%;overflow:hidden;
-  box-shadow:0 0 0 1px var(--linea),0 0 80px rgba(226,178,90,.35),inset 0 0 40px rgba(0,0,0,.6);animation:respira 7s ease-in-out infinite}
-.eroe-volto img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;transform:scale(1.65);filter:saturate(1.1) contrast(1.05)}
-@keyframes respira{50%{box-shadow:0 0 0 1px var(--linea),0 0 130px rgba(226,178,90,.55),inset 0 0 40px rgba(0,0,0,.6)}}
 .eroe-testo{order:1;animation:sale 1.2s .2s both cubic-bezier(.2,.8,.2,1)}
 @keyframes sale{from{opacity:0;transform:translateY(30px)}}
 .scendi{position:absolute;bottom:26px;left:50%;width:26px;height:42px;border:1.5px solid var(--oro);border-radius:14px;transform:translateX(-50%)}
@@ -89,7 +87,7 @@ h3{font-size:clamp(19px,2vw,23px)}
 @keyframes rotella{to{transform:translateY(14px);opacity:0}}
 @media (max-width:900px){
   .eroe{grid-template-columns:1fr;text-align:center;padding-top:96px}
-  .eroe-anello{order:1;max-width:min(78vw,400px)}
+  .eroe-anello{order:1;max-width:min(88vw,440px)}
   .eroe-testo{order:2}
   .lead{margin-left:auto;margin-right:auto}
   .cta{justify-content:center}

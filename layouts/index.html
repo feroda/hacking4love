@@ -1,19 +1,8 @@
 {{ define "bodyclass" }}home{{ end }}
 {{ define "main" }}
 <section class="eroe">
-  <div class="eroe-anello" aria-hidden="true">
-    <svg viewBox="0 0 600 600" class="testo-rotante">
-      <defs><path id="giro" d="M300,300 m-250,0 a250,250 0 1,1 500,0 a250,250 0 1,1 -500,0"/></defs>
-      <text><textPath href="#giro">HACKING 4 LOVE · CHIUDERE UROBORO · TIME STOP · RULES CHANGE · L'UOMO AL CENTRO · </textPath></text>
-    </svg>
-    <svg viewBox="0 0 600 600" class="serpente">
-      <defs>
-        <linearGradient id="squame" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9be071"/><stop offset=".55" stop-color="#4f8a3c"/><stop offset="1" stop-color="#1f4a1c"/></linearGradient>
-      </defs>
-      <circle cx="300" cy="300" r="205" fill="none" stroke="url(#squame)" stroke-width="30" stroke-linecap="round" pathLength="100" stroke-dasharray="95 5" transform="rotate(-80 300 300)" class="serpente-corpo"/>
-      <circle cx="300" cy="300" r="205" fill="none" stroke="#06140a" stroke-opacity=".45" stroke-width="30" stroke-dasharray="3 9" transform="rotate(-80 300 300)"/>
-    </svg>
-    <div class="eroe-volto"><img src="{{ "img/uomo-uroboro.jpg" | relURL }}" alt="" width="1200" height="800"></div>
+  <div class="eroe-anello">
+    {{ partial "eroe-uroboro.html" . }}
   </div>
   <div class="eroe-testo">
     <p class="occhiello">hacking4love.it</p>

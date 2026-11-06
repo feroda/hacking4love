@@ -1,0 +1,37 @@
+{{/*
+  L'uroboro della home: l'immagine con il serpente intero e due anelli che girano in senso opposto.
+  Le misure sono in pixel dell'immagine static/img/uomo-uroboro.jpg (1200×800), misurate sul bordo
+  esterno del serpente: centro (575.4, 392.2), semiassi 292.2 × 266.5 (il serpente è un po' ovale).
+  Il primo anello parte a 3px dallo schermo dal serpente a qualunque dimensione: lo ricalcola
+  assets/js/main.js (funzione uroboro). Se cambi l'immagine, vanno rimisurati centro e semiassi.
+*/}}
+<svg class="uroboro" viewBox="228 71 694 642" role="img" aria-label="Un uroboro, il serpente che si morde la coda, intorno all'Uomo vitruviano">
+  <defs>
+    <clipPath id="clip-serpente">
+      {{/* il serpente (ellisse) più la testa, che esce un po' dal cerchio */}}
+      <ellipse cx="575.4" cy="392.2" rx="292.2" ry="266.5"/>
+      <path d="M498 133 L519 122.5 L539.5 116.5 L556.5 112.5 L580 110.8 L600.5 112.5 L617.5 116.3 L631 120.5 L636.6 127.8 L637.6 137 L638 150 L498 150 Z"/>
+    </clipPath>
+    <radialGradient id="alone" cx="50%" cy="50%" r="50%">
+      <stop offset=".6" stop-color="#e2b25a" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#e2b25a" stop-opacity="0"/>
+    </radialGradient>
+    {{/* percorso del testo: l'ellisse percorsa due volte; il testo (lungo un giro) scorre sul secondo giro e così non si interrompe mai */}}
+    <path id="giro-testo" d="M258.7 392.2 A316.7 291 0 1 1 892.1 392.2 A316.7 291 0 1 1 258.7 392.2 A316.7 291 0 1 1 892.1 392.2 A316.7 291 0 1 1 258.7 392.2"/>
+  </defs>
+
+  <ellipse class="alone" cx="575.4" cy="392.2" rx="340" ry="315" fill="url(#alone)"/>
+
+  {{/* Anello 1: a 3px dal serpente, due fili d'oro e tacche che girano in senso orario */}}
+  <g class="anello-1">
+    <ellipse cx="575.4" cy="392.2" rx="296.45" ry="270.75" class="filo" data-off=".75"/>
+    <ellipse cx="575.4" cy="392.2" rx="301.7" ry="276" class="tacche" pathLength="360" data-off="6"/>
+    <ellipse cx="575.4" cy="392.2" rx="306.95" ry="281.25" class="filo" data-off="11.25"/>
+  </g>
+
+  {{/* Anello 2: il testo, gira in senso antiorario */}}
+  <text class="anello-2"><textPath href="#giro-testo" startOffset="1910" textLength="1910" lengthAdjust="spacing">HACKING 4 LOVE · CHIUDERE UROBORO · TIME STOP · RULES CHANGE · L'UOMO AL CENTRO ·&#160;</textPath></text>
+
+  {{/* L'immagine sopra gli anelli: il serpente resta intero e la testa passa sopra il primo anello */}}
+  <image href="{{ "img/uomo-uroboro.jpg" | relURL }}" x="0" y="0" width="1200" height="800" clip-path="url(#clip-serpente)" class="uroboro-img"/>
+</svg>
