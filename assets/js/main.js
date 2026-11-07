@@ -54,7 +54,7 @@
 // Uroboro della home: anelli a 3px dal serpente sullo schermo, testo che gira in senso opposto alle tacche
 (function () {
   var svg = document.querySelector('svg.uroboro'); if (!svg) return;
-  var CX = 575.4, CY = 392.2, A = 292.2, B = 266.5, W = 694, MARGINE = 3, TESTO = 21;
+  var CX = 575.4, CY = 392.2, A = 292.2, B = 266.5, W = 694, MARGINE = 3, TESTO = 23;
   var ridotto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var anelli = svg.querySelectorAll('.anello-1 ellipse'), giro = svg.querySelector('#giro-testo'), tp = svg.querySelector('textPath'), meta = 0;
   function misura() {

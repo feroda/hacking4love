@@ -78,7 +78,7 @@ h3{font-size:clamp(19px,2vw,23px)}
 .anello-1 .filo{fill:none;stroke:var(--oro);stroke-width:1.5;opacity:.9}
 .anello-1 .tacche{fill:none;stroke:var(--oro-chiaro);stroke-width:7;stroke-dasharray:.5 2.5;animation:tacche 90s linear infinite}
 @keyframes tacche{to{stroke-dashoffset:-360}}
-.anello-2{font:700 20px var(--display);letter-spacing:.3em;fill:var(--oro)}
+.anello-2{font:700 22px var(--display);letter-spacing:.3em;fill:var(--oro)}
 @keyframes gira{to{transform:rotate(360deg)}}
 .eroe-testo{order:1;animation:sale 1.2s .2s both cubic-bezier(.2,.8,.2,1)}
 @keyframes sale{from{opacity:0;transform:translateY(30px)}}
@@ -263,6 +263,8 @@ h3{font-size:clamp(19px,2vw,23px)}
 .piede-anello{display:flex;justify-content:center;margin-bottom:12px}
 .piede-anello .anello{animation:gira 30s linear infinite}
 .piede-motto{font:700 14px var(--display);letter-spacing:.35em;text-transform:uppercase;color:var(--oro)}
+.piede-h4l{font:italic 500 18px/1.5 var(--serif);color:#d9d1bf;max-width:620px;margin:14px auto 18px}
+.piede-h4l b{font:700 13px var(--display);letter-spacing:.18em;text-transform:uppercase;font-style:normal;color:var(--oro)}
 .piede-nota{font-size:12px;opacity:.75;max-width:560px;margin:10px auto 0}
 
 /* comparsa allo scroll */
