@@ -228,6 +228,8 @@ h3{font-size:clamp(19px,2vw,23px)}
 .btn.vuoto{background:transparent;color:var(--oro-chiaro)}
 .btn.vuoto:hover{background:rgba(226,178,90,.1)}
 .btn:focus-visible,button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--oro-chiaro);outline-offset:3px}
+.h4l{font:italic 500 clamp(17px,1.7vw,20px)/1.5 var(--serif);color:#cfc6b2;max-width:34em;margin:18px 0 0;padding-left:16px;border-left:2px solid var(--oro)}
+.h4l b{font:700 .78em var(--display);letter-spacing:.14em;text-transform:uppercase;font-style:normal;color:var(--oro)}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .cta.centro{justify-content:center}
 
@@ -254,6 +256,7 @@ h3{font-size:clamp(19px,2vw,23px)}
   .eroe-anello{order:1;max-width:min(88vw,440px)}
   .eroe-testo{order:2}
   .lead{margin-left:auto;margin-right:auto}
+  .h4l{margin-left:auto;margin-right:auto;border-left:0;padding-left:0}
   .cta{justify-content:center}
   .scendi{display:none}
 }
