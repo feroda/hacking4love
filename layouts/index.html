@@ -75,7 +75,7 @@
     <p class="occhiello">Le loro parole</p>
     <h2 id="ct-titolo">{{ .titolo }}</h2>
   </header>
-  <div class="ct-muro">
+  <div class="ct-muro" tabindex="0" aria-label="Citazioni dei cantanti">
     {{ range .voci }}
     <figure class="ct-voce rivela"{{ with .lingua }} lang="{{ . }}"{{ end }}>
       <blockquote><p>{{ .testo | htmlEscape | replaceRE "\n" "<br>" | safeHTML }}</p></blockquote>
@@ -83,6 +83,7 @@
     </figure>
     {{ end }}
   </div>
+  <p class="ct-contatore" aria-hidden="true" hidden></p>
   {{ end }}
 </section>
 

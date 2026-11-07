@@ -328,6 +328,23 @@ h3{font-size:clamp(19px,2vw,23px)}
   font:600 12px var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--oro)}
 .ct-voce figcaption::before{content:"— "}
 
+/* cantanti sul telefono: una striscia da scorrere col dito, tutte le citazioni caricate subito */
+.ct-contatore{display:none}
+@media (max-width:640px){
+  .ct-muro{columns:auto;display:flex;gap:14px;position:relative;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 16px;
+    margin:0 -16px;padding:4px 16px 10px;scrollbar-width:none;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+  .ct-muro::-webkit-scrollbar{display:none}
+  .ct-muro:focus-visible{outline:2px solid var(--oro-chiaro);outline-offset:-2px}
+  .ct-voce{flex:0 0 85%;margin:0;scroll-snap-align:start;display:flex;flex-direction:column;padding:30px 22px 20px}
+  .ct-voce blockquote{flex:1;display:flex;align-items:center}
+  .ct-voce blockquote p{font-size:19px}
+  .js .ct-voce.rivela{opacity:1;transform:none}
+  .ct-contatore{display:block;margin:14px 0 0;text-align:center;font:600 12px var(--sans);letter-spacing:.24em;color:var(--oro)}
+  .ct-contatore[hidden]{display:none}
+  .ct-muro.spinta .ct-voce{animation:ct-spinta 1s cubic-bezier(.3,.7,.3,1) 1}
+}
+@keyframes ct-spinta{0%,100%{transform:none}40%{transform:translateX(-48px)}}
+
 /* contatti */
 .contatti{text-align:center}
 .contatti .sez-lead{max-width:680px;margin:0 auto}

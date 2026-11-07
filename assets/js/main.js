@@ -72,3 +72,31 @@
   function gira(t) { if (meta) tp.setAttribute('startOffset', meta * (1 - (t / 80000) % 1)); requestAnimationFrame(gira); }
   requestAnimationFrame(gira);
 })();
+
+// Citazioni dei cantanti: sul telefono sono una striscia orizzontale. Contatore "1 / 14" e una sola spintarella per far capire che si scorre.
+(function () {
+  var m = document.querySelector('.ct-muro'), c = document.querySelector('.ct-contatore'); if (!m || !c) return;
+  var voci = m.querySelectorAll('.ct-voce'), n = voci.length;
+  var ridotto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function striscia() { return m.scrollWidth > m.clientWidth + 2; }
+  function aggiorna() {
+    if (!striscia()) { c.hidden = true; return; }
+    c.hidden = false;
+    var x = m.scrollLeft + parseFloat(getComputedStyle(m).paddingLeft), i = 0, meglio = Infinity;
+    voci.forEach(function (v, k) { var d = Math.abs(v.offsetLeft - x); if (d < meglio) { meglio = d; i = k; } });
+    if (m.scrollLeft + m.clientWidth >= m.scrollWidth - 2) i = n - 1;
+    c.textContent = (i + 1) + ' / ' + n;
+  }
+  m.addEventListener('scroll', aggiorna, { passive: true });
+  addEventListener('resize', aggiorna); aggiorna();
+  if (ridotto || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting || !striscia() || m.scrollLeft > 0) return;
+      io.disconnect();
+      m.classList.add('spinta');
+      setTimeout(function () { m.classList.remove('spinta'); }, 1100);
+    });
+  }, { threshold: .6 });
+  io.observe(m);
+})();
