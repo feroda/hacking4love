@@ -2,6 +2,10 @@
   <div class="piede-anello">{{ partial "anello.html" (dict "size" 56 "id" "piede") }}</div>
   <p class="piede-motto">Time Stop · Rules Change</p>
   <p class="piede-h4l"><b>Hacking 4 Love</b>: hacker come persona che affronta sfide intellettuali per superare creativamente limitazioni imposte: chi smonta le regole per capirle e rimontarle con amore. Con Kintsugi.</p>
+  <figure class="piede-foto">
+    <img src="{{ "img/luca.jpg" | relURL }}" width="150" height="150" alt="{{ site.Params.autore }}" loading="lazy" decoding="async">
+    <figcaption>«Per la libertà, sempre.»<small>Luca · W il software libero</small></figcaption>
+  </figure>
   <p>{{ site.Params.autore }} · Testi <a href="https://creativecommons.org/licenses/by/4.0/deed.it" rel="license">CC BY 4.0</a> · Codice <a href="https://github.com/feroda/hacking4love">AGPL v3</a> · Fatto con software libero (<a href="https://gohugo.io">Hugo</a>)</p>
   {{ with site.Params.goatcounter }}<p class="piede-nota">Conto le visite con <a href="https://www.goatcounter.com">GoatCounter</a>, in forma anonima e senza cookie.</p>{{ end }}
   <p class="piede-nota">Le opinioni espresse su questo sito sono personali. Nessuna persona o istituzione citata è coinvolta o ha approvato questo progetto.</p>
