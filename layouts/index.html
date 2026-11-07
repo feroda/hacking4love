@@ -63,6 +63,23 @@
   </div>
 </section>
 
+<section id="cantanti" class="cantanti sezione" aria-labelledby="ct-titolo">
+  {{ with site.Data.citazioni }}
+  <header class="sez-testa rivela">
+    <p class="occhiello">Le loro parole</p>
+    <h2 id="ct-titolo">{{ .titolo }}</h2>
+  </header>
+  <div class="ct-muro">
+    {{ range .voci }}
+    <figure class="ct-voce rivela"{{ with .lingua }} lang="{{ . }}"{{ end }}>
+      <blockquote><p>{{ .testo | htmlEscape | replaceRE "\n" "<br>" | safeHTML }}</p></blockquote>
+      <figcaption lang="it">{{ .nome }}</figcaption>
+    </figure>
+    {{ end }}
+  </div>
+  {{ end }}
+</section>
+
 <section id="puzzle" class="sezione">
   <header class="sez-testa">
     <p class="occhiello">Il puzzle</p>
