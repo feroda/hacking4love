@@ -1,18 +1,23 @@
 # Citazioni della sezione "I cantanti sono Sacerdoti, o forse Angeli..." (home, dopo Papa Nero).
 # Testi riportati così come li ha scritti Luca. Per andare a capo dentro una citazione usa "|-".
 # lingua: "en" per i testi in inglese (serve a lettori di schermo e sillabazione).
-titolo: "I cantanti sono Sacerdoti, o forse Angeli..."
+titolo: "I cantanti sono Sacerdoti, o meglio Angeli..."
 voci:
   - nome: Elisa
     testo: "E se c'è un segreto è fare tutto come se vedessi solo il Sole"
   - nome: Max Pezzali
-    testo: "Vedere finalmente che, rischiamo di perdere, mille miliardi e più di cose, se tu non mi avessi fatto il dono di dividerle con me"
+    testo: "Vedere finalmente che, rischiavo di perdere mille miliardi e più di cose, se tu non mi avessi fatto il dono di dividerle con me"
   - nome: Nesli
     testo: "Non vedi che cosa rifletti, sopra un mare di specchi si vola"
   - nome: Lorenzo Jovanotti
     testo: "L'Amore a volte ti libera, e ti nutre le cellule, e ti fa venir voglia di vivere fino all'ultimo attimo, dove suona la musica, nella Terra Degli Uomini"
+  - nome: Genesis, the Gabriel Era
+    testo: "Lord of lords, king of kings Has returned to lead his children home To take them to the New Jerusalem!"
+    lingua: en
   - nome: Franco Battiato
     testo: "Cercare l'Uno al di sopra del Bene e del Male"
+  - nome: Gianna Nannini
+    testo: "Meravigliosa Creatura, sei sola al mondo"
   - nome: Dream Theater
     testo: "The Spirit Carries On"
     lingua: en
@@ -38,3 +43,6 @@ voci:
       Avremo gli occhi vigili e attenti e selvatici degli animali... Siamo noi quei pazzi che venite a cercare
   - nome: Bandabardò
     testo: "Sarà come rapinare banche, dicendo solo per favore"
+  - nome: Peter Gabriel
+    testo: "If looks could kill, they probably will, in Games Without Frontiers, War without tears"
+    lingua: en
