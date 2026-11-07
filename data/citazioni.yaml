@@ -3,6 +3,8 @@
 # lingua: "en" per i testi in inglese (serve a lettori di schermo e sillabazione).
 titolo: "I cantanti sono Sacerdoti, o forse Angeli..."
 voci:
+  - nome: Elisa
+    testo: "E se c'è un segreto è fare tutto come se vedessi solo il Sole"
   - nome: Max Pezzali
     testo: "Vedere finalmente che, rischiamo di perdere, mille miliardi e più di cose, se tu non mi avessi fatto il dono di dividerle con me"
   - nome: Nesli
@@ -30,5 +32,9 @@ voci:
     lingua: en
   - nome: Aladdin
     testo: "Ogni cosa che ho, anche quella più bella, no non vale la stella che tra poco toccherò"
+  - nome: Elisa e Francesco De Gregori
+    testo: |-
+      E vai e vai che presto i giorni si allungano e avremo sogni come fari
+      Avremo gli occhi vigili e attenti e selvatici degli animali... Siamo noi quei pazzi che venite a cercare
   - nome: Bandabardò
     testo: "Sarà come rapinare banche, dicendo solo per favore"
