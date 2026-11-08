@@ -30,6 +30,10 @@ disableKinds = ["taxonomy", "term"]
     url = "/#manifesto"
     weight = 10
   [[menus.main]]
+    name = "Cantanti"
+    url = "/#vasco"
+    weight = 15
+  [[menus.main]]
     name = "Il puzzle"
     url = "/#puzzle"
     weight = 20
