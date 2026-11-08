@@ -309,16 +309,16 @@ h3{font-size:clamp(19px,2vw,23px)}
 .destinatari li:last-child{border-bottom:1px solid var(--linea)}
 .destinatari mark{background:linear-gradient(100deg,var(--oro-scuro),var(--oro-chiaro) 40%,var(--oro) 60%,var(--oro-chiaro));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700;padding:0}
 
-/* papa nero */
-.papa-nero{text-align:center;position:relative}
-.pn-dentro{position:relative;padding:clamp(50px,8vw,90px) clamp(20px,5vw,70px);border-radius:24px;background:#000;
+/* gesù della canzone */
+.gesu-canzone{text-align:center;position:relative}
+.gc-dentro{position:relative;padding:clamp(50px,8vw,90px) clamp(20px,5vw,70px);border-radius:24px;background:#000;
   border:1px solid rgba(226,178,90,.35);box-shadow:0 0 0 8px rgba(226,178,90,.04),0 40px 120px -30px rgba(226,178,90,.3);overflow:hidden}
-.pn-dentro::before{content:"";position:absolute;inset:0;background:url("../img/uomo-uroboro.jpg") center/cover;opacity:.07;filter:grayscale(1)}
-.pn-dentro>*{position:relative}
-.papa-nero h2{font-size:clamp(32px,5.4vw,64px)}
-.papa-nero h2 span{color:#000;-webkit-text-stroke:1.5px var(--oro);text-shadow:0 0 40px rgba(226,178,90,.5)}
-.pn-testo{font:500 22px/1.55 var(--serif);max-width:640px;margin:0 auto 22px;color:#ddd5c3}
-.pn-nota{font-size:13px;color:var(--tenue);letter-spacing:.02em;margin:0}
+.gc-dentro::before{content:"";position:absolute;inset:0;background:url("../img/uomo-uroboro.jpg") center/cover;opacity:.07;filter:grayscale(1)}
+.gc-dentro>*{position:relative}
+.gesu-canzone h2{font-size:clamp(32px,5.4vw,64px)}
+.gesu-canzone h2 span{color:#000;-webkit-text-stroke:1.5px var(--oro);text-shadow:0 0 40px rgba(226,178,90,.5)}
+.gc-testo{font:500 22px/1.55 var(--serif);max-width:640px;margin:0 auto 22px;color:#ddd5c3}
+.gc-nota{font-size:13px;color:var(--tenue);letter-spacing:.02em;margin:0}
 
 /* cantanti: tutte le citazioni insieme, a muro */
 .cantanti{padding-top:clamp(40px,6vw,70px)}

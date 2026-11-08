@@ -12,7 +12,7 @@ Poi apri http://localhost:1313
 
 | Cosa | File |
 |---|---|
-| Testi della home (manifesto, Papa Nero, contatti) | `layouts/index.html` |
+| Testi della home (manifesto, Gesù della Canzone, contatti) | `layouts/index.html` |
 | Sigilli del puzzle: domande, articoli-indizio, racconti | `data/puzzle.yaml` |
 | Tappe della pagina "Come l'ho risolto" | `data/tappe.yaml` |
 | Email, sito personale, Telegram | `hugo.toml` → `[params]` |
