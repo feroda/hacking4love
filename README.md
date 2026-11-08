@@ -23,12 +23,13 @@ Poi apri http://localhost:1313
 ## Le parole-chiave del puzzle
 
 Nel sito non c'è la parola, solo il suo hash SHA-256. La parola viene normalizzata
-(minuscolo, senza accenti, senza spazi ai lati), quindi "Felicità" e "felicita" valgono uguale.
+(minuscolo, senza accenti, senza spazi ai lati), quindi "Responsabilità" e "responsabilita" valgono uguale.
 
     echo -n "nuovaparola" | sha256sum
 
-Copia il risultato nel campo `hash` del sigillo in `data/puzzle.yaml`.
-Le parole attuali (felicita, senso, tempo, amore) sono SEGNAPOSTO: cambiale prima di pubblicare.
+Copia il risultato nel campo `hash` del sigillo in `data/puzzle.yaml`. Per accettare anche un sinonimo
+aggiungi il suo hash nella lista `alias` dello stesso sigillo.
+Le parole attuali: bellezza, sharing is caring, ridere di te, liberta (una per articolo-indizio).
 
 Nota onesta: un hash di una parola italiana comune si indovina con un dizionario in pochi secondi.
 Per un gioco va bene; non usarlo per proteggere niente di serio.

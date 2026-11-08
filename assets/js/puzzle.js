@@ -157,7 +157,7 @@
           var v = normalizza(form.chiave.value);
           if (!v) return;
           sha256(v).then(function (h) {
-            if (h === cfg.sigilli[s].hash) { apriSigillo(s); salva(); }
+            if (h === cfg.sigilli[s].hash || (cfg.sigilli[s].alias || []).indexOf(h) >= 0) { apriSigillo(s); salva(); }
             else {
               card.classList.remove('errore'); void card.offsetWidth; card.classList.add('errore');
               stato.textContent = 'Non è questa. Rileggi l\'articolo.';

@@ -3,7 +3,10 @@
 # Nel sito c'è solo l'hash SHA-256 della parola, non la parola.
 # La parola viene normalizzata così: minuscolo, senza accenti, senza spazi ai lati.
 # Per calcolare un nuovo hash:   echo -n "parola" | sha256sum
-# PAROLE ATTUALI (SEGNAPOSTO, da cambiare prima di pubblicare): felicita, senso, tempo, amore
+# "link": il testo del link all'articolo nel gioco ("articolo" è il titolo vero, usato nella pagina Indizi).
+# "alias" (facoltativo): altri hash accettati per lo stesso sigillo, per i sinonimi.
+# PAROLE (scelte dall'utente, prese da articoli già esistenti): bellezza, sharing is caring,
+# ridere di te, liberta. Domande e racconti sono bozze.
 
 immagine: "/img/uomo-uroboro.jpg"
 colonne: 4
@@ -11,30 +14,34 @@ righe: 3
 
 sigilli:
   - lettera: "U"
-    nome: "Il sigillo della Felicità"
-    articolo: "Felicità, senso, tempo"
-    url: "https://example.org/articoli/felicita-senso-tempo/"
-    domanda: "Cosa aumenta, quando si dà il senso?"
-    hash: "84712aab2c09f89f61e8dfdb88232187743e9e6fad994ea02ac83a878d45a1c8"
-    racconto: "Il primo pezzo l'ho trovato chiedendomi cosa cerco davvero. La risposta era la più semplice: la felicità. Non quella da comprare, quella che cresce quando le cose hanno un senso."
+    nome: "Il sigillo della Sezione Aurea"
+    link: "Leggi l'articolo"
+    articolo: "La bellezza ci salverà"
+    url: "https://lucaferroni.it/posts/bellezza/"
+    domanda: "Ci dobbiamo alimentare di positività e di… cosa? È lei che ci salverà."
+    hash: "5266532d434b9002561a28061c07b958b57c19b877faccf203e5c4ec84299857"
+    racconto: "Il primo pezzo è uno sguardo: guardare con occhi nuovi il mondo in cui siamo immersi, e riconoscere la differenza come qualcosa che arricchisce. Lì ho trovato la bellezza."
   - lettera: "O"
-    nome: "Il sigillo del Senso"
-    articolo: "Hacker: una parola, uno stile di vita"
-    url: "https://example.org/articoli/hacker-stile-di-vita/"
-    domanda: "Cosa aumenta, quando si dà il tempo?"
-    hash: "1ee51250477e4dd106c36aac0ac48489f068f61cf376e2bb0ef721fa913e880e"
-    racconto: "Il secondo è venuto da quindici anni di software libero: Linux Day, il tavolo tecnico con Stallman, il MIUR. Hacking vuol dire capire come funziona una cosa per renderla libera. Lì ho trovato il senso."
+    nome: "Il sigillo del sapere che non si consuma"
+    link: "Leggi lo scopo del PDP FSUG"
+    articolo: "Lo scopo del PDP"
+    url: "https://lucaferroni.it/posts/pdp-articolo-3/"
+    domanda: "Lo Statuto del PDP finisce con un motto inglese di tre parole. Quale?"
+    hash: "049d35a0520907006c515546e6a71d5bc58e21f3ed6ddc00cd2f5b20c326c45a"
+    racconto: "Il secondo pezzo viene dal 2003, dal PDP e dal software libero: prima l'etica, poi la tecnica. Il sapere che circola non si consuma, cresce. Condividere è prendersi cura."
   - lettera: "M"
-    nome: "Il sigillo del Tempo"
-    articolo: "Ogni momento è stateless"
-    url: "https://example.org/articoli/ogni-momento-stateless/"
-    domanda: "Cosa bisogna dare, perché aumenti il senso?"
-    hash: "8d6546721a1d106cf8d27f7326ebae7e83c1592aeb7479b8f7ec9d8d700d464f"
-    racconto: "Il terzo è il più difficile, perché non si trova: si dà. Il tempo. Un istante ripetuto nel tempo diventa eterno, e ogni momento non dipende dalla storia."
+    nome: "Il sigillo dello Scanzonato"
+    link: "Leggi il commento alla canzone"
+    articolo: "Canzone: Ridere di Te"
+    url: "https://lucaferroni.it/posts/song-ridere-di-te/"
+    domanda: "Una canzone di Vasco, con il Te maiuscolo: il principio femminile dell'Universo. Qual è il titolo?"
+    hash: "d8c2d72d57e3cae785f42378f3a30c78a625404f60b9f653242147acb355d8b6"
+    racconto: "Il terzo pezzo è una canzone. Maschile e femminile, tutti e due imperfetti, che ridono l'uno dell'altro con rispetto. Chi sa ridere di sé e dell'altro non ha bisogno di vincere."
   - lettera: "O"
-    nome: "Il sigillo dell'Amore"
-    articolo: "Hacking 4 Love: La grande festa"
-    url: "https://example.org/articoli/la-grande-festa/"
-    domanda: "Per cosa si fa hacking, qui?"
-    hash: "4c270de06fa61f16d7bff0eaabdd5511ab1d5109cfd754e94b570df7b7d74412"
-    racconto: "L'ultimo pezzo chiude il cerchio. Le canzoni, le lettere, la Lettera al Papa: tutto portava allo stesso posto. Si fa hacking per amore. E quando il serpente si morde la coda, al centro resta l'UOMO."
+    nome: "Il sigillo dello scopo dell'UOMO"
+    link: "Il progetto da 1 miliardo di €"
+    articolo: "1 miliardo per la libertà"
+    url: "https://github.com/feroda/1/blob/main/README_it.md"
+    domanda: "Un progetto aperto per gestire un miliardo di euro. Per cosa?"
+    hash: "8ff576f9c1f4130066da185a946c4d6a7438b2bf1715fa6c28ab1b514bf41aa1"
+    racconto: "L'ultimo pezzo chiude il cerchio: una libertà delicata, che tutela quella di ognuno fin dove inizia quella degli altri. Bellezza, condivisione, un sorriso con rispetto portano lì. E quando il serpente si morde la coda, al centro resta l'UOMO."
