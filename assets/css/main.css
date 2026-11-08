@@ -452,6 +452,8 @@ h3{font-size:clamp(19px,2vw,23px)}
 .puzzle.risolto .tessera{border-radius:0;box-shadow:none;outline:0}
 .puzzle.risolto .casella{border:0;border-radius:0}
 .puzzle.risolto .rivelazione{animation:appare 1s 1.6s forwards}
+.puzzle:not(.risolto) .puzzle-chi-sono{display:none}
+#tappe{scroll-margin-top:72px}
 .puzzle.risolto .riv-uomo span{animation:lettera .9s cubic-bezier(.2,.9,.3,1.2) forwards}
 .puzzle.risolto .riv-uomo span:nth-child(1){animation-delay:2s}
 .puzzle.risolto .riv-uomo span:nth-child(2){animation-delay:2.2s}
