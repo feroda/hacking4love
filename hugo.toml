@@ -18,8 +18,8 @@ disableKinds = ["taxonomy", "term"]
   messenger = "https://m.me/luca.ferroni.75"
   linkedin = "https://www.linkedin.com/in/lucaferroni/"
   # Codice GoatCounter: la parte prima di .goatcounter.com (es. "hacking4love").
-  # Vuoto = nessuno script di statistiche. SEGNAPOSTO: da compilare.
-  goatcounter = ""
+  # Vuoto = nessuno script di statistiche.
+  goatcounter = "feroda"
 
 [markup.goldmark.renderer]
   unsafe = true
