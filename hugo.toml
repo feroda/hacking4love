@@ -13,6 +13,10 @@ disableKinds = ["taxonomy", "term"]
   sitoPersonale = "https://example.org/"
   # Canale Telegram del progetto. Vuoto = pulsante nascosto.
   telegram = "https://t.me/my_uroboro"
+  # Contatti privati. Vuoto = link nascosto.
+  telegramPersonale = "https://t.me/feroda"
+  messenger = "https://m.me/luca.ferroni.75"
+  linkedin = "https://www.linkedin.com/in/lucaferroni/"
   # Codice GoatCounter: la parte prima di .goatcounter.com (es. "hacking4love").
   # Vuoto = nessuno script di statistiche. SEGNAPOSTO: da compilare.
   goatcounter = ""

@@ -250,6 +250,8 @@ h3{font-size:clamp(19px,2vw,23px)}
 .h4l b{font:700 .78em var(--display);letter-spacing:.14em;text-transform:uppercase;font-style:normal;color:var(--oro)}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .cta.centro{justify-content:center}
+.contatti-privati{margin-top:18px;text-align:center;font-size:15px;opacity:.85}
+.contatti-privati a{color:var(--oro-chiaro);margin:0 8px}
 
 /* eroe */
 .eroe{position:relative;overflow-x:clip;min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:clamp(20px,4vw,60px);

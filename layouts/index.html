@@ -102,9 +102,16 @@
     <h2>Se questa cosa deve arrivare a qualcuno, aiutami</h2>
     <p class="sez-lead">Se sei un cantante, un sacerdote, una persona che parla a tante persone, o conosci qualcuno che può far arrivare questo messaggio a chi deve arrivare: scrivimi.</p>
     <div class="cta centro">
-      <a class="btn oro" href="mailto:{{ site.Params.email }}?subject=Hacking%204%20Love">Scrivimi</a>
+      <a class="btn oro" href="mailto:{{ site.Params.email }}?subject=%5BUROBORO%5D%20-%20">Scrivimi</a>
       {{ with site.Params.telegram }}<a class="btn vuoto" href="{{ . }}" rel="noopener">Unisciti al progetto Uroboro</a>{{ end }}
     </div>
+    {{ if or site.Params.telegramPersonale site.Params.messenger site.Params.linkedin }}
+    <p class="contatti-privati">In privato:
+      {{ with site.Params.telegramPersonale }}<a href="{{ . }}" rel="noopener">Telegram</a>{{ end }}
+      {{ with site.Params.messenger }}<a href="{{ . }}" rel="noopener">Messenger</a>{{ end }}
+      {{ with site.Params.linkedin }}<a href="{{ . }}" rel="noopener">LinkedIn</a>{{ end }}
+    </p>
+    {{ end }}
   </div>
 </section>
 {{ end }}
