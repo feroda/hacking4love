@@ -251,10 +251,11 @@ h3{font-size:clamp(19px,2vw,23px)}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .cta.centro{justify-content:center}
 .btn svg{width:20px;height:20px;fill:currentColor;flex:none}
-.privati{margin-top:26px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;font-size:15px;color:#d9d1bf}
-.chip{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border:1px solid rgba(226,178,90,.45);border-radius:99px;color:var(--oro-chiaro);text-decoration:none;font:500 14px var(--sans);transition:background .2s,border-color .2s}
-.chip:hover{background:rgba(226,178,90,.12);border-color:var(--oro)}
-.chip svg{width:16px;height:16px;fill:currentColor;flex:none}
+.contatti-privati-tit{margin:34px 0 12px;text-align:center;font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
+.contatti-privati{list-style:none;margin:0;padding:0;display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(18px,5vw,40px)}
+.contatti-privati a{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--oro-chiaro);text-decoration:none;font-size:14px;transition:transform .2s}
+.contatti-privati a:hover{transform:translateY(-3px)}
+.contatti-privati svg{width:44px;height:44px;fill:currentColor}
 
 /* eroe */
 .eroe{position:relative;overflow-x:clip;min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:clamp(20px,4vw,60px);
