@@ -44,6 +44,14 @@ Per un gioco va bene; non usarlo per proteggere niente di serio.
 
 In alternativa Netlify o Cloudflare Pages: comando di build `hugo --gc --minify`, cartella `public`.
 
+## Copie archiviate
+
+Copie datate del sito sulla Wayback Machine di Internet Archive, come prova pubblica di autorship e data:
+
+| Data | Versione | Copia |
+|---|---|---|
+| 10 novembre 2026 | v0.4 | https://web.archive.org/web/20261110093337/https://hacking4love.it/ |
+
 ## Licenza
 
 Codice: GNU AGPL v3 (vedi `LICENSE`). Testi: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/deed.it), Lucafero da Fabriano. Foto, video, nome e voce di Luca Ferroni: tutti i diritti riservati.
