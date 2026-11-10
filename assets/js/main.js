@@ -100,3 +100,23 @@
   }, { threshold: .6 });
   io.observe(m);
 })();
+
+// Messaggio video sull'avatar del piè di pagina: si carica e parte solo al click
+(function () {
+  var b = document.querySelector('.piede-play'); if (!b) return;
+  var volto = b.parentNode, v;
+  b.addEventListener('click', function () {
+    if (!v) {
+      v = document.createElement('video');
+      v.src = b.dataset.video; v.preload = 'none'; v.playsInline = true;
+      v.setAttribute('aria-label', 'Messaggio video di Luca');
+      v.addEventListener('click', function () { v.paused ? v.play() : v.pause(); });
+      v.addEventListener('play', function () { volto.classList.add('suona'); });
+      v.addEventListener('pause', function () { volto.classList.remove('suona'); });
+      v.addEventListener('ended', function () { volto.classList.remove('video'); v.currentTime = 0; });
+      volto.insertBefore(v, b);
+    }
+    volto.classList.add('video');
+    v.play();
+  });
+})();

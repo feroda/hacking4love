@@ -480,6 +480,14 @@ h3{font-size:clamp(19px,2vw,23px)}
 .piede-foto{margin:30px auto 22px}
 .piede-volto{position:relative;width:150px;margin:0 auto}
 .piede-foto img{display:block;width:150px;height:150px;margin:0 auto;border-radius:50%;object-fit:cover;border:2px solid var(--oro);box-shadow:0 0 0 6px rgba(226,178,90,.12),0 0 36px rgba(226,178,90,.3)}
+.piede-volto video{display:block;width:150px;height:150px;border-radius:50%;object-fit:cover;border:2px solid var(--oro);box-shadow:0 0 0 6px rgba(226,178,90,.12),0 0 36px rgba(226,178,90,.3);background:#000;cursor:pointer}
+.piede-volto.video img{display:none}
+.piede-play{position:absolute;inset:0;width:150px;height:150px;margin:0 auto;border:0;border-radius:50%;background:rgba(0,0,0,.18);color:#fff;cursor:pointer;display:grid;place-items:center;transition:background .2s}
+.piede-play span{display:grid;place-items:center;width:52px;height:52px;padding-left:4px;border-radius:50%;background:rgba(10,8,20,.6);border:2px solid var(--oro);font-size:20px;line-height:1;color:var(--oro-chiaro);box-shadow:0 0 18px rgba(226,178,90,.45);transition:transform .2s}
+.piede-play:hover,.piede-play:focus-visible{background:rgba(0,0,0,.05)}
+.piede-play:hover span,.piede-play:focus-visible span{transform:scale(1.08)}
+.piede-play:focus-visible{outline:2px solid var(--oro-chiaro);outline-offset:4px}
+.piede-volto.suona .piede-play{opacity:0;pointer-events:none}
 .piede-emoji{position:absolute;bottom:-4px;font-size:36px;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
 .piede-emoji.sx{left:-34px}
 .piede-emoji.dx{right:-34px}
