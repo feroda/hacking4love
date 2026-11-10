@@ -46,4 +46,4 @@ In alternativa Netlify o Cloudflare Pages: comando di build `hugo --gc --minify`
 
 ## Licenza
 
-Codice: GNU AGPL v3 (vedi `LICENSE`). Testi e immagini: CC BY-ND 4.0, Lucafero da Fabriano.
+Codice: GNU AGPL v3 (vedi `LICENSE`). Testi: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/deed.it), Lucafero da Fabriano. Foto, video, nome e voce di Luca Ferroni: tutti i diritti riservati.
