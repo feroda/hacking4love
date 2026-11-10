@@ -35,6 +35,7 @@
     <div class="tavola-cornice">
       <div class="tavola" style="--col: {{ $p.colonne }}; --righe: {{ $p.righe }}" aria-label="Tavola del puzzle"></div>
       <img class="immagine-intera" src="{{ $p.immagine | relURL }}" alt="L'UOMO al centro dell'uroboro: il puzzle composto" width="1200" height="800" loading="lazy">
+      {{ partial "kintsugi.html" $p }}
       <div class="rivelazione" aria-live="polite">
         <p class="riv-sopra">Il serpente si è morso la coda</p>
         <p class="riv-uomo"><span>U</span><span>O</span><span>M</span><span>O</span></p>

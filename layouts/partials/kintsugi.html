@@ -1,0 +1,32 @@
+{{/* Crepe d'oro sulle giunture del puzzle (Kintsugi): linee spezzate, con scarti fissi (da un hash) calcolati sulla griglia colonne x righe. */}}
+{{- $col := .colonne }}{{ $rig := .righe }}{{ $W := 1200 }}{{ $H := 800 }}{{ $n := 16 }}
+<svg class="kintsugi" viewBox="0 0 {{ $W }} {{ $H }}" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+{{- range $c := seq 1 (sub $col 1) }}
+  {{- $x0 := div (mul $W $c) $col }}{{ $d := "" }}{{ $rami := "" }}
+  {{- range $i := seq 0 $n }}
+    {{- $y := div (mul $H $i) $n }}
+    {{- $x := add $x0 (mul 2 (sub (mod (hash.FNV32a (printf "%d-v%d-kintsugi" $i $c)) 13) 6)) }}
+    {{- $d = printf "%s%s%d %d " $d (cond (eq $i 0) "M" "L") $x $y }}
+    {{- if and (gt $i 0) (lt $i $n) (eq (mod (hash.FNV32a (printf "%d-rv%d-kintsugi" $i $c)) 5) 0) }}
+      {{- $s := cond (eq (mod $i 2) 0) 1 -1 }}
+      {{- $rami = printf "%sM%d %d l%d %d l%d %d " $rami $x $y (mul $s 16) 8 (mul $s 10) 13 }}
+    {{- end }}
+  {{- end }}
+  <path pathLength="1" d="{{ trim $d " " }}"/>
+  {{- with $rami }}<path class="ramo" pathLength="1" d="{{ trim . " " }}"/>{{ end }}
+{{- end }}
+{{- range $r := seq 1 (sub $rig 1) }}
+  {{- $y0 := div (mul $H $r) $rig }}{{ $d := "" }}{{ $rami := "" }}{{ $m := mul $n 2 }}
+  {{- range $i := seq 0 $m }}
+    {{- $x := div (mul $W $i) $m }}
+    {{- $y := add $y0 (mul 2 (sub (mod (hash.FNV32a (printf "%d-o%d-kintsugi" $i $r)) 11) 5)) }}
+    {{- $d = printf "%s%s%d %d " $d (cond (eq $i 0) "M" "L") $x $y }}
+    {{- if and (gt $i 0) (lt $i $m) (eq (mod (hash.FNV32a (printf "%d-ro%d-kintsugi" $i $r)) 7) 0) }}
+      {{- $s := cond (eq (mod $i 2) 0) 1 -1 }}
+      {{- $rami = printf "%sM%d %d l%d %d l%d %d " $rami $x $y 9 (mul $s 15) 12 (mul $s 9) }}
+    {{- end }}
+  {{- end }}
+  <path pathLength="1" d="{{ trim $d " " }}"/>
+  {{- with $rami }}<path class="ramo" pathLength="1" d="{{ trim . " " }}"/>{{ end }}
+{{- end }}
+</svg>
