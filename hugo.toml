@@ -20,6 +20,9 @@ disableKinds = ["taxonomy", "term"]
   # Codice GoatCounter: la parte prima di .goatcounter.com (es. "hacking4love").
   # Vuoto = nessuno script di statistiche.
   goatcounter = "feroda"
+  # Link ai CV (PDF). Vuoto = pulsante nascosto.
+  cvIt = ""
+  cvEn = ""
 
 [markup.goldmark.renderer]
   unsafe = true
@@ -38,8 +41,8 @@ disableKinds = ["taxonomy", "term"]
     url = "/#puzzle"
     weight = 20
   [[menus.main]]
-    name = "Come l'ho risolto"
-    url = "/come-l-ho-risolto/"
+    name = "Il percorso"
+    url = "/il-percorso/"
     weight = 30
   [[menus.main]]
     name = "Indizi"

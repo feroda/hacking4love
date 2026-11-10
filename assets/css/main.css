@@ -422,3 +422,9 @@ h3{font-size:clamp(19px,2vw,23px)}
   .js .rivela{opacity:1;transform:none}
   .kintsugi path{stroke-dashoffset:0}
 }
+
+/* Il percorso: tre soluzioni */
+.soluzioni .carta h3{margin:0 0 10px}
+.soluzioni .sol-link{margin-top:18px}
+.soluzioni .sol-link a{color:var(--oro-chiaro);font-weight:600}
+.soluzioni .sol-credito{margin-top:14px;font-size:13px;color:var(--serpe-chiaro)}
