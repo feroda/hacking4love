@@ -27,11 +27,11 @@ disableKinds = ["taxonomy", "term"]
 [menus]
   [[menus.main]]
     name = "Manifesto"
-    url = "/#manifesto"
+    url = "/archivio/#manifesto"
     weight = 10
   [[menus.main]]
     name = "Cantanti"
-    url = "/#vasco"
+    url = "/archivio/#vasco"
     weight = 15
   [[menus.main]]
     name = "Il puzzle"
@@ -49,3 +49,7 @@ disableKinds = ["taxonomy", "term"]
     name = "Contatti"
     url = "/#contatti"
     weight = 50
+  [[menus.main]]
+    name = "Archivio"
+    url = "/archivio/"
+    weight = 60

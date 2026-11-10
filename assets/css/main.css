@@ -242,6 +242,12 @@ h3{font-size:clamp(19px,2vw,23px)}
 }
 @keyframes ct-spinta{0%,100%{transform:none}40%{transform:translateX(-48px)}}
 
+/* sintesi */
+.sintesi{text-align:center;padding-top:clamp(30px,5vw,60px);padding-bottom:0}
+.sintesi>div{max-width:38em;margin:0 auto}
+.sintesi p{margin:0;font:400 18px/1.7 var(--sans);color:#d4ccba}
+.sintesi .sintesi-lead{margin-bottom:22px;font:600 clamp(21px,2.6vw,27px)/1.45 var(--sans);color:var(--oro-chiaro);text-wrap:balance}
+
 /* contatti */
 .contatti{text-align:center}
 .contatti .sez-lead{max-width:680px;margin:0 auto}

@@ -14,78 +14,7 @@
       <a class="btn vuoto" href="{{ "/come-l-ho-risolto/" | relURL }}">Guarda come l'ho risolto</a>
     </div>
   </div>
-  <a class="scendi" href="#manifesto" aria-label="Scorri al manifesto"><span></span></a>
-</section>
-
-<div class="nastro" aria-hidden="true"><div>{{ range seq 6 }}<span>Time Stop</span><i>✦</i><span>Rules Change</span><i>✦</i>{{ end }}</div></div>
-
-<section id="manifesto" class="sezione">
-  <header class="sez-testa">
-    <p class="occhiello">Il manifesto</p>
-    <h2>Perché sono qui</h2>
-  </header>
-  <div class="carte">
-    <article class="carta rivela">
-      <span class="num">I</span>
-      <h3>Mi offro per chiudere Uroboro</h3>
-      <p>Uroboro è il serpente che si morde la coda: un cerchio che gira su se stesso da sempre. L'eterno ritorno dell'identico (F. Nietzsche) così come per un istante, così come per la fine di un'era. Un simbolo presente anche nel mio libro preferito "La Storia Infinita" di Michael Ende. <strong>Io credo che oggi siamo in un punto di equilibrio tra un'era e la prossima, e lo pensiamo in molti. Quindi mi metto a disposizione</strong> per chiudere il Serpentone, perché il giro finisca e ne cominci uno nuovo. <em>Time stop. Rules change.</em></p>
-    </article>
-    <article class="carta rivela">
-      <span class="num">II</span>
-      <h3>L'UOMO al centro dell'Universo</h3>
-      <p>Sono qui alla riscoperta dell'Uomo. Non la macchina, non il mercato, non l'algoritmo: l'Uomo, con il suo desiderio e la scintilla che porta con sé. Unire il Cielo e la Terra, la Terra e il Cielo. Di nuovo. Perché se ci siamo decentrati dalla felicità dell'Uomo, è stato necessario, ma ora è il momento di tornare. Avendo cambiato noi stessi: riprendere la rotta per la felicità, riportare al centro l'<strong>UOMO che agisca come portatore di Benessere, Giustizia, Bellezza, per libera scelta, non per caso, né per obbligo.</strong></p>
-    </article>
-    <article class="carta rivela">
-      <span class="num">III</span>
-      <h3>I cantanti sono i nuovi sacerdoti</h3>
-      <p><strong>Oggi la parola sacra passa dalle canzoni. Chi canta parla a milioni di persone, e spesso dice quello che nessun altro ha il coraggio di dire</strong>. Per questo voglio entrare in contatto con loro. <strong>Anche io ho bisogno di dire cose che gli altri non hanno il coraggio di dire, o non sanno</strong>. Quando ho trovato questo coraggio, sono stato internato. Anche questo era necessario. Mi ha fatto crescere, e ringrazio di ogni momento. Ma se non vedo i problemi risolti, la mia testa, il mio cuore e il mio ventre continuano a lavorarci, incessantemente.</p>
-    </article>
-    <article class="carta rivela">
-      <span class="num">IV</span>
-      <h3>A chi scrivo</h3>
-      <p>La teoria dei 6 gradi di separazione sostiene che ogni persona sulla Terra può essere collegata a qualunque altra attraverso una catena di conoscenze e relazioni con un massimo di 5 passaggi.
-      Per questo mi rivolgo a tutti quelli che possono sposare il progetto Uroboro, e in particolare a <strong>chi può facilitare il contatto con le persone che possono dare visibilità, sostegno, credibilità e slancio al progetto</strong>. Raggiungiamo:
-      </p>
-      <ul class="destinatari">
-        <li><mark>PAPA</mark></li>
-        <li><mark>VASCO</mark> e cantanti</li>
-        <li>BigTech</li>
-        <li>Influencer e Spiriti Liberi</li>
-      </ul>
-    </article>
-  </div>
-</section>
-
-<section id="vasco" class="gesu-canzone sezione" aria-labelledby="gc-titolo">
-  <div class="gc-dentro rivela">
-    <p class="occhiello">Un'opinione mia</p>
-    <h2 id="gc-titolo">Per me Vasco Rossi<br>è il <span>Gesù della Canzone</span></h2>
-    <p class="gc-testo">È una lettura personale e simbolica. Da cinquant'anni le sue canzoni fanno quello che faceva Lui, più di un sacerdote: parlano di anima, corpo e spirito a chi in chiesa non ci entra, e anche a chi ci entra. E il cerchio che cerco di chiudere, secondo me, lo sta cercando di chiudere anche lui.</p>
-    <p class="gc-testo">Io lo vedo, lo sento e lo leggo nelle sue canzoni, ne ho commentate alcune nella mia raccolta <a href="https://docs.google.com/document/d/1Jlf-xLiyxFWp5YfcKsNs6luClVbbzZKmUtiO79zY1X0/edit?usp=sharing" target="_blank" rel="noopener">PreghieraMusica</a>.</p>
-    <p>Io vivo Sally, io vivo ViveRe o niente, Io Sono Manifesto futurista della nuova umanità</p>
-    <!-- <p>Albachiara + Sally = Una nuova canzone per lei</p>
-      .<p class="gc-testo">Il disegno per cercare una nuova creatura, una nuova Donna</p>
-    -->
-    <p class="gc-nota">Non parlo a nome di Vasco Rossi né della Chiesa, e non ho alcun ruolo ufficiale con loro.</p>
-  </div>
-</section>
-
-<section id="cantanti" class="cantanti sezione" aria-labelledby="ct-titolo">
-  {{ with site.Data.citazioni }}
-  <header class="sez-testa rivela">
-    <p class="occhiello">Le loro parole</p>
-    <h2 id="ct-titolo">{{ .titolo }}</h2>
-  </header>
-  <div class="ct-muro" tabindex="0" aria-label="Citazioni dei cantanti">
-    {{ range .voci }}
-    <figure class="ct-voce rivela"{{ with .lingua }} lang="{{ . }}"{{ end }}>
-      <blockquote><p>{{ .testo | htmlEscape | replaceRE "\n" "<br>" | safeHTML }}</p></blockquote>
-      <figcaption lang="it">{{ .nome }}</figcaption>
-    </figure>
-    {{ end }}
-  </div>
-  <p class="ct-contatore" aria-hidden="true" hidden></p>
-  {{ end }}
+  <a class="scendi" href="#puzzle" aria-label="Scorri al puzzle"><span></span></a>
 </section>
 
 <section id="puzzle" class="sezione">
@@ -97,11 +26,18 @@
   {{ partial "puzzle.html" (dict "mode" "gioca") }}
 </section>
 
+<section id="sintesi" class="sezione sintesi">
+  <div class="rivela">
+    <p class="sintesi-lead">Semplificando, tutto è un unico corpo. Ciò che fai fuori di te per migliorare la situazione, lo stai facendo dentro di te.</p>
+    <p>Lo scopo primario è a questo punto facile: portare prima serenità (bellezza e condivisione), poi sorriso grato, e infine libertà delicata al tuo corpo, a tutto ciò che percepisci intorno a te, e che puoi migliorare donando senza aspettative i tuoi talenti, basta credere che ciò che fai fuori di te, lo fai in te.</p>
+  </div>
+</section>
+
 <section id="contatti" class="sezione contatti">
   <div class="rivela">
     <p class="occhiello">Contatti</p>
     <h2>Se questa cosa deve arrivare a qualcuno, aiutami</h2>
-    <p class="sez-lead">Se sei un cantante, un sacerdote, una persona che parla a tante persone, o conosci qualcuno che può far arrivare questo messaggio a chi deve arrivare: scrivimi.</p>
+    <p class="sez-lead">Se sei un cantante, un sacerdote, una persona che parla a tante persone, o conosci qualcuno che può far arrivare questo messaggio a chi deve arrivare. Unisciti al grande corpo:</p>
     <div class="cta centro">
       {{ with site.Params.telegram }}<a class="btn oro" href="{{ . }}" rel="noopener">{{ partial "icona.html" "telegram" }}Unisciti al canale del progetto Uroboro</a>{{ end }}
     </div>
