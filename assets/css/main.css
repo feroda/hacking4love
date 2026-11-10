@@ -493,6 +493,9 @@ h3{font-size:clamp(19px,2vw,23px)}
 .piede-emoji{position:absolute;bottom:-4px;font-size:36px;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
 .piede-emoji.sx{left:-34px}
 .piede-emoji.dx{right:-34px}
+.piede-emoji.sx-alto{top:-4px;bottom:auto;left:-34px}
+.piede-emoji.dx-alto{top:-4px;bottom:auto;right:-34px}
+.piede-glider{width:34px;height:34px;color:var(--oro);fill:var(--oro)}
 .piede-foto figcaption{margin-top:14px;font:italic 600 20px/1.3 var(--serif);color:var(--oro-chiaro)}
 .piede-foto figcaption small{display:block;margin-top:4px;font:600 11px var(--sans);letter-spacing:.24em;text-transform:uppercase;font-style:normal;color:var(--tenue)}
 
