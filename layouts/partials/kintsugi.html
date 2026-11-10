@@ -1,32 +1,78 @@
-{{/* Crepe d'oro sulle giunture del puzzle (Kintsugi): linee spezzate, con scarti fissi (da un hash) calcolati sulla griglia colonne x righe. */}}
+{{/* Crepe d'oro Kintsugi sul puzzle risolto: giunture spezzate tra i pezzi, rami che entrano nei pezzi e crepe che attraversano la figura (più fitte nella metà alta).
+     Tutti gli scarti vengono da un hash fisso: le crepe sono sempre le stesse. Ogni crepa è disegnata due volte: un filo scuro sotto (la rottura) e l'oro sopra (la riparazione). */}}
 {{- $col := .colonne }}{{ $rig := .righe }}{{ $W := 1200 }}{{ $H := 800 }}{{ $n := 16 }}
-<svg class="kintsugi" viewBox="0 0 {{ $W }} {{ $H }}" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+{{- $crepe := slice }}
+
+{{- /* rami: dal punto (x,y) entrano nel pezzo; $vx = 1 se il ramo va in orizzontale, 0 se in verticale */}}
+{{- define "partials/kintsugi-ramo" }}
+  {{- $h := hash.FNV32a .chiave }}{{ $s := cond (eq (mod $h 2) 0) 1 -1 }}
+  {{- $a1 := add 26 (mod (div $h 3) 34) }}{{ $b1 := sub (mod (div $h 7) 41) 20 }}
+  {{- $a2 := add 18 (mod (div $h 11) 30) }}{{ $b2 := sub (mod (div $h 13) 47) 23 }}
+  {{- $a3 := add 10 (mod (div $h 17) 24) }}{{ $b3 := sub (mod (div $h 19) 35) 17 }}
+  {{- $l := slice (mul $s $a1) $b1 (mul $s $a2) $b2 (mul $s $a3) $b3 }}
+  {{- if eq .vx 0 }}{{ $l = slice $b1 (mul $s $a1) $b2 (mul $s $a2) $b3 (mul $s $a3) }}{{ end }}
+  {{- $d := printf "M%d %d l%d %d l%d %d l%d %d" .x .y (index $l 0) (index $l 1) (index $l 2) (index $l 3) (index $l 4) (index $l 5) }}
+  {{- $f := "" }}
+  {{- if eq (mod (div $h 23) 3) 0 }}
+    {{- $fx := add .x (index $l 0) }}{{ $fy := add .y (index $l 1) }}
+    {{- $f = printf "M%d %d l%d %d l%d %d" $fx $fy (sub 0 (index $l 3)) (index $l 2) (div (index $l 2) 2) (sub 0 (div (index $l 5) 2)) }}
+  {{- end }}
+  {{- return (dict "ramo" $d "filo" $f) }}
+{{- end }}
+
 {{- range $c := seq 1 (sub $col 1) }}
-  {{- $x0 := div (mul $W $c) $col }}{{ $d := "" }}{{ $rami := "" }}
+  {{- $x0 := div (mul $W $c) $col }}{{ $d := "" }}
   {{- range $i := seq 0 $n }}
     {{- $y := div (mul $H $i) $n }}
-    {{- $x := add $x0 (mul 2 (sub (mod (hash.FNV32a (printf "%d-v%d-kintsugi" $i $c)) 13) 6)) }}
+    {{- $x := add $x0 (mul 3 (sub (mod (hash.FNV32a (printf "%d-v%d-kintsugi" $i $c)) 13) 6)) }}
     {{- $d = printf "%s%s%d %d " $d (cond (eq $i 0) "M" "L") $x $y }}
-    {{- if and (gt $i 0) (lt $i $n) (eq (mod (hash.FNV32a (printf "%d-rv%d-kintsugi" $i $c)) 5) 0) }}
-      {{- $s := cond (eq (mod $i 2) 0) 1 -1 }}
-      {{- $rami = printf "%sM%d %d l%d %d l%d %d " $rami $x $y (mul $s 16) 8 (mul $s 10) 13 }}
+    {{- if and (gt $i 0) (lt $i $n) (eq (mod (hash.FNV32a (printf "%d-rv%d-kintsugi" $i $c)) (cond (lt $y 440) 3 6)) 0) }}
+      {{- $r := partial "kintsugi-ramo" (dict "chiave" (printf "%d-bv%d-kintsugi" $i $c) "x" $x "y" $y "vx" 1) }}
+      {{- $crepe = $crepe | append (dict "c" "ramo" "d" $r.ramo) }}
+      {{- with $r.filo }}{{ $crepe = $crepe | append (dict "c" "filo" "d" .) }}{{ end }}
     {{- end }}
   {{- end }}
-  <path pathLength="1" d="{{ trim $d " " }}"/>
-  {{- with $rami }}<path class="ramo" pathLength="1" d="{{ trim . " " }}"/>{{ end }}
+  {{- $crepe = $crepe | append (dict "c" "giuntura" "d" (trim $d " ")) }}
 {{- end }}
+
 {{- range $r := seq 1 (sub $rig 1) }}
-  {{- $y0 := div (mul $H $r) $rig }}{{ $d := "" }}{{ $rami := "" }}{{ $m := mul $n 2 }}
+  {{- $y0 := div (mul $H $r) $rig }}{{ $d := "" }}{{ $m := mul $n 2 }}
   {{- range $i := seq 0 $m }}
     {{- $x := div (mul $W $i) $m }}
-    {{- $y := add $y0 (mul 2 (sub (mod (hash.FNV32a (printf "%d-o%d-kintsugi" $i $r)) 11) 5)) }}
+    {{- $y := add $y0 (mul 3 (sub (mod (hash.FNV32a (printf "%d-o%d-kintsugi" $i $r)) 11) 5)) }}
     {{- $d = printf "%s%s%d %d " $d (cond (eq $i 0) "M" "L") $x $y }}
-    {{- if and (gt $i 0) (lt $i $m) (eq (mod (hash.FNV32a (printf "%d-ro%d-kintsugi" $i $r)) 7) 0) }}
-      {{- $s := cond (eq (mod $i 2) 0) 1 -1 }}
-      {{- $rami = printf "%sM%d %d l%d %d l%d %d " $rami $x $y 9 (mul $s 15) 12 (mul $s 9) }}
+    {{- if and (gt $i 0) (lt $i $m) (eq (mod (hash.FNV32a (printf "%d-ro%d-kintsugi" $i $r)) (cond (lt $y 440) 3 6)) 0) }}
+      {{- $rm := partial "kintsugi-ramo" (dict "chiave" (printf "%d-bo%d-kintsugi" $i $r) "x" $x "y" $y "vx" 0) }}
+      {{- $crepe = $crepe | append (dict "c" "ramo" "d" $rm.ramo) }}
+      {{- with $rm.filo }}{{ $crepe = $crepe | append (dict "c" "filo" "d" .) }}{{ end }}
     {{- end }}
   {{- end }}
-  <path pathLength="1" d="{{ trim $d " " }}"/>
-  {{- with $rami }}<path class="ramo" pathLength="1" d="{{ trim . " " }}"/>{{ end }}
+  {{- $crepe = $crepe | append (dict "c" "giuntura" "d" (trim $d " ")) }}
 {{- end }}
+
+{{- /* crepe che attraversano la figura: partenza x y, passo dx dy, numero di passi */}}
+{{- $vie := slice (slice 0 150 62 14 10) (slice 1200 70 -58 24 9) (slice 360 0 16 58 7) (slice 840 0 -20 56 8) (slice 0 330 70 -12 7) (slice 1200 300 -66 -6 8) (slice 560 0 6 62 5) (slice 0 560 64 -18 5) (slice 1200 640 -60 -14 4) }}
+{{- range $k, $v := $vie }}
+  {{- $x := index $v 0 }}{{ $y := index $v 1 }}{{ $d := printf "M%d %d" $x $y }}
+  {{- range $i := seq 1 (index $v 4) }}
+    {{- $h := hash.FNV32a (printf "%d-a%d-kintsugi" $i $k) }}
+    {{- $x = add $x (add (index $v 2) (sub (mod $h 31) 15)) }}{{ $y = add $y (add (index $v 3) (sub (mod (div $h 31) 31) 15)) }}
+    {{- $d = printf "%s L%d %d" $d $x $y }}
+    {{- if eq (mod (div $h 997) 3) 0 }}
+      {{- $r := partial "kintsugi-ramo" (dict "chiave" (printf "%d-ba%d-kintsugi" $i $k) "x" $x "y" $y "vx" (cond (gt (mul (index $v 3) (index $v 3)) (mul (index $v 2) (index $v 2))) 1 0)) }}
+      {{- $crepe = $crepe | append (dict "c" "ramo" "d" $r.ramo) }}
+      {{- with $r.filo }}{{ $crepe = $crepe | append (dict "c" "filo" "d" .) }}{{ end }}
+    {{- end }}
+  {{- end }}
+  {{- $crepe = $crepe | append (dict "c" "via" "d" $d) }}
+{{- end }}
+<svg class="kintsugi" viewBox="0 0 {{ $W }} {{ $H }}" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="kintsugi-oro" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="{{ $W }}" y2="{{ $H }}">
+      <stop offset="0" stop-color="#fff3c4"/><stop offset=".22" stop-color="#f6d892"/><stop offset=".4" stop-color="#e2b25a"/>
+      <stop offset=".58" stop-color="#fff3c4"/><stop offset=".78" stop-color="#f6d892"/><stop offset="1" stop-color="#e2b25a"/>
+    </linearGradient>
+  </defs>
+  <g class="fondo">{{ range $crepe }}<path class="{{ .c }}" pathLength="1" d="{{ .d }}"/>{{ end }}</g>
+  <g class="oro">{{ range $crepe }}<path class="{{ .c }}" pathLength="1" d="{{ .d }}"/>{{ end }}</g>
 </svg>
