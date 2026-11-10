@@ -21,8 +21,8 @@ disableKinds = ["taxonomy", "term"]
   # Vuoto = nessuno script di statistiche.
   goatcounter = "feroda"
   # Link ai CV (PDF). Vuoto = pulsante nascosto.
-  cvIt = ""
-  cvEn = ""
+  cvIt = "documenti/cv-it.pdf"
+  cvEn = "documenti/cv-en.pdf"
 
 [markup.goldmark.renderer]
   unsafe = true

@@ -24,8 +24,8 @@
     <h2>Curriculum</h2>
   </header>
   <div class="cta centro">
-    {{ with $cvIt }}<a class="btn oro" href="{{ . }}" target="_blank" rel="noopener" lang="it">CV in italiano</a>{{ end }}
-    {{ with $cvEn }}<a class="btn vuoto" href="{{ . }}" target="_blank" rel="noopener" lang="en">CV in English</a>{{ end }}
+    {{ with $cvIt }}<a class="btn oro" href="{{ . | relURL }}" target="_blank" rel="noopener" lang="it">CV in italiano</a>{{ end }}
+    {{ with $cvEn }}<a class="btn vuoto" href="{{ . | relURL }}" target="_blank" rel="noopener" lang="en">CV in English</a>{{ end }}
   </div>
 </section>
 {{ end }}
@@ -37,8 +37,15 @@
   <div class="carte soluzioni">
     {{ range site.Data.soluzioni }}
     <article class="carta rivela">
+      {{ with .ambito }}<p class="occhiello">{{ . }}</p>{{ end }}
       <h3>{{ .titolo }}</h3>
       <p>{{ .testo }}</p>
+      {{ with .azioni }}
+      <details class="sol-azioni">
+        <summary>Cosa propongo ({{ len . }} azioni)</summary>
+        <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+      </details>
+      {{ end }}
       <p class="sol-link"><a href="{{ .pdf | relURL }}" target="_blank" rel="noopener">Leggi il documento (PDF) ↗</a></p>
       <p class="sol-credito">{{ .credito }}</p>
     </article>

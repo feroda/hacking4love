@@ -20,6 +20,9 @@
   {{- return (dict "ramo" $d "filo" $f) }}
 {{- end }}
 
+{{- /* zona delle scritte (Il serpente... e UOMO): sul telefono le crepe che la toccano vengono nascoste */}}
+{{- define "partials/kintsugi-centro" }}{{ return (and (ge .x 150) (le .x 1050) (ge .y 200) (le .y 580)) }}{{ end }}
+
 {{- range $c := seq 1 (sub $col 1) }}
   {{- $x0 := div (mul $W $c) $col }}{{ $d := "" }}
   {{- range $i := seq 0 $n }}
@@ -28,8 +31,9 @@
     {{- $d = printf "%s%s%d %d " $d (cond (eq $i 0) "M" "L") $x $y }}
     {{- if and (gt $i 0) (lt $i $n) (eq (mod (hash.FNV32a (printf "%d-rv%d-kintsugi" $i $c)) (cond (lt $y 440) 3 6)) 0) }}
       {{- $r := partial "kintsugi-ramo" (dict "chiave" (printf "%d-bv%d-kintsugi" $i $c) "x" $x "y" $y "vx" 1) }}
-      {{- $crepe = $crepe | append (dict "c" "ramo" "d" $r.ramo) }}
-      {{- with $r.filo }}{{ $crepe = $crepe | append (dict "c" "filo" "d" .) }}{{ end }}
+      {{- $z := cond (partial "kintsugi-centro" (dict "x" $x "y" $y)) " centro" "" }}
+      {{- $crepe = $crepe | append (dict "c" (print "ramo" $z) "d" $r.ramo) }}
+      {{- with $r.filo }}{{ $crepe = $crepe | append (dict "c" (print "filo" $z) "d" .) }}{{ end }}
     {{- end }}
   {{- end }}
   {{- $crepe = $crepe | append (dict "c" "giuntura" "d" (trim $d " ")) }}
@@ -43,8 +47,9 @@
     {{- $d = printf "%s%s%d %d " $d (cond (eq $i 0) "M" "L") $x $y }}
     {{- if and (gt $i 0) (lt $i $m) (eq (mod (hash.FNV32a (printf "%d-ro%d-kintsugi" $i $r)) (cond (lt $y 440) 3 6)) 0) }}
       {{- $rm := partial "kintsugi-ramo" (dict "chiave" (printf "%d-bo%d-kintsugi" $i $r) "x" $x "y" $y "vx" 0) }}
-      {{- $crepe = $crepe | append (dict "c" "ramo" "d" $rm.ramo) }}
-      {{- with $rm.filo }}{{ $crepe = $crepe | append (dict "c" "filo" "d" .) }}{{ end }}
+      {{- $z := cond (partial "kintsugi-centro" (dict "x" $x "y" $y)) " centro" "" }}
+      {{- $crepe = $crepe | append (dict "c" (print "ramo" $z) "d" $rm.ramo) }}
+      {{- with $rm.filo }}{{ $crepe = $crepe | append (dict "c" (print "filo" $z) "d" .) }}{{ end }}
     {{- end }}
   {{- end }}
   {{- $crepe = $crepe | append (dict "c" "giuntura" "d" (trim $d " ")) }}
@@ -53,18 +58,20 @@
 {{- /* crepe che attraversano la figura: partenza x y, passo dx dy, numero di passi */}}
 {{- $vie := slice (slice 0 150 62 14 10) (slice 1200 70 -58 24 9) (slice 360 0 16 58 7) (slice 840 0 -20 56 8) (slice 0 330 70 -12 7) (slice 1200 300 -66 -6 8) (slice 560 0 6 62 5) (slice 0 560 64 -18 5) (slice 1200 640 -60 -14 4) }}
 {{- range $k, $v := $vie }}
-  {{- $x := index $v 0 }}{{ $y := index $v 1 }}{{ $d := printf "M%d %d" $x $y }}
+  {{- $x := index $v 0 }}{{ $y := index $v 1 }}{{ $d := printf "M%d %d" $x $y }}{{ $zc := false }}
   {{- range $i := seq 1 (index $v 4) }}
     {{- $h := hash.FNV32a (printf "%d-a%d-kintsugi" $i $k) }}
     {{- $x = add $x (add (index $v 2) (sub (mod $h 31) 15)) }}{{ $y = add $y (add (index $v 3) (sub (mod (div $h 31) 31) 15)) }}
     {{- $d = printf "%s L%d %d" $d $x $y }}
+    {{- if partial "kintsugi-centro" (dict "x" $x "y" $y) }}{{ $zc = true }}{{ end }}
     {{- if eq (mod (div $h 997) 3) 0 }}
       {{- $r := partial "kintsugi-ramo" (dict "chiave" (printf "%d-ba%d-kintsugi" $i $k) "x" $x "y" $y "vx" (cond (gt (mul (index $v 3) (index $v 3)) (mul (index $v 2) (index $v 2))) 1 0)) }}
-      {{- $crepe = $crepe | append (dict "c" "ramo" "d" $r.ramo) }}
-      {{- with $r.filo }}{{ $crepe = $crepe | append (dict "c" "filo" "d" .) }}{{ end }}
+      {{- $z := cond (partial "kintsugi-centro" (dict "x" $x "y" $y)) " centro" "" }}
+      {{- $crepe = $crepe | append (dict "c" (print "ramo" $z) "d" $r.ramo) }}
+      {{- with $r.filo }}{{ $crepe = $crepe | append (dict "c" (print "filo" $z) "d" .) }}{{ end }}
     {{- end }}
   {{- end }}
-  {{- $crepe = $crepe | append (dict "c" "via" "d" $d) }}
+  {{- $crepe = $crepe | append (dict "c" (cond $zc "via centro" "via") "d" $d) }}
 {{- end }}
 <svg class="kintsugi" viewBox="0 0 {{ $W }} {{ $H }}" preserveAspectRatio="none" aria-hidden="true" focusable="false">
   <defs>
