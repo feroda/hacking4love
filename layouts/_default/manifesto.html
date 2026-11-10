@@ -1,9 +1,8 @@
-{{ define "bodyclass" }}pagina archivio{{ end }}
+{{ define "bodyclass" }}pagina manifesto{{ end }}
 {{ define "main" }}
 <section class="pagina-testa">
-  <p class="occhiello">Archivio</p>
   <h1>{{ .Title }}</h1>
-  <p class="lead">{{ .Params.sottotitolo }}</p>
+  {{ with .Params.sottotitolo }}<p class="lead">{{ . }}</p>{{ end }}
 </section>
 
 <section id="manifesto" class="sezione">
@@ -74,4 +73,6 @@
   <p class="ct-contatore" aria-hidden="true" hidden></p>
   {{ end }}
 </section>
+
+{{ partial "contatti.html" . }}
 {{ end }}
