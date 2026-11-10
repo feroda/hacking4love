@@ -38,7 +38,7 @@
       <div class="rivelazione" aria-live="polite">
         <p class="riv-sopra">Il serpente si è morso la coda</p>
         <p class="riv-uomo"><span>U</span><span>O</span><span>M</span><span>O</span></p>
-        <p class="riv-sotto">Uroboro è chiuso. Al centro resta l'UOMO.</p>
+        <p class="riv-sotto">{{ (index $p.sigilli (sub (len $p.sigilli) 1)).racconto }}</p>
       </div>
     </div>
     <div class="vassoio-box">
