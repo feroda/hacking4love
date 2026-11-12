@@ -1,0 +1,31 @@
+{{- /* Linguette dorate fisse ai due lati, verso la call to action «Aiuta Uroboro».
+       Sulle pagine che hanno la sezione #aiuta restano nella pagina, altrove portano alla home. */ -}}
+{{- $haAiuta := or .IsHome (in (slice "manifesto" "percorso" "soluzioni") .Layout) -}}
+{{- $href := cond $haAiuta "#aiuta" ("/#aiuta" | relURL) -}}
+<style>
+.linguetta{position:fixed;top:75%;z-index:40;display:flex;align-items:center;gap:8px;padding:16px 8px;
+  writing-mode:vertical-rl;font:700 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;
+  color:#1a1206;background:linear-gradient(180deg,var(--oro-chiaro),var(--oro) 50%,var(--oro-scuro));
+  box-shadow:0 8px 26px -6px rgba(226,178,90,.6);transition:padding .25s,opacity .35s,visibility .35s}
+.linguetta i{font-style:normal;opacity:.55}
+.linguetta-sx{left:0;border-radius:0 10px 10px 0;transform:translateY(-50%) rotate(180deg)}
+.linguetta-dx{right:0;border-radius:10px 0 0 10px;transform:translateY(-50%)}
+.linguetta-sx:hover{padding-left:12px}
+.linguetta-dx:hover{padding-right:12px}
+.linguetta:focus-visible{outline:2px solid var(--oro-chiaro);outline-offset:3px}
+.linguette-via .linguetta{opacity:0;visibility:hidden}
+@media (max-width:640px){.linguetta{font-size:10px;padding:12px 5px;gap:6px;letter-spacing:.1em}}
+@media print{.linguetta{display:none}}
+</style>
+<a class="linguetta linguetta-sx" href="{{ $href }}">Aiuta Uroboro <i>✦</i> Aiuta l'UOMO</a>
+<a class="linguetta linguetta-dx" href="{{ $href }}" aria-hidden="true" tabindex="-1">Aiuta Uroboro <i>✦</i> Aiuta l'UOMO</a>
+<script>
+(function () {
+  // Quando la sezione «Aiuta Uroboro» è sullo schermo le linguette si fanno da parte.
+  var s = document.getElementById('aiuta');
+  if (!s || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (e) {
+    document.body.classList.toggle('linguette-via', e[0].isIntersecting);
+  }, { threshold: 0.15 }).observe(s);
+})();
+</script>
