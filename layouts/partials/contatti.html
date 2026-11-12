@@ -8,6 +8,12 @@
 .fratelli-svg .fr-mano{fill:var(--oro)}
 .fratelli-svg .fr-testa{fill:var(--inchiostro-2);stroke:var(--oro);stroke-width:3}
 .fratelli-svg .fr-occhio{fill:var(--oro-chiaro)}
+.fratelli-svg .fr-oggetto circle,.fratelli-svg .fr-oggetto rect{fill:var(--inchiostro-2);stroke:var(--oro);stroke-width:2.5}
+.fratelli-svg .fr-oggetto line{stroke:var(--oro);stroke-width:3;stroke-linecap:round}
+.fratelli-svg .fr-oggetto .fr-buca{fill:var(--oro)}
+.fratelli-svg .fr-oggetto .fr-griglia{stroke-width:1.5}
+.fratelli-svg .fr-oggetto .fr-paletta{stroke-width:6}
+.fratelli-svg .fr-aureola{fill:none;stroke:var(--oro-chiaro);stroke-width:3}
 .fratelli-svg text{fill:var(--pergamena);font:600 17px var(--display);letter-spacing:.06em}
 .fratelli-chiusa{max-width:680px;margin:44px auto 0}
 @media (max-width:720px){.fratelli{grid-template-columns:1fr;justify-items:center}.fratelli-svg{max-width:260px}}
@@ -26,7 +32,7 @@
         <li>Mi vedo <strong>fratello del <mark>Papa</mark></strong>, e del suo ruolo di canalizzatore tra l'Uno e lo Spirito in Terra.</li>
       </ul>
     </div>
-    <p class="sez-lead fratelli-chiusa">Perché so che così, tenendoci per mano, <strong>possiamo essere noi a chiudere un grande Uroboro</strong>, e alzare insieme il nostro livello di coscienza.</p>
+    <p class="sez-lead fratelli-chiusa">Perché so che così, tenendoci per mano, <strong>possiamo essere noi a chiudere un grande Uroboro</strong>, e alzare insieme il livello di coscienza.</p>
     <p class="sez-lead" style="margin-top:28px">Se conosci qualcuno che può arrivare a loro, anche in cinque passaggi, <strong>scrivimi il suo nome</strong>.</p>
     <div class="cta centro">
       {{ with site.Params.telegramPersonale }}<a class="btn oro" href="{{ . }}" rel="noopener">{{ partial "icona.html" "telegram" }}Scrivimi il nome su Telegram</a>{{ end }}
