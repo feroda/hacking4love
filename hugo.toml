@@ -29,21 +29,21 @@ disableKinds = ["taxonomy", "term"]
 
 [menus]
   [[menus.main]]
+    name = "Il puzzle"
+    url = "/#puzzle"
+    weight = 10
+  [[menus.main]]
     name = "Manifesto"
     url = "/manifesto/#manifesto"
-    weight = 10
+    weight = 20
   [[menus.main]]
     name = "Cantanti"
     url = "/manifesto/#vasco"
-    weight = 15
-  [[menus.main]]
-    name = "Il puzzle"
-    url = "/#puzzle"
-    weight = 20
-  [[menus.main]]
-    name = "Soluzioni"
-    url = "/soluzioni/"
     weight = 25
+  # Soluzioni fuori dal menu: ci si arriva dal puzzle («Guarda come l'ho risolto io»).
+  # [[menus.main]]
+  #   name = "Soluzioni"
+  #   url = "/soluzioni/"
   [[menus.main]]
     name = "Il percorso"
     url = "/il-percorso/"

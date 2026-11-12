@@ -366,6 +366,9 @@ h3{font-size:clamp(19px,2vw,23px)}
 @keyframes cade{from{opacity:0;transform:translateY(-30px) rotate(-12deg) scale(.6)}}
 .puzzle-azioni{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:28px}
 .puzzle-azioni .btn{padding:11px 20px;font-size:14px}
+.puzzle .puzzle-chi-sono{display:none}
+.puzzle.risolto .puzzle-chi-sono{display:inline-flex}
+.puzzle.risolto .puzzle-chi-sono-prima{display:none}
 
 /* vittoria */
 @property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
