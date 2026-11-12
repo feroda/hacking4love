@@ -1,1 +1,2 @@
 User-agent: *
+Disallow: /anteprima-1002ce04/
