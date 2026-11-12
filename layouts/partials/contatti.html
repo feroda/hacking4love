@@ -1,13 +1,32 @@
+<style>
+.contatti .sez-lead+.sez-lead{margin-top:14px}
+.fratelli{display:grid;grid-template-columns:minmax(220px,300px) minmax(0,440px);gap:clamp(24px,5vw,56px);align-items:center;justify-content:center;margin:36px auto 0;text-align:left}
+.fratelli-lista{margin:0}
+.fratelli-svg{width:100%;height:auto;display:block;overflow:visible}
+.fratelli-svg .fr-croce line{stroke:var(--oro);stroke-width:1;opacity:.28}
+.fratelli-svg .fr-braccia polyline,.fratelli-svg .fr-pupo line,.fratelli-svg .fr-pupo polyline,.fratelli-svg .fr-pupo path{fill:none;stroke:var(--oro-chiaro);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.fratelli-svg .fr-mano{fill:var(--oro)}
+.fratelli-svg .fr-testa{fill:var(--inchiostro-2);stroke:var(--oro);stroke-width:3}
+.fratelli-svg .fr-occhio{fill:var(--oro-chiaro)}
+.fratelli-svg text{fill:var(--pergamena);font:600 17px var(--display);letter-spacing:.06em}
+.fratelli-chiusa{max-width:680px;margin:44px auto 0}
+@media (max-width:720px){.fratelli{grid-template-columns:1fr;justify-items:center}.fratelli-svg{max-width:260px}}
+</style>
 <section id="aiuta" class="sezione contatti">
   <div class="rivela">
     <p class="occhiello">Aiuta Uroboro</p>
     <h2>Voglio passare del tempo con loro</h2>
-    <p class="sez-lead">Chi legge queste pagine mi chiede: ma poi che vuoi fare con questi artisti, o con il Papa? So quanto è prezioso il loro tempo. Potrei dire che voglio confrontarmi con loro su questi documenti, in particolare sul progetto «1 miliardo per la libertà», e ricevere un punto di vista dalla loro posizione. Ma il motivo vero è un altro: <strong>io li sento fratelli e sorella, e incontrarli è il MIO modo</strong> di affrontare i sensi di colpa e cancellarli da questo viaggio.</p>
-    <ul class="destinatari" style="max-width:680px;margin:28px auto 0">
-      <li>Mi vedo <strong>fratello complice di <mark>Vasco</mark></strong>, col quale condividere quest'avventura inutile.</li>
-      <li>Mi vedo <strong>fratello di <mark>Elisa</mark></strong>, nominato in <em>Se piovesse il tuo nome</em>.</li>
-      <li>Mi vedo <strong>fratello del <mark>Papa</mark></strong>, e del suo ruolo di canalizzatore tra l'Uno e lo Spirito in Terra.</li>
-    </ul>
+    <p class="sez-lead">Chi legge queste pagine mi chiede: ma poi che vuoi fare con questi artisti, o con il Papa? So quanto è prezioso il loro tempo.</p>
+    <p class="sez-lead">Potrei dire che voglio confrontarmi con loro su questi documenti, in particolare sul progetto «1 miliardo per la libertà», e ricevere un punto di vista dalla loro posizione. Ma il motivo vero è un altro: <strong>io li sento fratelli e sorella, e incontrarli è il MIO modo</strong> di affrontare i sensi di colpa e cancellarli da questo viaggio.</p>
+    <div class="fratelli">
+      {{ partial "fratelli.html" . }}
+      <ul class="destinatari fratelli-lista">
+        <li>Mi vedo <strong>fratello complice di <mark>Vasco</mark></strong>, col quale condividere quest'avventura inutile.</li>
+        <li>Mi vedo <strong>fratello di <mark>Elisa</mark></strong>, nominato in <em>Se piovesse il tuo nome</em>.</li>
+        <li>Mi vedo <strong>fratello del <mark>Papa</mark></strong>, e del suo ruolo di canalizzatore tra l'Uno e lo Spirito in Terra.</li>
+      </ul>
+    </div>
+    <p class="sez-lead fratelli-chiusa">Perché so che così, tenendoci per mano, <strong>possiamo essere noi a chiudere un grande Uroboro</strong>, e alzare insieme il nostro livello di coscienza.</p>
     <p class="sez-lead" style="margin-top:28px">Se conosci qualcuno che può arrivare a loro, anche in cinque passaggi, <strong>scrivimi il suo nome</strong>.</p>
     <div class="cta centro">
       {{ with site.Params.telegramPersonale }}<a class="btn oro" href="{{ . }}" rel="noopener">{{ partial "icona.html" "telegram" }}Scrivimi il nome su Telegram</a>{{ end }}

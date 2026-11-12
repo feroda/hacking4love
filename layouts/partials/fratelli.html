@@ -1,0 +1,37 @@
+{{- /* Quattro pupetti per mano, disposti sulle proporzioni di una croce latina:
+       il Papa in alto, Vasco ed Elisa sui bracci, io (il fanciullino) in basso.
+       Le mani unite chiudono un cerchio. */ -}}
+{{- $p := slice
+  (dict "x" 200 "y" 52  "nome" "Papa"  "lx" 200 "ly" 18  "a" "middle")
+  (dict "x" 88  "y" 170 "nome" "Vasco" "lx" 52  "ly" 176 "a" "end")
+  (dict "x" 312 "y" 170 "nome" "Elisa" "lx" 348 "ly" 176 "a" "start")
+  (dict "x" 200 "y" 318 "nome" "Io, il fanciullino" "lx" 200 "ly" 448 "a" "middle") -}}
+{{- /* coppie che si tengono per mano: Papa-Vasco, Papa-Elisa, Vasco-Io, Elisa-Io */ -}}
+{{- $mani := slice (slice 0 1) (slice 0 2) (slice 1 3) (slice 2 3) -}}
+<svg class="fratelli-svg" viewBox="0 0 400 460" role="img" aria-labelledby="fratelli-tit">
+  <title id="fratelli-tit">Quattro figure si tengono per mano a forma di croce: il Papa in alto, Vasco ed Elisa ai lati, io in basso.</title>
+  <g class="fr-croce" stroke-dasharray="3 7">
+    <line x1="200" y1="40" x2="200" y2="430"/>
+    <line x1="60" y1="170" x2="340" y2="170"/>
+  </g>
+  <g class="fr-braccia">
+    {{- range $mani }}
+      {{- $a := index $p (index . 0) }}{{ $b := index $p (index . 1) }}
+      {{- $ax := $a.x }}{{ $ay := add $a.y 40 }}{{ $bx := $b.x }}{{ $by := add $b.y 40 }}
+      {{- $mx := div (add $ax $bx) 2 }}{{ $my := div (add $ay $by) 2 }}
+    <polyline points="{{ $ax }},{{ $ay }} {{ $mx }},{{ $my }} {{ $bx }},{{ $by }}"/>
+    <circle class="fr-mano" cx="{{ $mx }}" cy="{{ $my }}" r="5"/>
+    {{- end }}
+  </g>
+  {{- range $p }}
+  <g class="fr-pupo">
+    <line x1="{{ .x }}" y1="{{ add .y 22 }}" x2="{{ .x }}" y2="{{ add .y 72 }}"/>
+    <polyline points="{{ sub .x 16 }},{{ add .y 104 }} {{ .x }},{{ add .y 72 }} {{ add .x 16 }},{{ add .y 104 }}"/>
+    <circle class="fr-testa" cx="{{ .x }}" cy="{{ .y }}" r="22"/>
+    <circle class="fr-occhio" cx="{{ sub .x 7 }}" cy="{{ sub .y 5 }}" r="2.6"/>
+    <circle class="fr-occhio" cx="{{ add .x 7 }}" cy="{{ sub .y 5 }}" r="2.6"/>
+    <path d="M{{ sub .x 10 }},{{ add .y 6 }} Q{{ .x }},{{ add .y 16 }} {{ add .x 10 }},{{ add .y 6 }}"/>
+    <text x="{{ .lx }}" y="{{ .ly }}" text-anchor="{{ .a }}">{{ .nome }}</text>
+  </g>
+  {{- end }}
+</svg>
