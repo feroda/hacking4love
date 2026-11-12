@@ -222,7 +222,7 @@ h3{font-size:clamp(19px,2vw,23px)}
 .al-dentro>*{position:relative}
 .angelo-luce .occhiello{color:#9b7130}
 .angelo-luce h2{font-size:clamp(32px,5.4vw,64px);color:#2a1f0e}
-.angelo-luce h2 span{color:#fff;-webkit-text-stroke:1px rgba(155,113,48,.6);paint-order:stroke fill;text-shadow:0 0 18px rgba(255,255,255,.95),0 0 46px rgba(226,178,90,.9),0 2px 0 rgba(155,113,48,.35)}
+.angelo-luce h2 span{color:#fff;-webkit-text-stroke:1.5px #6b4a17;paint-order:stroke fill;text-shadow:0 0 18px rgba(255,255,255,.95),0 0 46px rgba(226,178,90,.9),0 2px 0 rgba(155,113,48,.35)}
 .al-testo{font:400 19px/1.6 var(--sans);max-width:640px;margin:0 auto 22px;color:#3b2d16}
 .al-citazioni{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:860px;margin:34px auto 30px;text-align:left}
 .al-voce{margin:0;padding:28px 26px 20px;border-radius:var(--raggio);background:rgba(255,255,255,.55);border:1px solid rgba(155,113,48,.25);box-shadow:0 14px 40px -24px rgba(155,113,48,.6)}
