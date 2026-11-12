@@ -212,13 +212,17 @@ h3{font-size:clamp(19px,2vw,23px)}
 .gesu-canzone h2 span{color:#000;-webkit-text-stroke:1.5px var(--oro);text-shadow:0 0 40px rgba(226,178,90,.5)}
 .gc-testo{font:400 19px/1.6 var(--sans);max-width:640px;margin:0 auto 22px;color:#ddd5c3}
 .gc-nota{font-size:13px;color:var(--tenue);letter-spacing:.02em;margin:0}
-.gc-citazioni{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:860px;margin:34px auto 30px;text-align:left}
+.gc-citazioni{display:grid;grid-template-columns:1fr;gap:20px;max-width:860px;margin:34px auto 30px;text-align:left}
 .gc-voce{margin:0;padding:28px 26px 20px;border-radius:var(--raggio);background:rgba(226,178,90,.06);border:1px solid rgba(226,178,90,.3);box-shadow:0 14px 40px -24px rgba(226,178,90,.45)}
 .gc-voce blockquote{margin:0}
 .gc-voce blockquote p{margin:0;font:400 19px/1.55 var(--sans);color:#e4dccb}
 .gc-voce figcaption{margin-top:16px;padding-top:10px;border-top:1px solid rgba(226,178,90,.3);text-align:right;font:600 12px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--oro)}
 .gc-voce figcaption::before{content:"— "}
 .gc-voce cite{font-style:normal;letter-spacing:.08em;text-transform:none;font-weight:500}
+.gc-voce-piccola{grid-column:-2/-1;padding:18px 22px 14px}
+@media (min-width:640px){.gc-citazioni{grid-template-columns:repeat(2,1fr)}}
+.gc-voce-piccola blockquote p{font-size:16px}
+.gc-voce-piccola figcaption{margin-top:12px;font-size:11px}
 
 /* angelo della luce: il gemello luminoso del Gesù della Canzone */
 .angelo-luce{text-align:center;position:relative;padding-top:0}
