@@ -166,8 +166,9 @@ h3{font-size:clamp(19px,2vw,23px)}
 .scendi{position:absolute;bottom:26px;left:50%;width:26px;height:42px;border:1.5px solid var(--oro);border-radius:14px;transform:translateX(-50%)}
 .scendi span{position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--oro);animation:rotella 1.8s infinite}
 @keyframes rotella{to{transform:translateY(14px);opacity:0}}
-@media (max-width:900px){
-  .eroe{grid-template-columns:1fr;text-align:center;padding-top:96px}
+/* in verticale (telefono, ma anche monitor FullHD ruotato) l'eroe va in colonna: logo sopra, testo sotto */
+@media (max-width:900px),(orientation:portrait){
+  .eroe{grid-template-columns:1fr;align-content:center;text-align:center;padding-top:96px}
   .eroe-anello{order:1;max-width:min(88vw,440px)}
   .eroe-testo{order:2}
   .lead{margin-left:auto;margin-right:auto}
@@ -175,6 +176,7 @@ h3{font-size:clamp(19px,2vw,23px)}
   .cta{justify-content:center}
   .scendi{display:none}
 }
+@media (orientation:portrait) and (min-width:901px){.eroe-anello{max-width:min(80vw,42vh,640px)}}
 
 /* nastro */
 .nastro{overflow:hidden;border-block:1px solid var(--linea);background:linear-gradient(90deg,rgba(226,178,90,.08),rgba(95,160,70,.08));padding:14px 0}
