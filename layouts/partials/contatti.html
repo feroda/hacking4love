@@ -10,12 +10,11 @@
     </ul>
     <p class="sez-lead" style="margin-top:28px">Se conosci qualcuno che può arrivare a loro, anche in cinque passaggi, <strong>scrivimi il suo nome</strong>.</p>
     <div class="cta centro">
-      {{ with site.Params.email }}<a class="btn oro" href="mailto:{{ . }}?subject=%5BUROBORO%5D%20-%20Posso%20aiutarti%20ad%20arrivare%20a%20" rel="noopener">{{ partial "icona.html" "mail" }}Posso aiutarti ad arrivare a…</a>{{ end }}
+      {{ with site.Params.telegramPersonale }}<a class="btn oro" href="{{ . }}" rel="noopener">{{ partial "icona.html" "telegram" }}Scrivimi il nome su Telegram</a>{{ end }}
       {{ with site.Params.telegram }}<a class="btn vuoto" href="{{ . }}" rel="noopener">{{ partial "icona.html" "telegram" }}Unisciti al canale Uroboro</a>{{ end }}
     </div>
-    <p class="contatti-privati-tit">In privato</p>
+    <p class="contatti-privati-tit">Non usi Telegram? Scrivimi qui</p>
     <ul class="contatti-privati">
-      {{ with site.Params.telegramPersonale }}<li><a href="{{ . }}" rel="noopener">{{ partial "icona.html" "telegram" }}<span>Telegram</span></a></li>{{ end }}
       {{ with site.Params.messenger }}<li><a href="{{ . }}" rel="noopener">{{ partial "icona.html" "messenger" }}<span>Messenger</span></a></li>{{ end }}
       {{ with site.Params.linkedin }}<li><a href="{{ . }}" rel="noopener">{{ partial "icona.html" "linkedin" }}<span>LinkedIn</span></a></li>{{ end }}
       {{ with site.Params.email }}<li><a href="mailto:{{ . }}?subject=%5BUROBORO%5D%20-%20">{{ partial "icona.html" "mail" }}<span>Mail</span></a></li>{{ end }}
