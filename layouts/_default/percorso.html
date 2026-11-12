@@ -53,33 +53,5 @@
   </div>
 </section>
 
-<section class="sezione stretta" id="soluzione">
-  <header class="sez-testa">
-    <h2>Come l'ho risolto</h2>
-    <p class="sez-lead">Il puzzle l'ho composto io, prima di voi. Ecco i passaggi, nell'ordine in cui li ho trovati.</p>
-  </header>
-  {{ partial "puzzle.html" (dict "mode" "replay") }}
-</section>
-
-<section class="sezione">
-  <header class="sez-testa">
-    <p class="occhiello">I quattro sigilli</p>
-    <h2>Pezzo per pezzo</h2>
-  </header>
-  <ol class="passi">
-    {{ range $i, $s := site.Data.puzzle.sigilli }}
-    <li class="passo rivela">
-      <span class="passo-lettera">{{ $s.lettera }}</span>
-      <div>
-        <h3>{{ $s.nome }}</h3>
-        <p>{{ $s.racconto }}</p>
-        <p class="passo-fonte">Dove l'ho trovato: <a href="{{ $s.url }}" target="_blank" rel="noopener">{{ $s.articolo }} ↗</a></p>
-      </div>
-    </li>
-    {{ end }}
-  </ol>
-  <div class="cta centro"><a class="btn oro" href="{{ "/#puzzle" | relURL }}">Ora tocca a te</a></div>
-</section>
-
 {{ partial "contatti.html" . }}
 {{ end }}

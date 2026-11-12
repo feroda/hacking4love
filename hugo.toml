@@ -41,13 +41,18 @@ disableKinds = ["taxonomy", "term"]
     url = "/#puzzle"
     weight = 20
   [[menus.main]]
+    name = "Soluzioni"
+    url = "/soluzioni/"
+    weight = 25
+  [[menus.main]]
     name = "Il percorso"
     url = "/il-percorso/"
     weight = 30
-  [[menus.main]]
-    name = "Indizi"
-    url = "/articoli/"
-    weight = 40
+  # Indizi nascosto dal menu: la pagina /articoli/ resta raggiungibile solo per URL.
+  # [[menus.main]]
+  #   name = "Indizi"
+  #   url = "/articoli/"
+  #   weight = 40
   [[menus.main]]
     name = "Aiuta Uroboro"
     url = "/#aiuta"
