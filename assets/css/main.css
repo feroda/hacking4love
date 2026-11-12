@@ -214,7 +214,7 @@ h3{font-size:clamp(19px,2vw,23px)}
 /* angelo della luce: il gemello luminoso del Gesù della Canzone */
 .angelo-luce{text-align:center;position:relative;padding-top:0}
 .al-dentro{position:relative;padding:clamp(50px,8vw,90px) clamp(20px,5vw,70px);border-radius:24px;overflow:hidden;color:#2a1f0e;
-  background:radial-gradient(120% 90% at 50% 0%,#fffaf0 0%,#f6e7c4 50%,#e6c886 100%);
+  background:#e6c886;
   border:1px solid rgba(255,250,235,.7);box-shadow:0 0 0 8px rgba(246,216,146,.06),0 40px 140px -30px rgba(246,216,146,.55)}
 .al-dentro::before{content:"";position:absolute;left:50%;top:-30%;width:120%;aspect-ratio:1;transform:translateX(-50%);pointer-events:none;
   background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.35) 0deg 4deg,transparent 4deg 14deg);
