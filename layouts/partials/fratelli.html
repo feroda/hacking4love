@@ -42,16 +42,15 @@
     <circle class="fr-occhio" cx="{{ sub .x 7 }}" cy="{{ sub .y 5 }}" r="2.6"/>
     <circle class="fr-occhio" cx="{{ add .x 7 }}" cy="{{ sub .y 5 }}" r="2.6"/>
     {{- if eq .chi "papa" }}
-    <path d="M{{ sub .x 9 }},{{ add .y 9 }} Q{{ .x }},{{ add .y 11 }} {{ add .x 9 }},{{ add .y 9 }}"/>
+    <line x1="{{ sub .x 8 }}" y1="{{ add .y 9 }}" x2="{{ add .x 8 }}" y2="{{ add .y 9 }}"/>
     <ellipse class="fr-aureola" cx="{{ .x }}" cy="{{ sub .y 29 }}" rx="17" ry="5"/>
     {{- else }}
     <path d="M{{ sub .x 10 }},{{ add .y 6 }} Q{{ .x }},{{ add .y 16 }} {{ add .x 10 }},{{ add .y 6 }}"/>
     {{- end }}
     {{- if eq .chi "elisa" }}
     <g class="fr-oggetto">
-      <line x1="{{ add .x 35 }}" y1="{{ add .y 14 }}" x2="{{ add .x 42 }}" y2="{{ add .y 46 }}"/>
-      <circle cx="{{ add .x 33 }}" cy="{{ add .y 4 }}" r="10"/>
-      <line class="fr-griglia" x1="{{ add .x 23 }}" y1="{{ add .y 4 }}" x2="{{ add .x 43 }}" y2="{{ add .y 4 }}"/>
+      <polygon points="{{ add .x 24 }},{{ add .y 6 }} {{ add .x 42 }},{{ add .y 6 }} {{ add .x 35 }},{{ add .y 44 }}"/>
+      <circle cx="{{ add .x 33 }}" cy="{{ add .y 2 }}" r="10"/>
     </g>
     {{- end }}
     <text x="{{ .lx }}" y="{{ .ly }}" text-anchor="middle">{{ .nome }}</text>
