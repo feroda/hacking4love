@@ -8,7 +8,7 @@ disableKinds = ["taxonomy", "term"]
 [params]
   description = "Mi offro per chiudere Uroboro. Sono qui per ritrovare l'UOMO al centro dell'Universo. Componi il puzzle."
   autore = "Lucafero da Fabriano"
-  email = "luca@befair.it"
+  email = "uroboro@befair.it"
   # Il tuo sito personale: gli articoli-indizio vivranno lì
   sitoPersonale = "https://example.org/"
   # Canale Telegram del progetto. Vuoto = pulsante nascosto.
