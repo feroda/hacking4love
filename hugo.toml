@@ -49,6 +49,6 @@ disableKinds = ["taxonomy", "term"]
     url = "/articoli/"
     weight = 40
   [[menus.main]]
-    name = "Contatti"
-    url = "/#contatti"
+    name = "Aiuta Uroboro"
+    url = "/#aiuta"
     weight = 50

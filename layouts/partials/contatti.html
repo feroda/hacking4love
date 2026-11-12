@@ -1,10 +1,17 @@
-<section id="contatti" class="sezione contatti">
+<section id="aiuta" class="sezione contatti">
   <div class="rivela">
-    <p class="occhiello">Contatti</p>
-    <h2>Se questa cosa deve arrivare a qualcuno, aiutami</h2>
-    <p class="sez-lead">Se sei un cantante, un sacerdote, una persona che parla a tante persone, o conosci qualcuno che può far arrivare questo messaggio a chi deve arrivare. Unisciti al grande corpo:</p>
+    <p class="occhiello">Aiuta Uroboro</p>
+    <h2>Voglio passare del tempo con loro</h2>
+    <p class="sez-lead">Chi legge queste pagine mi chiede: ma poi che vuoi fare con questi artisti, o con il Papa? So quanto è prezioso il loro tempo. Voglio confrontarmi con loro su questi documenti, presentare il progetto «1 miliardo per la libertà» e ricevere uno sguardo dalla loro posizione. Ma il motivo vero è un altro: <strong>li sento fratelli e sorella</strong>, e incontrarli è il modo di affrontare i sensi di colpa e cancellarli da questo viaggio.</p>
+    <ul class="destinatari" style="max-width:680px;margin:28px auto 0">
+      <li>Mi vedo <strong>fratello complice di <mark>Vasco</mark></strong>, col quale condividere quest'avventura inutile.</li>
+      <li>Mi vedo <strong>fratello di <mark>Elisa</mark></strong>, nominato in <em>Se piovesse il tuo nome</em>.</li>
+      <li>Mi vedo <strong>fratello del <mark>Papa</mark></strong>, e del suo ruolo di canalizzatore tra l'Uno e la Madre Terra, e viceversa.</li>
+    </ul>
+    <p class="sez-lead" style="margin-top:28px">Se conosci qualcuno che può arrivare a loro, anche in cinque passaggi, <strong>scrivimi il suo nome</strong>.</p>
     <div class="cta centro">
-      {{ with site.Params.telegram }}<a class="btn oro" href="{{ . }}" rel="noopener">{{ partial "icona.html" "telegram" }}Unisciti al canale del progetto Uroboro</a>{{ end }}
+      {{ with site.Params.email }}<a class="btn oro" href="mailto:{{ . }}?subject=%5BUROBORO%5D%20-%20Posso%20aiutarti%20ad%20arrivare%20a%20" rel="noopener">{{ partial "icona.html" "mail" }}Posso aiutarti ad arrivare a…</a>{{ end }}
+      {{ with site.Params.telegram }}<a class="btn vuoto" href="{{ . }}" rel="noopener">{{ partial "icona.html" "telegram" }}Unisciti al canale Uroboro</a>{{ end }}
     </div>
     <p class="contatti-privati-tit">In privato</p>
     <ul class="contatti-privati">
