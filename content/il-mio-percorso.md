@@ -1,4 +1,4 @@
 ---
-title: "Il percorso"
+title: "Il mio percorso"
 layout: "percorso"
 ---

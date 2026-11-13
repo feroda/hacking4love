@@ -45,8 +45,8 @@ disableKinds = ["taxonomy", "term"]
   #   name = "Soluzioni"
   #   url = "/soluzioni/"
   [[menus.main]]
-    name = "Il percorso"
-    url = "/il-percorso/"
+    name = "Il mio percorso"
+    url = "/il-mio-percorso/"
     weight = 30
   # Indizi nascosto dal menu: la pagina /articoli/ resta raggiungibile solo per URL.
   # [[menus.main]]

@@ -473,7 +473,7 @@ h3{font-size:clamp(19px,2vw,23px)}
   .kintsugi path{stroke-dashoffset:0}
 }
 
-/* Il percorso: tre soluzioni */
+/* Il mio percorso: tre azioni */
 .soluzioni .carta h3{margin:0 0 10px}
 .soluzioni .sol-link{margin-top:18px}
 .soluzioni .sol-link a{color:var(--oro-chiaro);font-weight:600}
