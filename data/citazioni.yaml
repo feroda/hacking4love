@@ -1,13 +1,11 @@
 # Citazioni della sezione "I cantanti sono Sacerdoti, o forse Angeli..." (home, dopo il Gesù della Canzone).
 # Testi riportati così come li ha scritti Luca. Per andare a capo dentro una citazione usa "|-".
 # lingua: "en" per i testi in inglese (serve a lettori di schermo e sillabazione).
-titolo: "I cantanti sono Sacerdoti, o Angeli"
+titolo: "I cantanti sono i nuovi Sacerdoti, o Angeli"
 voci:
   - nome: John Lennon
     testo: "You may say I'm a dreamer, but I'm not the only one"
     lingua: en
-  - nome: Elisa
-    testo: "E se c'è un segreto è fare tutto come se vedessi solo il Sole"
   - nome: Max Pezzali
     testo: "Vedere finalmente che, rischiavo di perdere mille miliardi e più di cose, se tu non mi avessi fatto il dono di dividerle con me"
   - nome: Nesli
@@ -22,7 +20,7 @@ voci:
   - nome: Gianna Nannini
     testo: "Meravigliosa Creatura, sei sola al mondo"
   - nome: Dream Theater
-    testo: "The Spirit Carries On"
+    testo: "If I die tomorrow, I'd be allright, because I believe, that after we're gone, The Spirit Carries On"
     lingua: en
   - nome: Francesca Michielin
     testo: "Nessun grado di separazione, nessuna divisione tra di noi, siamo una sola direzione"
@@ -37,6 +35,9 @@ voci:
     lingua: en
   - nome: Queen and David Bowie
     testo: "Why can't we give love, one more chance"
+    lingua: en
+  - nome: Muse
+    testo: "I want to exorcise the demons from your past, I want to satisfy the undisclosed desires in your heart "
     lingua: en
   - nome: Aladdin
     testo: "Ogni cosa che ho, anche quella più bella, no non vale la stella che tra poco toccherò"
