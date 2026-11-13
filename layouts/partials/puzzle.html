@@ -16,7 +16,7 @@
       <h3>{{ $s.nome }}</h3>
       {{ if eq $.mode "gioca" }}
       <p class="sigillo-domanda">{{ $s.domanda }}</p>
-      <p class="sigillo-fonte"><a href="{{ $s.url }}" target="_blank" rel="noopener">{{ $s.link | default $s.articolo }} ↗</a></p>
+      <p class="sigillo-fonte"><a href="{{ $s.url }}" target="_blank" rel="noopener">{{ $s.link | default $s.articolo }} ↗</a> <span class="sigillo-o">oppure</span> <button type="button" class="sigillo-compila">Compilamelo</button></p>
       <form class="sigillo-form" autocomplete="off">
         <label class="sr" for="chiave-{{ $i }}">Parola-chiave per {{ $s.nome }}</label>
         <input id="chiave-{{ $i }}" name="chiave" type="text" placeholder="parola-chiave" spellcheck="false" autocapitalize="off">

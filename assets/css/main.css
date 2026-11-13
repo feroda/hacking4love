@@ -327,6 +327,10 @@ h3{font-size:clamp(19px,2vw,23px)}
 .sigillo-lettera span{font:900 26px var(--display);color:var(--oro-scuro);transition:.6s}
 .sigillo-domanda{font:400 16px/1.45 var(--sans);color:#ddd4c0;margin:0 0 6px}
 .sigillo-fonte{font-size:13px;color:var(--tenue);margin:0 0 12px}
+.sigillo-o{opacity:.7}
+.sigillo-compila{background:none;border:0;padding:0;font:inherit;color:var(--oro-chiaro);text-decoration:underline dotted;text-underline-offset:3px;cursor:pointer}
+.sigillo-compila:hover{color:var(--oro)}
+.sigillo.aperto .sigillo-o,.sigillo.aperto .sigillo-compila{display:none}
 .sigillo-form{display:flex;gap:6px}
 .sigillo-form input,.finto-input{flex:1;min-width:0;padding:10px 12px;border-radius:10px;background:rgba(0,0,0,.4);border:1px solid var(--linea);color:var(--testo);font:500 15px var(--sans);letter-spacing:.06em}
 .finto-input{min-height:42px;color:var(--oro-chiaro);letter-spacing:.3em}
