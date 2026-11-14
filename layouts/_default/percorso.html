@@ -40,9 +40,10 @@
   </ul>
   <ol class="linea">
     {{ range site.Data.tappe }}
-    <li class="rivela">{{ partial "icona-tappa.html" (.tipo | default "personale") }}<time>{{ .quando }}</time><h3>{{ .titolo }}</h3>{{ with .testo }}<p>{{ . }}</p>{{ end }}</li>
+    <li class="rivela{{ if not .chiave }} tappa-extra{{ end }}">{{ partial "icona-tappa.html" (.tipo | default "personale") }}<time>{{ .quando }}</time><h3>{{ .titolo }}</h3>{{ with .testo }}<p>{{ . }}</p>{{ end }}</li>
     {{ end }}
   </ol>
+  <p class="cta centro"><button type="button" class="btn vuoto linea-tutte" hidden aria-expanded="false" data-chiuso="Mostra tutto il percorso ({{ len site.Data.tappe }} tappe)" data-aperto="Mostra solo le tappe principali">Mostra tutto il percorso ({{ len site.Data.tappe }} tappe)</button></p>
 </section>
 
 {{ $cvIt := site.Params.cvIt }}{{ $cvEn := site.Params.cvEn }}

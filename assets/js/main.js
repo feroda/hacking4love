@@ -120,3 +120,15 @@
     v.play();
   });
 })();
+
+/* Il mio percorso: all'inizio solo le tappe chiave, il pulsante mostra tutte le altre (senza JS si vedono tutte) */
+(function () {
+  var b = document.querySelector('.linea-tutte'), ol = document.querySelector('.linea');
+  if (!b || !ol || !ol.querySelector('.tappa-extra')) return;
+  ol.classList.add('ridotta'); b.hidden = false;
+  b.addEventListener('click', function () {
+    var aperto = ol.classList.toggle('ridotta') === false;
+    b.setAttribute('aria-expanded', aperto); b.textContent = aperto ? b.dataset.aperto : b.dataset.chiuso;
+    if (!aperto) document.getElementById('tappe').scrollIntoView({ behavior: 'smooth' });
+  });
+})();
