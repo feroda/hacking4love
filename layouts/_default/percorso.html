@@ -10,9 +10,14 @@
     <p class="occhiello">La strada</p>
     <h2>Le tappe che mi hanno portato qui</h2>
   </header>
+  {{ $nomi := dict "personale" "Personale" "lavoro" "Lavoro" "gnu" "Software libero" "maniacale" "Episodio maniacale" }}
+  {{ $usati := slice }}{{ range site.Data.tappe }}{{ with .tipo }}{{ $usati = $usati | append . }}{{ end }}{{ end }}
+  <ul class="linea-legenda">
+    {{ range slice "personale" "lavoro" "gnu" "maniacale" }}{{ if in $usati . }}<li>{{ partial "icona-tappa.html" . }}{{ index $nomi . }}</li>{{ end }}{{ end }}
+  </ul>
   <ol class="linea">
     {{ range site.Data.tappe }}
-    <li class="rivela"><time>{{ .quando }}</time><h3>{{ .titolo }}</h3><p>{{ .testo }}</p></li>
+    <li class="rivela">{{ partial "icona-tappa.html" (.tipo | default "personale") }}<time>{{ .quando }}</time><h3>{{ .titolo }}</h3><p>{{ .testo }}</p></li>
     {{ end }}
   </ol>
 </section>

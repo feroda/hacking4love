@@ -301,7 +301,18 @@ h3{font-size:clamp(19px,2vw,23px)}
 .passo-fonte{font-size:14px}
 .linea{list-style:none;margin:0 auto 50px;padding:0 0 0 30px;max-width:760px;border-left:1px solid var(--linea)}
 .linea li{position:relative;padding:0 0 34px 18px}
-.linea li::before{content:"";position:absolute;left:-37px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--notte);border:2px solid var(--oro);box-shadow:0 0 12px var(--oro)}
+/* icone della timeline al posto dei pallini (partial icona-tappa.html) */
+.tappa-icona{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--notte);border:1.5px solid var(--oro);box-shadow:0 0 12px rgba(226,178,90,.45);color:var(--oro)}
+.tappa-icona svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.tappa-icona.gnu{color:var(--serpe-chiaro);border-color:var(--serpe-chiaro);box-shadow:0 0 12px rgba(95,160,70,.45)}
+.tappa-icona.maniacale{background:#fff;border-color:#d62828;box-shadow:0 0 12px rgba(214,40,40,.55)}
+.tappa-icona.maniacale svg{width:20px;height:20px}
+.tappa-icona .croce{fill:#d62828;stroke:none}
+.linea .tappa-icona{position:absolute;left:-46px;top:-2px}
+.linea-legenda{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;list-style:none;margin:-10px auto 40px;padding:0;color:var(--tenue);font:500 14px var(--sans)}
+.linea-legenda li{display:flex;align-items:center;gap:8px}
+.linea-legenda .tappa-icona{width:24px;height:24px;box-shadow:none}
+.linea-legenda .tappa-icona svg{width:15px;height:15px}
 .linea time{font:600 13px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--serpe-chiaro)}
 .linea h3{margin:4px 0 6px}
 .linea p{margin:0;color:#cfc8b8}
