@@ -44,6 +44,7 @@
 - quando: "2011 - oggi"
   titolo: "Proseguo da Libero Professionista"
   tipo: "lavoro"
+  chiave: true
   testo: "Chiudo l'azienda, lascio beFair solo come marchio e proseguo come Luca Ferroni: sviluppatore nell'ambito delle reti e dei sistemi di monitoraggio, gestore di server GNU/Linux e docente di corsi post diploma ITS sulla CyberSecurity."
 - quando: "2012"
   titolo: "Software libero al MIUR, due anni dopo"
@@ -70,6 +71,7 @@
 - quando: "2013-2016, 2025"
   titolo: "Docente all'ITIS Merloni Miliani di Fabriano"
   tipo: "lavoro"
+  chiave: true
   testo: "Nell'indirizzo di Informatica, ovviamente. La mia materia è TPSIT, il cui nome è quasi mezzo programma: «Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni». Un bel ricordo dei ragazzi che vi partecipavano e dei colleghi più motivati."
 - quando: "2014-2020"
   titolo: "Il MakerSpace della Biblioteca Multimediale R. Sassi"
@@ -82,6 +84,7 @@
 - quando: "Aprile 2019 - aprile 2022"
   titolo: "Coordinatore locale del progetto DOORS"
   tipo: "lavoro"
+  chiave: true
   testo: "Un progetto pedagogico basato sulla Pedagogia del Desiderio di M.C. Carvalho, derivata dalla Pedagogia dell'Oppresso di Paulo Freire, poi sull'ArtEducazione e infine, con noi, su LCL. Stupefacente per le reazioni dei ragazzi delle scuole medie che partecipavano. 28 partner, 2 milioni di euro."
 - quando: "2020-2021"
   titolo: "IoRestoACasa.work, videoconferenze libere nel lockdown"
