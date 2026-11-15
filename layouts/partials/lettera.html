@@ -1,0 +1,9 @@
+{{/* Una lettera. Riceve un dict con "nome" (file assets/lettere/<nome>.md) e "a" (destinatario). */}}
+{{ $testo := resources.Get (printf "lettere/%s.md" .nome) }}
+<article class="sezione stretta prosa lettera" id="{{ .nome }}">
+  <header class="sez-testa">
+    <p class="occhiello">Lettera a</p>
+    <h2>{{ .a }}</h2>
+  </header>
+  {{ with $testo }}{{ .Content | markdownify }}{{ else }}<p><em>Da scrivere.</em></p>{{ end }}
+</article>
