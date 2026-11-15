@@ -2,7 +2,7 @@
 
 Pensate che io interpreto il titolo di questa canzone, e di questo album come “**o vive il Re, o niente**”, curiosa la scomposizione delle parole italiane. Grande forza dello Spirito, tanto è vero che parole = paro-le, ossia “paro-Lei”, “sembro Lei”. Lei, la Monade, le parole ci hanno sempre accolto e guidato nella direzione della Monade, di cui io oggi sto scrivendo.
 
-Dell’album spendo una parola anche sulla copertina: Vasco guida in retromarcia, andare indietro, andare indietro nel tempo. Questo il percorso di un cantante “angelo” (v. epilogo “Cantanti come angeli”) che vuole possedere Lei, la Monade, sulla poltrona proprio con il REWIND.
+Dell’album spendo una parola anche sulla copertina: Vasco guida in retromarcia, andare indietro, andare indietro nel tempo. Questo il percorso di un cantante Angelo che vuole possedere Lei, la Monade, sulla poltrona proprio con il REWIND.
 
 Tenete presente che io non so, e non affermo che queste canzoni siano state scritte con questa intenzione conscia e consapevole, anche se secondo me molti degli aspetti che io affermo sono consapevoli nell’artista. Il punto è che, secondo le mie interpretazioni, lo Spirito stesso, la Monade si è espressa attraverso questi grandi artisti.
 
