@@ -507,3 +507,12 @@ h3{font-size:clamp(19px,2vw,23px)}
 .algoritmo ol ol ol{list-style:lower-roman}
 .algoritmo ol ol ol ol{list-style:decimal}
 .algoritmo ol ol ol ol ol{list-style:lower-alpha}
+
+/* Lettere: i tre bottoni d'oro in alto, in fila, a tutta larghezza (div e non nav: su mobile ogni nav è il menu nascosto) */
+.lettere-scelta{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;width:100%;padding-top:10px;padding-bottom:10px}
+.lettere-scelta .btn{flex:1 1 0;min-width:200px;justify-content:center;text-align:center}
+.lettera-sito{margin-top:28px}
+/* Il testo delle lettere giustificato, con la sillabazione; sul telefono resta allineato a sinistra */
+.lettera p,.lettera li{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.lettera .cta,.lettera .sez-testa p{text-align:inherit}
+@media (max-width:640px){.lettera p,.lettera li{text-align:left;hyphens:manual;-webkit-hyphens:manual}}

@@ -7,11 +7,9 @@
 
 {{ with .Content }}<section class="sezione stretta prosa">{{ . }}</section>{{ end }}
 
-<nav class="sezione stretta prosa lettere-indice" aria-label="Le lettere">
-  <ul>
-    {{ range .Params.lettere }}<li><a href="#{{ .nome }}">Lettera a {{ .a }}</a></li>{{ end }}
-  </ul>
-</nav>
+<div class="sezione stretta lettere-scelta" role="navigation" aria-label="Le lettere">
+  {{ range .Params.lettere }}<a class="btn oro" href="#{{ .nome }}">{{ .a }}</a>{{ end }}
+</div>
 
 {{ range .Params.lettere }}
   {{ partial "lettera.html" . }}
