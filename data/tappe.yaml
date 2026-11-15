@@ -6,7 +6,7 @@
   tipo: "personale"
   testo: "Conseguo la maturità scientifica con 52/60 e, allo stesso tempo, trionfo superando da privatista l'esame di solfeggio al Conservatorio Rossini di Pesaro."
 - quando: "1999-2004"
-  titolo: "La Master Laurea in Computer Science"
+  titolo: "Laurea in Computer Science"
   tipo: "personale"
   chiave: true
   testo: "Mi laureo nel percorso quinquennale di Informatica con 104/110. La tesi è «Studio, progettazione e realizzazione di un filesystem in spazio utente per le distribuzioni GNU/Linux», nata da un'idea di Richard Stallman durante una cena insieme a Modena."
@@ -20,9 +20,9 @@
   tipo: "lavoro"
   testo: "Gli anni del primo lavoro: assunto prima di laurearmi, ricordo bene che ho dovuto chiedere 15 giorni di pausa prima di iniziare. Un ambiente indimenticabile, con colleghi che sento ancora oggi, 17 anni dopo il mio trasferimento a Fabriano, nelle Marche."
 - quando: "2008-2009"
-  titolo: "Gli anni di BEFAIR SNC e del progetto JAGOM"
+  titolo: "Gli anni di beFair s.n.c. e del progetto JAGOM"
   tipo: "lavoro"
-  testo: "Con BEFAIR SNC sviluppo JAGOM, «JAGOM is A Grain Of Mustard seed»: un acronimo ricorsivo, come da tradizione hacker. È un social network fatto per il terzo settore, per sviluppare COMUNICAZIONE, ORGANIZZAZIONE, OPERATIVITÀ ed EVOLUZIONE."
+  testo: "Con beFair s.n.c. inizio a sviluppa JAGOM, «JAGOM is A Grain Of Mustard seed»: un acronimo ricorsivo, come da tradizione hacker. È un social network fatto per il terzo settore, per sviluppare COMUNICAZIONE, ORGANIZZAZIONE, OPERATIVITÀ ed EVOLUZIONE."
 - quando: "2009"
   titolo: "Il diploma di Master in Scienze e Tecnologie del Software Libero e Open Source"
   tipo: "personale"
@@ -35,7 +35,7 @@
   titolo: "Io Libero Professionista"
   tipo: "lavoro"
   chiave: true
-  testo: "beFair, un'avventura passata, rimane come (bel) marchio, così io proseguo come ditta individuale Luca Ferroni: sviluppatore nell'ambito delle reti e dei sistemi di monitoraggio, gestore di server GNU/Linux e docente di corsi post diploma ITS sulla CyberSecurity."
+  testo: "beFair, azienda formalmente abbandonata, rimane come (bel) marchio. Io proseguo come Luca Ferroni: sviluppatore nell'ambito delle reti e dei sistemi di monitoraggio, gestore di server GNU/Linux e docente di corsi post diploma ITS sulla CyberSecurity."
 - quando: "2009-2010"
   titolo: "Il Vademecum e il Dossier Scuola: 30.000 copie"
   tipo: "gnu"
@@ -45,7 +45,7 @@
   titolo: "Al tavolo tecnico con Richard Stallman"
   tipo: "gnu"
   chiave: true
-  testo: "Il Software Libero come questione etica, socioeconomica e infine tecnica. Sono co-organizzatore della visita di Richard Stallman, che tiene 2 conferenze: una al Comune di Ancona, l'altra all'Università Politecnica delle Marche. Il tavolo tecnico è pensato per i referenti tecnici di strutture chiave come la Sanità, la Provincia, il Comune e l'Università stessa, e qui ho l'onore di introdurlo con una presentazione preparata a 4 mani."
+  testo: "Il Software Libero come questione etica, socioeconomica e infine tecnica. Sono co-organizzatore della visita di Richard Stallman, che tiene 2 conferenze: una al Comune di Ancona, l'altra all'Università Politecnica delle Marche. Il tavolo tecnico è pensato per i referenti tecnici di strutture chiave come la Sanità, la Provincia, il Comune e l'Università stessa, e qui ho l'onore di introdurlo con una presentazione preparata a 4 mani con lui."
 - quando: "2012"
   titolo: "Software libero al MIUR, due anni dopo"
   tipo: "gnu"
@@ -54,7 +54,7 @@
   titolo: "Euclides André Mance e Richard Stallman si incontrano"
   tipo: "gnu"
   chiave: true
-  testo: "Su mia iniziativa e facilitazione, con il supporto della REES Marche e di Solidarius Italia, rendiamo possibile l'incontro di questi 2 grandi della Terra a Curitiba, in Brasile. Ne esce una dichiarazione di comunione di intenti tra i 2, per le reti del Software Libero e dell'Economia Solidale."
+  testo: "Su mia iniziativa e facilitazione, con il supporto della REES Marche e di Solidarius Italia, rendiamo possibile l'incontro di questi 2 grandi della Terra a Curitiba, in Brasile. Ne esce una dichiarazione di comunione di intenti tra i 2, per le reti del Software Libero e quelle dell'Economia Solidale."
 - quando: "Luglio 2012"
   titolo: "6ª Conferenza Italiana sul Software Libero"
   tipo: "gnu"
@@ -63,7 +63,7 @@
   titolo: "Episodio maniacale n. 1"
   tipo: "maniacale"
   chiave: true
-  testo: "Appagato e stressato dalle importanti attività del 2012, a fine anno inizio a vedere un quadro generale più grande di me, su cui non mi do pace: ossessivamente ne voglio sapere di più. Questo mi porta a dormire pochissimo e... a fare altre cose. Niente di gravissimo, ma mi ritrovo ricoverato. E lì scopro di avere un DISTURBO BIPOLARE DI TIPO 1."
+  testo: "Trionfante, stressato e gonfio di Ego dalle importanti attività del 2012, a fine anno inizio a vedere un quadro generale più grande di me, su cui non mi do pace: ossessivamente ne voglio sapere di più. Coincidenze (sincronicità junghiane?), rivelazioni, supposizioni su alieni, telescopi puntati sui Maya e la fine del loro calendario... Questo mi porta a dormire pochissimo e... perdermi volontariamente in un bosco il 1° gennaio. Mi ritrovo ricoverato. Ed è la prima volta che scopro di avere un DISTURBO BIPOLARE DI TIPO 1."
 - quando: "2013"
   titolo: "Hacker: una parola, uno stile di vita"
   tipo: "personale"
@@ -77,6 +77,7 @@
   titolo: "Il MakerSpace della Biblioteca Multimediale R. Sassi"
   tipo: "gnu"
   testo: "Gli anni indimenticabili di Passion, Play, Project, Peer (LCL - Learning Creative Learning, dal MIT di Boston). Gli anni della sperimentazione: dalla Maker Faire Rome con l'app per suonare collettivamente, agli ologrammi, al telaio jacquard."
+  chiave: true
 - quando: "2018-2022"
   titolo: "beFair, un network di professionisti"
   tipo: "lavoro"
@@ -125,4 +126,4 @@
 - quando: "Settembre 2026"
   titolo: "Campanelli di allarme per il n. 5"
   tipo: "maniacale"
-  testo: "A settembre, poco prima di iniziare questo sito, sento di nuovo il «contatto con l'Universo», perché di questo si tratta, e si alzano dei campanelli di allarme. Ma riesco a gestirli perché, per la prima volta, sono più stabile in me stesso: so che non sono io a essere sbagliato, ma alcuni concetti «esagerati» che, seppure io li veda, non occorre che racconti alle persone che mi stanno vicine, perché sono reali solo nella mia testa. Che di fatto prevede il futuro, ma va beh, questa è un'altra storia. D'altro canto so che fare le analisi più spesso, dormire di più e anche prendere una o 2 pasticchette in più fa stare più tranquilli quelli che mi circondano. Sulle pasticche non sono d'accordo, ma per il bene del sistema e della situazione, per ora lo faccio."
+  testo: "A settembre, percepisco di nuovo il «contatto con l'Universo», perché di questo si tratta. Riesco a gestirlo perché sono più stabile in me stesso, grazie al lavoro fatto: so che non sono io a essere sbagliato, ma alcuni concetti «esagerati» che, seppure io li veda, non sono comprensibili alle personer. Sono reali solo nella mia testa, sono proiezioni di un futuro che è solo mio. I campanelli di allarme intorno a me si sono alzati, quindi faccio le analisi più spesso, cerco di dormire di più e prendo anche 2 pasticchette in più per far stare più tranquilli quelli che mi circondano. Sulle pasticche non sono d'accordo, ma per il bene del sistema e della situazione, per ora lo faccio."
