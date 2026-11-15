@@ -12,7 +12,7 @@ Da hacker che affronta sfide intellettuali per risolvere problemi interessanti, 
 
 Credo che, riunendo questa «squadra», potremo manifestare una bellezza e una concretezza tali da elevare le coscienze di molti uomini e donne di buona volontà e, a cascata, di tutti: far tornare il Sole. «Time stop, rules change», ho scritto nel sito di questo progetto.
 
-Però non voglio, e non riuscirei, a fare questo passo senza venirLa a trovare per due ore, per presentarci e costruire insieme un piano: non posso certo decidere io cosa farà Lei, dall'alto del Suo ruolo, della Sua cultura e della Sua esperienza. So che il Suo tempo è prezioso, ma la ricompensa che avremo nel fare Luce e nel fare Spazio, in un'epoca diventata troppo stretta per garantire a tutti un po' di piacere, sarà grande, anzi immensa.
+Però non voglio, né saprei, fare questo passo senza venirLa a trovare per due ore, per presentarci e costruire insieme un piano: non posso certo decidere io cosa farà Lei, dall'alto del Suo ruolo, della Sua cultura e della Sua esperienza. So che il Suo tempo è prezioso, ma la ricompensa che avremo nel fare Luce e nel fare Spazio, in un'epoca diventata troppo stretta per garantire a tutti un po' di piacere, sarà grande, anzi immensa.
 
 Ho raccolto il mio percorso e le mie proposte in una pagina: [QR code → hacking4love.it/papa/].
 
