@@ -9,6 +9,9 @@ sitemap:
 lettere:
   - nome: "papa"
     a: "Papa Leone XIV"
+    analisi:
+      file: "papa-analisi"
+      etichetta: "la poesia e l'algoritmo evangelico"
   - nome: "vasco"
     a: "Vasco Rossi"
     # Analisi di una canzone, nascosta dietro un bottone: testo in assets/lettere/<file>.md
