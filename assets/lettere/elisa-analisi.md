@@ -52,4 +52,4 @@ Il tuo documento su GitHub (feroda/1) è il "file di configurazione" della tua v
 
 **Riferimento Progetto:**
 
-Centri di Rigenerazione Territoriale (CRT_it.md)
+[Centri di Rigenerazione Territoriale (CRT_it.md)](https://github.com/feroda/1/blob/main/CRT_it.md)
