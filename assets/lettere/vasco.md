@@ -10,7 +10,7 @@ Per un breve tempo ti ho chiamato Gesù della Canzone, ma credo sia troppo per e
 
 Ho scritto anche a Papa Leone XIV e a Elisa, l'Angelo della Luce e della Natura, che fa la strada opposta: dall'alto verso il basso. Strana squadra, lo so. Ma le tue canzoni e quelle di Elisa cercano da anni la stessa cosa: un uomo capace di tenere insieme cielo e terra, le passioni e i doveri, la famiglia, il lavoro, la fede. Io non so se sono quell'uomo. So che ci ho provato per tutta la vita, e mi candido a manifestare, insieme a voi, che si può fare. Chiudere il cerchio, chiudere Uroboro. Con AmoRe.
 
-Sarò io quello che affronta i sensi di colpa e li cancella da questo viaggio? O quello che ha cambiato solo se stesso per fare la rivoluzione? «Vedrai che vita vedrai», «c'è qualcuno che ha sbagliato mestiere»: mi risuonano dentro, e sai cosa intendo.
+Sarò io quello che affronta i sensi di colpa e li cancella da questo viaggio? O quello che ha cambiato solo se stesso per fare la rivoluzione? «Vedrai che vita vedrai», «qui c'è qualcuno che ha sbagliato mestiere»: mi risuonano dentro, e sai cosa intendo.
 
 Non ti chiedo un concerto, né una foto, né un favore. Ti chiedo un po' di tempo insieme: qualche ora, a Zocca, a Los Angeles, dove vuoi tu. Per conoscerci, parlare, o se lo riteniamo importante, suonare. Poi decidiamo insieme se e come andare avanti.
 
