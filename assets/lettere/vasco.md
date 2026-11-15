@@ -12,7 +12,7 @@ Ho scritto anche a Papa Leone XIV e a Elisa, l'Angelo della Luce e della Natura,
 
 Sarò io quello che affronta i sensi di colpa e li cancella da questo viaggio? O quello che ha cambiato solo se stesso per fare la rivoluzione? «Vedrai che vita vedrai», «qui c'è qualcuno che ha sbagliato mestiere»: mi risuonano dentro, e sai cosa intendo.
 
-Non ti chiedo un concerto, né una foto, né un favore. Ti chiedo un po' di tempo insieme: qualche ora, a Zocca, a Los Angeles, dove vuoi tu. Per conoscerci, parlare, o se lo ritieni importante, suonare. Poi decidiamo insieme se e come andare avanti.
+Non ti chiedo un concerto, né una foto, né un favore. Ti chiedo un po' di tempo insieme: qualche ora, a Zocca, a Los Angeles, dove vuoi tu. Per conoscerci, parlare e progettare questa manifestazione, e, se tu lo ritieni importante, suonare. Poi decidiamo insieme se e come andare avanti.
 
 Le tre lettere stanno su un'unica pagina: ognuno di voi legge quello che ho scritto agli altri. [QR code → hacking4love.it/lettere/] Trasparenza: per me è una regola, non un dettaglio.
 
