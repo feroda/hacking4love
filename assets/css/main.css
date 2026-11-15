@@ -516,3 +516,12 @@ h3{font-size:clamp(19px,2vw,23px)}
 .lettera p,.lettera li{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 .lettera .cta,.lettera .sez-testa p{text-align:inherit}
 @media (max-width:640px){.lettera p,.lettera li{text-align:left;hyphens:manual;-webkit-hyphens:manual}}
+/* Lettere su mobile: «↑ Lettere» fisso in basso a destra (compare dopo i tre bottoni) e meno rientro nell'analisi */
+.torna-lettere{display:none}
+@media (max-width:640px){
+  .torna-lettere{display:block;position:fixed;right:14px;bottom:14px;z-index:50;padding:10px 16px;border-radius:99px;
+    background:linear-gradient(135deg,var(--oro-chiaro),var(--oro) 50%,var(--oro-scuro));color:#1a1206;font:600 14px var(--sans);
+    text-decoration:none;box-shadow:0 8px 24px -6px rgba(0,0,0,.6);transition:opacity .3s,transform .3s}
+  .torna-lettere.nascosto{opacity:0;pointer-events:none;transform:translateY(10px)}
+  .analisi-canzone{padding-left:12px}
+}

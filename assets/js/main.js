@@ -147,3 +147,10 @@
     });
   });
 })();
+
+/* Lettere: «↑ Lettere» nascosto finché i tre bottoni in alto sono sullo schermo */
+(function () {
+  var t = document.querySelector('.torna-lettere'), s = document.getElementById('scelta');
+  if (!t || !s || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (es) { t.classList.toggle('nascosto', es[0].boundingClientRect.bottom > 0); }).observe(s);
+})();
