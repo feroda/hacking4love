@@ -12,7 +12,7 @@ Ho scritto anche a Papa Leone XIV e a Vasco Rossi, l'Angelo che scende nelle omb
 
 «Se c'è un segreto è fare tutto come se vedessi solo il Sole», canti. Io ci provo ogni giorno, anche quando piove. Forse è per questo che ti scrivo adesso.
 
-Non ti chiedo un concerto, né una foto, né un favore. Ti chiedo un po' di tempo insieme: qualche ora, dove vuoi tu. Per conoscerci, parlare, o se lo riteniamo importante, suonare. Poi decidiamo insieme se e come andare avanti.
+Non ti chiedo un concerto, né una foto, né un favore. Ti chiedo un po' di tempo insieme: qualche ora, dove vuoi tu. Per conoscerci, parlare, o se lo ritieni importante, suonare. Poi decidiamo insieme se e come andare avanti.
 
 Le tre lettere stanno su un'unica pagina: ognuno di voi legge quello che ho scritto agli altri. [QR code → hacking4love.it/lettere/] Trasparenza: per me è una regola, non un dettaglio.
 
