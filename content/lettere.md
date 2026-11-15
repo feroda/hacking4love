@@ -3,6 +3,8 @@ title: "Lettere"
 sottotitolo: "Ho scritto a tre persone. Ognuna può leggere quello che ho scritto alle altre."
 layout: "lettere"
 noindex: true
+# Niente linguette «Aiuta Uroboro» ai lati in questa pagina
+linguette: false
 sitemap:
   disable: true
 # L'ordine delle lettere nella pagina. Il testo di ognuna sta in assets/lettere/<nome>.md
