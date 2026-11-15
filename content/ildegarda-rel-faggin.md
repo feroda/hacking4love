@@ -15,7 +15,7 @@ Nella struttura di Ildegarda di Bingen, espressa in *Causae et curae*, l'unità 
 
 Questo mi fa pensare alla struttura del corpo come presentata da Faggin: come un **ponte tra fisica classica e fisica quantistica**, che praticamente interpreta i segnali di ciò che apparentemente è fuori di noi e li trasforma in esperienze per la nostra coscienza.
 
-Diciamo quello che Ildegarda potrebbe intendere come la nostra anima, che sottilmente è collegata con il cosmo, è collegata con l'Uno: come la nostra Seity è **un'onda nell'oceano dell'Uno**.
+Diciamo quello che Ildegarda potrebbe intendere come la nostra anima, che sottilmente è collegata con il cosmo, è collegata con l'Uno (di Faggin): come la nostra Seity (sempre Faggin) è **un'onda nell'oceano dell'Uno**.
 
 E quando questa onda **fluisce** liberamente, o **accordatamente**, con l'oceano dell'Uno, allora possiamo dire che anche secondo Ildegarda di Bingen siamo accordati: tutto fluisce per la crescita e l'evoluzione della persona, della sua coscienza. E questa è la ***Viriditas***.
 
