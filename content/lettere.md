@@ -17,4 +17,7 @@ lettere:
       canzone: "Vivere o Niente"
   - nome: "elisa"
     a: "Elisa"
+    analisi:
+      file: "elisa-analisi"
+      canzone: "Qualcosa che non c'è"
 ---
