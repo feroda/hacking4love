@@ -132,3 +132,18 @@
     if (!aperto) document.getElementById('tappe').scrollIntoView({ behavior: 'smooth' });
   });
 })();
+
+/* Lettere: il bottone dorato mostra l'analisi della canzone (senza JS si vede tutta) */
+(function () {
+  document.querySelectorAll('.analisi-bottone').forEach(function (b) {
+    var box = document.getElementById(b.getAttribute('aria-controls'));
+    if (!box) return;
+    box.hidden = true; b.hidden = false;
+    b.addEventListener('click', function () {
+      var aperto = box.hidden;
+      box.hidden = !aperto;
+      b.setAttribute('aria-expanded', aperto); b.textContent = aperto ? b.dataset.aperto : b.dataset.chiuso;
+      if (!aperto) b.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+})();

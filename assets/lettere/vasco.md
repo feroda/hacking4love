@@ -16,7 +16,7 @@ Non ti chiedo un concerto, né una foto, né un favore. Ti chiedo un po' di temp
 
 Le tre lettere stanno su un'unica pagina: ognuno di voi legge quello che ho scritto agli altri. [QR code → hacking4love.it/lettere/] Trasparenza: per me è una regola, non un dettaglio.
 
-Con gratitudine, e con tutto il rock che ho,
+Con gratitudine, e con tutto il rock che ho,\
 Ciao. E so cosa vuol dire "Ciao".
 
 Luca «Lucafero» Ferroni\

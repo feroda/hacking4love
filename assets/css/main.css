@@ -500,3 +500,6 @@ h3{font-size:clamp(19px,2vw,23px)}
 .sol-azioni ul{margin:10px 0 0;padding-left:20px}
 .sol-azioni li{margin:4px 0}
 .soluzioni .sol-credito{margin-top:14px;font-size:13px;color:var(--serpe-chiaro)}
+/* Lettere: analisi di una canzone dietro il bottone dorato */
+.analisi-canzone{margin-top:24px;padding:4px 0 4px 22px;border-left:2px solid var(--oro)}
+.analisi-canzone[hidden]{display:none}

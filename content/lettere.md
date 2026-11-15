@@ -11,6 +11,10 @@ lettere:
     a: "Papa Leone XIV"
   - nome: "vasco"
     a: "Vasco Rossi"
+    # Analisi di una canzone, nascosta dietro un bottone: testo in assets/lettere/<file>.md
+    analisi:
+      file: "vasco-analisi"
+      canzone: "Vivere o Niente"
   - nome: "elisa"
     a: "Elisa"
 ---

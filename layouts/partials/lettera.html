@@ -1,4 +1,5 @@
-{{/* Una lettera. Riceve un dict con "nome" (file assets/lettere/<nome>.md) e "a" (destinatario). */}}
+{{/* Una lettera. Riceve un dict con "nome" (file assets/lettere/<nome>.md), "a" (destinatario)
+     e, se c'è, "analisi" (file + canzone): l'analisi di una canzone, nascosta dietro un bottone dorato. */}}
 {{ $testo := resources.Get (printf "lettere/%s.md" .nome) }}
 <article class="sezione stretta prosa lettera" id="{{ .nome }}">
   <header class="sez-testa">
@@ -6,4 +7,10 @@
     <h2>{{ .a }}</h2>
   </header>
   {{ with $testo }}{{ .Content | markdownify }}{{ else }}<p><em>Da scrivere.</em></p>{{ end }}
+  {{ with .analisi }}{{ with resources.Get (printf "lettere/%s.md" .file) }}
+  <p class="cta centro"><button type="button" class="btn oro analisi-bottone" hidden aria-expanded="false" aria-controls="analisi-{{ $.nome }}" data-chiuso="Mostra la mia analisi di {{ $.analisi.canzone }}" data-aperto="Nascondi la mia analisi di {{ $.analisi.canzone }}">Mostra la mia analisi di {{ $.analisi.canzone }}</button></p>
+  <div class="analisi-canzone" id="analisi-{{ $.nome }}">
+    {{ .Content | markdownify }}
+  </div>
+  {{ end }}{{ end }}
 </article>
