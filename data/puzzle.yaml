@@ -6,7 +6,7 @@
 # "link": il testo del link all'articolo nel gioco ("articolo" è il titolo vero, usato nella pagina Indizi).
 # "alias" (facoltativo): altri hash accettati per lo stesso sigillo, per i sinonimi.
 # PAROLE (scelte dall'utente, prese da articoli già esistenti): bellezza, sharing is caring,
-# ridere di te, liberta. Domande e racconti sono bozze.
+# ridere di te, liberta delicata. Domande e racconti sono bozze.
 
 immagine: "/img/uomo-uroboro.jpg"
 colonne: 4
@@ -40,8 +40,8 @@ sigilli:
   - lettera: "O"
     nome: "Il sigillo dello scopo dell'UOMO"
     link: "Il progetto da 1 miliardo di €"
-    articolo: "1 miliardo per la libertà"
+    articolo: "1 miliardo per la libertà delicata"
     url: "https://github.com/feroda/1/blob/main/README_it.md"
     domanda: "Un progetto aperto per gestire un miliardo di euro. A che scopo?"
-    hash: "8ff576f9c1f4130066da185a946c4d6a7438b2bf1715fa6c28ab1b514bf41aa1"
+    hash: "52004c6c63f4e73df45de4329bd61342bd0790e333f603bd5e0e485b17e41e26"
     racconto: "L'ultimo pezzo chiude il cerchio: una libertà delicata, che tutela quella di ognuno fin dove inizia quella degli altri. Bellezza, condivisione, un sorriso con rispetto portano lì. E quando il serpente si morde la coda, al centro resta l'UOMO."
