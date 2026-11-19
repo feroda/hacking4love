@@ -1,1 +1,5 @@
 User-agent: *
+# Lettere (pagina e PDF) e anteprime: raggiungibili con il link, ma fuori dai motori di ricerca
+Disallow: /lettere/
+Disallow: /anteprima-1002ce04/
+Sitemap: https://hacking4love.it/sitemap.xml
