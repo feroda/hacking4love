@@ -8,7 +8,7 @@ disableKinds = ["taxonomy", "term"]
 [params]
   description = "Mi offro per chiudere Uroboro. Sono qui per ritrovare l'UOMO al centro dell'Universo. Componi il puzzle."
   autore = "Lucafero da Fabriano"
-  email = "luca@befair.it"
+  email = "uroboro@befair.it"
   # Il tuo sito personale: gli articoli-indizio vivranno lì
   sitoPersonale = "https://example.org/"
   # Canale Telegram del progetto. Vuoto = pulsante nascosto.
@@ -20,32 +20,40 @@ disableKinds = ["taxonomy", "term"]
   # Codice GoatCounter: la parte prima di .goatcounter.com (es. "hacking4love").
   # Vuoto = nessuno script di statistiche.
   goatcounter = "feroda"
+  # Link ai CV (PDF). Vuoto = pulsante nascosto.
+  cvIt = "documenti/cv-it.pdf"
+  cvEn = "documenti/cv-en.pdf"
 
 [markup.goldmark.renderer]
   unsafe = true
 
 [menus]
   [[menus.main]]
-    name = "Manifesto"
-    url = "/#manifesto"
-    weight = 10
-  [[menus.main]]
-    name = "Cantanti"
-    url = "/#vasco"
-    weight = 15
-  [[menus.main]]
     name = "Il puzzle"
     url = "/#puzzle"
+    weight = 10
+  [[menus.main]]
+    name = "Manifesto"
+    url = "/manifesto/#manifesto"
     weight = 20
   [[menus.main]]
-    name = "Come l'ho risolto"
-    url = "/come-l-ho-risolto/"
+    name = "Cantanti"
+    url = "/manifesto/#vasco"
+    weight = 25
+  # Soluzioni fuori dal menu: ci si arriva dal puzzle («Guarda come l'ho risolto io»).
+  # [[menus.main]]
+  #   name = "Soluzioni"
+  #   url = "/soluzioni/"
+  [[menus.main]]
+    name = "Il mio percorso"
+    url = "/il-mio-percorso/"
     weight = 30
+  # Indizi nascosto dal menu: la pagina /articoli/ resta raggiungibile solo per URL.
+  # [[menus.main]]
+  #   name = "Indizi"
+  #   url = "/articoli/"
+  #   weight = 40
   [[menus.main]]
-    name = "Indizi"
-    url = "/articoli/"
-    weight = 40
-  [[menus.main]]
-    name = "Contatti"
-    url = "/#contatti"
+    name = "Aiuta Uroboro"
+    url = "/#aiuta"
     weight = 50

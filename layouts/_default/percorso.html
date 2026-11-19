@@ -1,0 +1,64 @@
+{{ define "bodyclass" }}pagina percorso{{ end }}
+{{ define "main" }}
+<section class="pagina-testa">
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.sottotitolo }}<p class="lead">{{ . }}</p>{{ end }}
+</section>
+
+<section class="sezione" id="azioni">
+  <header class="sez-testa">
+    <h2>Tre azioni per la nostra società</h2>
+  </header>
+  <div class="carte soluzioni">
+    {{ range site.Data.soluzioni }}
+    <article class="carta rivela">
+      {{ with .ambito }}<p class="occhiello">{{ . }}</p>{{ end }}
+      <h3>{{ .titolo }}</h3>
+      <p>{{ .testo }}</p>
+      {{ with .azioni }}
+      <details class="sol-azioni">
+        <summary>Cosa propongo ({{ len . }} azioni)</summary>
+        <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+      </details>
+      {{ end }}
+      <p class="sol-link"><a href="{{ .pdf | relURL }}" target="_blank" rel="noopener">Leggi il documento (PDF) ↗</a></p>
+      <p class="sol-credito">{{ .credito }}</p>
+    </article>
+    {{ end }}
+  </div>
+</section>
+
+<section class="sezione" id="tappe">
+  <header class="sez-testa">
+    <p class="occhiello">La strada</p>
+    <h2>Le tappe che mi hanno portato qui</h2>
+  </header>
+  {{ $nomi := dict "personale" "Personale" "lavoro" "Lavoro" "gnu" "Software libero" "maniacale" "Episodio maniacale" }}
+  {{ $usati := slice }}{{ range site.Data.tappe }}{{ with .tipo }}{{ $usati = $usati | append . }}{{ end }}{{ end }}
+  <ul class="linea-legenda">
+    {{ range slice "personale" "lavoro" "gnu" "maniacale" }}{{ if in $usati . }}<li>{{ partial "icona-tappa.html" . }}{{ index $nomi . }}</li>{{ end }}{{ end }}
+  </ul>
+  <ol class="linea">
+    {{ range site.Data.tappe }}
+    <li class="rivela{{ if not .chiave }} tappa-extra{{ end }}">{{ partial "icona-tappa.html" (.tipo | default "personale") }}<time>{{ .quando }}</time><h3>{{ .titolo }}</h3>{{ with .testo }}<p>{{ . }}</p>{{ end }}</li>
+    {{ end }}
+  </ol>
+  <p class="cta centro"><button type="button" class="btn vuoto linea-tutte" hidden aria-expanded="false" data-chiuso="Mostra tutto il percorso ({{ len site.Data.tappe }} tappe)" data-aperto="Mostra solo le tappe principali">Mostra tutto il percorso ({{ len site.Data.tappe }} tappe)</button></p>
+</section>
+
+{{ $cvIt := site.Params.cvIt }}{{ $cvEn := site.Params.cvEn }}
+{{ if or $cvIt $cvEn }}
+<section class="sezione" id="cv">
+  <header class="sez-testa">
+    <h2>Curriculum</h2>
+  </header>
+  <div class="cta centro">
+    {{ with $cvIt }}<a class="btn oro" href="{{ . | relURL }}" target="_blank" rel="noopener" lang="it">CV in italiano</a>{{ end }}
+    {{ with $cvEn }}<a class="btn vuoto" href="{{ . | relURL }}" target="_blank" rel="noopener" lang="en">CV in English</a>{{ end }}
+  </div>
+</section>
+{{ end }}
+
+
+{{ partial "contatti.html" . }}
+{{ end }}

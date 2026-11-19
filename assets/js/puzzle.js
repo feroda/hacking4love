@@ -165,6 +165,23 @@
           }, function () { stato.textContent = 'Il tuo browser non può verificare la chiave qui. Apri il sito in https.'; });
         });
       });
+      // «Compilamelo»: apre il sigillo e mette i suoi pezzi al loro posto, senza svelare la parola.
+      root.querySelectorAll('.sigillo-compila').forEach(function (b) {
+        b.addEventListener('click', function () {
+          if (risolto) return;
+          var card = b.closest('.sigillo'), s = +card.dataset.sigillo;
+          apriSigillo(s, true); deseleziona();
+          card.querySelector('.sigillo-stato').textContent = 'Compilato per te: i pezzi della ' + cfg.sigilli[s].lettera + ' sono al loro posto.';
+          tessere.forEach(function (t) {
+            if (+t.dataset.sigillo !== s) return;
+            var cs = caselle[+t.dataset.id];
+            if (cs.firstChild === t) return;
+            if (cs.firstChild) sposta(cs.firstChild, vassoio);
+            sposta(t, cs);
+          });
+          dopoMossa();
+        });
+      });
       root.querySelector('.puzzle-reset').addEventListener('click', function () { scrivi(null); azzera(); });
 
       // Ripristina i progressi

@@ -16,7 +16,7 @@
       <h3>{{ $s.nome }}</h3>
       {{ if eq $.mode "gioca" }}
       <p class="sigillo-domanda">{{ $s.domanda }}</p>
-      <p class="sigillo-fonte"><a href="{{ $s.url }}" target="_blank" rel="noopener">{{ $s.link | default $s.articolo }} ↗</a></p>
+      <p class="sigillo-fonte"><a href="{{ $s.url }}" target="_blank" rel="noopener">{{ $s.link | default $s.articolo }} ↗</a> <span class="sigillo-o">oppure</span> <button type="button" class="sigillo-compila">Compilamelo</button></p>
       <form class="sigillo-form" autocomplete="off">
         <label class="sr" for="chiave-{{ $i }}">Parola-chiave per {{ $s.nome }}</label>
         <input id="chiave-{{ $i }}" name="chiave" type="text" placeholder="parola-chiave" spellcheck="false" autocapitalize="off">
@@ -35,6 +35,7 @@
     <div class="tavola-cornice">
       <div class="tavola" style="--col: {{ $p.colonne }}; --righe: {{ $p.righe }}" aria-label="Tavola del puzzle"></div>
       <img class="immagine-intera" src="{{ $p.immagine | relURL }}" alt="L'UOMO al centro dell'uroboro: il puzzle composto" width="1200" height="800" loading="lazy">
+      {{ partial "kintsugi.html" $p }}
       <div class="rivelazione" aria-live="polite">
         <p class="riv-sopra">Il serpente si è morso la coda</p>
         <p class="riv-uomo"><span>U</span><span>O</span><span>M</span><span>O</span></p>
@@ -54,9 +55,10 @@
   </div>
   {{ else }}
   <div class="puzzle-azioni">
-    <a class="btn oro puzzle-chi-sono" href="{{ "/come-l-ho-risolto/#tappe" | relURL }}">Ora sai cosa cerco. Scopri chi sono →</a>
+    <a class="btn vuoto puzzle-chi-sono-prima" href="{{ "/il-mio-percorso/#tappe" | relURL }}">Guarda chi sono</a>
+    <a class="btn oro puzzle-chi-sono" href="{{ "/il-mio-percorso/#tappe" | relURL }}">Ora sai cosa cerco. Scopri chi sono →</a>
     <button class="btn vuoto puzzle-reset" type="button">Ricomincia da capo</button>
-    <a class="btn vuoto" href="{{ "/come-l-ho-risolto/" | relURL }}">Guarda come l'ho risolto io</a>
+    <a class="btn vuoto" href="{{ "/soluzioni/#soluzione" | relURL }}">Guarda come l'ho risolto io</a>
   </div>
   {{ end }}
 </div>

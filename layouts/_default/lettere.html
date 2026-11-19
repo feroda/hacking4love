@@ -1,0 +1,19 @@
+{{ define "bodyclass" }}pagina lettere-pagina{{ end }}
+{{ define "main" }}
+<section class="pagina-testa">
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.sottotitolo }}<p class="lead">{{ . }}</p>{{ end }}
+</section>
+
+{{ with .Content }}<section class="sezione stretta prosa">{{ . }}</section>{{ end }}
+
+<div class="sezione stretta lettere-scelta" id="scelta" role="navigation" aria-label="Le lettere">
+  {{ range .Params.lettere }}<a class="btn oro" href="#{{ .nome }}">{{ .a }}</a>{{ end }}
+</div>
+
+{{ range .Params.lettere }}
+  {{ partial "lettera.html" . }}
+{{ end }}
+
+<a class="torna-lettere" href="#scelta" aria-label="Torna ai tre bottoni delle lettere">↑ Lettere</a>
+{{ end }}

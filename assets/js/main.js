@@ -120,3 +120,37 @@
     v.play();
   });
 })();
+
+/* Il mio percorso: all'inizio solo le tappe chiave, il pulsante mostra tutte le altre (senza JS si vedono tutte) */
+(function () {
+  var b = document.querySelector('.linea-tutte'), ol = document.querySelector('.linea');
+  if (!b || !ol || !ol.querySelector('.tappa-extra')) return;
+  ol.classList.add('ridotta'); b.hidden = false;
+  b.addEventListener('click', function () {
+    var aperto = ol.classList.toggle('ridotta') === false;
+    b.setAttribute('aria-expanded', aperto); b.textContent = aperto ? b.dataset.aperto : b.dataset.chiuso;
+    if (!aperto) document.getElementById('tappe').scrollIntoView({ behavior: 'smooth' });
+  });
+})();
+
+/* Lettere: il bottone dorato mostra l'analisi della canzone (senza JS si vede tutta) */
+(function () {
+  document.querySelectorAll('.analisi-bottone').forEach(function (b) {
+    var box = document.getElementById(b.getAttribute('aria-controls'));
+    if (!box) return;
+    box.hidden = true; b.hidden = false;
+    b.addEventListener('click', function () {
+      var aperto = box.hidden;
+      box.hidden = !aperto;
+      b.setAttribute('aria-expanded', aperto); b.textContent = aperto ? b.dataset.aperto : b.dataset.chiuso;
+      if (!aperto) b.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+})();
+
+/* Lettere: «↑ Lettere» nascosto finché i tre bottoni in alto sono sullo schermo */
+(function () {
+  var t = document.querySelector('.torna-lettere'), s = document.getElementById('scelta');
+  if (!t || !s || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (es) { t.classList.toggle('nascosto', es[0].boundingClientRect.bottom > 0); }).observe(s);
+})();
