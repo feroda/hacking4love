@@ -14,7 +14,7 @@ Credo che, riunendo questa «squadra», potremo manifestare una bellezza e una c
 
 Però non voglio, né saprei, fare questo passo senza venire a trovare Lei, o chi Lei vorrà indicarmi, per presentarci, verificare e costruire insieme un piano: non posso certo decidere io cosa farà Lei, dall'alto del Suo ruolo, della Sua cultura e della Sua esperienza. So che il Suo tempo è prezioso, ma la ricompensa che avremo nel fare Luce e nel fare Spazio, in un'epoca diventata troppo stretta per garantire a tutti un po' di piacere, sarà grande, anzi immensa.
 
-Le tre lettere stanno su un'unica pagina: ciascuno di voi può leggere ciò che ho scritto agli altri. [QR code → hacking4love.it/lettere/]
+Allego le lettere che ho scritto a Vasco Rossi ed Elisa, perché ciascuno di voi possa leggere ciò che ho scritto agli altri.
 
 Le scrissi già nel 2013 e nel 2021. Allora non trovai la forma e il canale giusti. Oggi provo con meno parole e una richiesta chiara.
 

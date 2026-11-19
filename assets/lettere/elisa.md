@@ -14,7 +14,7 @@ Non ti chiedo un concerto, né una foto, né un favore. Ti chiedo un po' di temp
 
 E se, nel provare a manifestare il bello, riuscissimo a ridare spazio a questa società che si è ristretta e a offrire ciò che è utile? Apriamo questo Blue Ocean! Bisogna capire come: io ho delle idee e mi piacerebbe condividerle con te.
 
-Le tre lettere stanno su un'unica pagina: ognuno di voi legge quello che ho scritto agli altri. [QR code → hacking4love.it/lettere/] Trasparenza: per me è una regola, non un dettaglio.
+Le tre lettere stanno su un'unica pagina: ognuno di voi legge quello che ho scritto agli altri. Trasparenza: per me è una regola, non un dettaglio.
 
 Con gratitudine, e con tutta la luce che ho,
 

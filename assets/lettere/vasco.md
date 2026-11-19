@@ -14,7 +14,7 @@ Sarò io quello che affronta i sensi di colpa e li cancella da questo viaggio? O
 
 Non ti chiedo un concerto, né una foto, né un favore. Ti chiedo un po' di tempo insieme: qualche ora, a Zocca, a Los Angeles, dove vuoi tu. Per conoscerci, parlare e progettare questa manifestazione, e, se tu lo ritieni importante, suonare. Poi decidiamo insieme se e come andare avanti.
 
-Le tre lettere stanno su un'unica pagina: ognuno di voi legge quello che ho scritto agli altri. [QR code → hacking4love.it/lettere/] Trasparenza: per me è una regola, non un dettaglio.
+Le tre lettere stanno su un'unica pagina: ognuno di voi legge quello che ho scritto agli altri. Trasparenza: per me è una regola, non un dettaglio.
 
 Con gratitudine, e con tutto il rock che ho,\
 Ciao. E so cosa vuol dire "Ciao".

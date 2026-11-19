@@ -3,5 +3,3 @@ resources/_gen/
 .hugo_build.lock
 *.swp
 static/documenti/cv-*.pdf
-# PDF delle lettere: pubblicati dal sito (compilato in locale) ma fuori da git
-static/lettere/*.pdf
