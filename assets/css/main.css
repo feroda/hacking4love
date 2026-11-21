@@ -246,6 +246,9 @@ h3{font-size:clamp(19px,2vw,23px)}
 .al-voce figcaption::before{content:"— "}
 .al-voce cite{font-style:normal;letter-spacing:.08em;text-transform:none;font-weight:500}
 .al-nota{font-size:13px;color:#6b5634;letter-spacing:.02em;margin:0}
+.al-dentro a:not(.btn){color:#5c1a14;font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;transition:color .2s,background .2s}
+.al-dentro a:not(.btn):hover,.al-dentro a:not(.btn):focus-visible{color:#2a1f0e;background:rgba(255,255,255,.45);text-decoration-thickness:2.5px;border-radius:3px}
+.al-dentro a:not(.btn):focus-visible{outline:2px solid #5c1a14;outline-offset:2px}
 
 /* cantanti: tutte le citazioni insieme, a muro */
 .cantanti{padding-top:clamp(40px,6vw,70px)}
