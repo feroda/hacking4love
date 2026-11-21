@@ -1,5 +1,6 @@
 {{/* Una lettera. Riceve un dict con "nome" (file assets/lettere/<nome>.md), "a" (destinatario)
-     e, se c'è, "analisi" (file + canzone, oppure file + etichetta): l'analisi di una canzone, nascosta dietro un bottone dorato. */}}
+     e, se c'è, "analisi" (file + canzone, oppure file + etichetta): l'analisi di una canzone, nascosta dietro un bottone dorato;
+     "pdf" (percorso in static/): il bottone «Scarica il PDF» con lettera e analisi, generato da genera_pdf_lettere.sh. */}}
 {{ $testo := resources.Get (printf "lettere/%s.md" .nome) }}
 <article class="sezione stretta prosa lettera" id="{{ .nome }}">
   <header class="sez-testa">
@@ -14,5 +15,5 @@
     {{ .Content | markdownify }}
   </div>
   {{ end }}{{ end }}
-  <p class="cta centro lettera-sito"><a class="btn vuoto" href="{{ site.Home.RelPermalink }}">Guarda il sito di Uroboro</a></p>
+  <p class="cta centro lettera-sito"><a class="btn vuoto" href="{{ site.Home.RelPermalink }}">Guarda il sito di Uroboro</a>{{ with .pdf }}<a class="btn vuoto" href="{{ . | relURL }}" download>Scarica il PDF</a>{{ end }}</p>
 </article>

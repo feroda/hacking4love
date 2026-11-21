@@ -1,0 +1,34 @@
+{{/* Pagina di stampa di una lettera: testo (assets/lettere/<nome>.md) e analisi completa,
+     senza menu, linguette e bottoni. Da qui genera_pdf_lettere.sh fa il PDF. */}}
+{{ $nome := .Params.nome }}
+{{ $l := index (where (site.GetPage "/lettere").Params.lettere "nome" $nome) 0 }}
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lettera a {{ $l.a }} · {{ site.Title }}</title>
+{{ $css := resources.Get "css/stampa.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+</head>
+<body>
+<article class="lettera">
+  <header>
+    <p class="occhiello">Lettera a</p>
+    <h1>{{ $l.a }}</h1>
+  </header>
+  {{ with resources.Get (printf "lettere/%s.md" $nome) }}{{ .Content | markdownify }}{{ end }}
+</article>
+{{ with $l.analisi }}{{ with resources.Get (printf "lettere/%s.md" .file) }}
+<section class="analisi">
+  <header>
+    <p class="occhiello">Allegato</p>
+    <h1>{{ $l.analisi.etichetta | default (printf "La mia analisi di «%s»" $l.analisi.canzone) | strings.FirstUpper }}</h1>
+  </header>
+  {{ .Content | markdownify }}
+</section>
+{{ end }}{{ end }}
+<footer class="piede">{{ site.Title }} · <a href="{{ site.BaseURL }}">{{ strings.TrimSuffix "/" (strings.TrimPrefix "https://" site.BaseURL) }}</a></footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+/* Pagina di stampa delle lettere (PDF «Scarica il PDF»). Font serviti dal sito: vedi static/fonts/OFL.txt */
+@font-face{font-family:'Cinzel';font-weight:500 900;src:url("../fonts/cinzel-latin.woff2") format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
+@font-face{font-family:'Cinzel';font-weight:500 900;src:url("../fonts/cinzel-latin-ext.woff2") format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+A720-A7FF}
+@font-face{font-family:'Inter';font-weight:100 900;src:url("../fonts/inter-latin.woff2") format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-weight:100 900;src:url("../fonts/inter-latin-ext.woff2") format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+A720-A7FF}
+
+:root{--oro:#b08a2e;--testo:#1c1a17;--tenue:#6b6458}
+@page{size:A4;margin:2cm}
+html{background:#fff}
+body{margin:0 auto;max-width:17cm;padding:2cm 0;color:var(--testo);background:#fff;
+  font:400 11pt/1.55 'Inter',system-ui,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+h1,h2,h3,h4{font-family:'Cinzel',Georgia,serif;font-weight:700;line-height:1.25;break-after:avoid;page-break-after:avoid}
+h1{font-size:22pt;margin:0 0 .6em;color:var(--testo)}
+h2{font-size:15pt;margin:1.4em 0 .5em}
+h3{font-size:13pt;margin:1.4em 0 .5em;color:var(--oro)}
+h4{font-size:11.5pt;margin:1.2em 0 .4em}
+header{border-bottom:1px solid var(--oro);margin-bottom:1.4em}
+.occhiello{font:600 9pt 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--oro);margin:0 0 .3em}
+p,li{text-align:justify;hyphens:auto;-webkit-hyphens:auto;orphans:3;widows:3}
+blockquote{margin:1em 0;padding:.2em 0 .2em 1em;border-left:2px solid var(--oro);color:var(--tenue);font-style:italic}
+a{color:var(--testo);text-decoration:underline;text-decoration-color:var(--oro)}
+img{max-width:100%}
+/* Il link scritto per esteso, così si legge anche sulla carta */
+@media print{
+  body{padding:0;max-width:none}
+  .lettera a[href^="http"]::after,.analisi a[href^="http"]::after{content:" (" attr(href) ")";font-size:8.5pt;color:var(--tenue);word-break:break-all}
+}
+/* L'analisi comincia su una pagina nuova */
+.analisi{break-before:page;page-break-before:always}
+.algoritmo ol ol{list-style:lower-alpha}
+.algoritmo ol ol ol{list-style:lower-roman}
+.algoritmo ol ol ol ol{list-style:decimal}
+.algoritmo ol ol ol ol ol{list-style:lower-alpha}
+.piede{margin-top:3em;padding-top:.6em;border-top:1px solid #ddd;font-size:8.5pt;color:var(--tenue);text-align:center}
+.piede a::after{content:none}

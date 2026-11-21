@@ -11,17 +11,21 @@ sitemap:
 lettere:
   - nome: "papa"
     a: "Papa Leone XIV"
+    # PDF con lettera e analisi, generato da genera_pdf_lettere.sh
+    pdf: "lettere/lettera-papa-con-analisi.pdf"
     analisi:
       file: "papa-analisi"
       etichetta: "la poesia e l'algoritmo evangelico"
   - nome: "vasco"
     a: "Vasco Rossi"
+    pdf: "lettere/lettera-vasco-con-analisi.pdf"
     # Analisi di una canzone, nascosta dietro un bottone: testo in assets/lettere/<file>.md
     analisi:
       file: "vasco-analisi"
       canzone: "Vivere o Niente"
   - nome: "elisa"
     a: "Elisa"
+    pdf: "lettere/lettera-elisa-con-analisi.pdf"
     analisi:
       file: "elisa-analisi"
       canzone: "Qualcosa che non c'è"
