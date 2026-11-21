@@ -6,6 +6,7 @@ enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
 
 [params]
+  sito = "https://hacking4love.it"
   description = "Mi offro per chiudere Uroboro. Sono qui per ritrovare l'UOMO al centro dell'Universo. Componi il puzzle."
   autore = "Lucafero da Fabriano"
   email = "uroboro@befair.it"

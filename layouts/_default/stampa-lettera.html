@@ -29,6 +29,6 @@
   {{ .Content | markdownify }}
 </section>
 {{ end }}{{ end }}
-<footer class="piede">{{ site.Title }} · <a href="{{ site.BaseURL }}">{{ strings.TrimSuffix "/" (strings.TrimPrefix "https://" site.BaseURL) }}</a></footer>
+<footer class="piede">{{ site.Title }} · <a href="{{ site.Params.sito }}/">{{ site.Params.sito }}</a></footer>
 </body>
 </html>
