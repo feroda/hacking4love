@@ -5,6 +5,38 @@
   {{ with .Params.sottotitolo }}<p class="lead">{{ . }}</p>{{ end }}
 </section>
 
+<section class="sezione" id="tappe">
+  <header class="sez-testa">
+    <p class="occhiello">La strada</p>
+    <h2>Le tappe che mi hanno portato qui</h2>
+  </header>
+  {{ $nomi := dict "personale" "Personale" "lavoro" "Lavoro" "gnu" "Software libero" "maniacale" "Episodio maniacale" }}
+  {{ $usati := slice }}{{ range site.Data.tappe }}{{ with .tipo }}{{ $usati = $usati | append . }}{{ end }}{{ end }}
+  <ul class="linea-legenda">
+    {{ range slice "personale" "lavoro" "gnu" "maniacale" }}{{ if in $usati . }}<li>{{ partial "icona-tappa.html" . }}{{ index $nomi . }}</li>{{ end }}{{ end }}
+    {{ if and site.Data.tappe_cifrate (not (in $usati "maniacale")) }}<li class="legenda-riservata" hidden>{{ partial "icona-tappa.html" "maniacale" }}{{ index $nomi "maniacale" }}</li>{{ end }}
+  </ul>
+  <ol class="linea">
+    {{ range site.Data.tappe }}
+    <li class="rivela{{ if not .chiave }} tappa-extra{{ end }}">{{ partial "icona-tappa.html" (.tipo | default "personale") }}<time>{{ .quando }}</time><h3>{{ .titolo }}</h3>{{ with .testo }}<p>{{ . }}</p>{{ end }}</li>
+    {{ end }}
+  </ol>
+  <p class="cta centro"><button type="button" class="btn vuoto linea-tutte" hidden aria-expanded="false" data-chiuso="Mostra tutto il percorso ({{ len site.Data.tappe }} tappe)" data-aperto="Mostra solo le tappe principali">Mostra tutto il percorso ({{ len site.Data.tappe }} tappe)</button></p>
+  {{ with site.Data.tappe_cifrate }}
+  {{/* Tappe riservate: qui c'è solo il testo cifrato (cifra_tappe_riservate.py), main.js lo apre con la password */}}
+  <form class="riservate" data-cifrato="{{ . | jsonify }}" hidden>
+    <p>Alcune tappe sono riservate: chiedimi la password.</p>
+    <div class="riservate-campo">
+      <label class="nascosto-vista" for="riservate-password">Password</label>
+      <input type="password" id="riservate-password" autocomplete="off" placeholder="Password" required>
+      <button type="submit" class="btn vuoto">Apri</button>
+    </div>
+    <p class="riservate-esito" role="status" aria-live="polite"></p>
+  </form>
+  <template id="icona-maniacale">{{ partial "icona-tappa.html" "maniacale" }}</template>
+  {{ end }}
+</section>
+
 <section class="sezione" id="azioni">
   <header class="sez-testa">
     <h2>Tre azioni per la nostra società</h2>
@@ -26,24 +58,6 @@
     </article>
     {{ end }}
   </div>
-</section>
-
-<section class="sezione" id="tappe">
-  <header class="sez-testa">
-    <p class="occhiello">La strada</p>
-    <h2>Le tappe che mi hanno portato qui</h2>
-  </header>
-  {{ $nomi := dict "personale" "Personale" "lavoro" "Lavoro" "gnu" "Software libero" "maniacale" "Episodio maniacale" }}
-  {{ $usati := slice }}{{ range site.Data.tappe }}{{ with .tipo }}{{ $usati = $usati | append . }}{{ end }}{{ end }}
-  <ul class="linea-legenda">
-    {{ range slice "personale" "lavoro" "gnu" "maniacale" }}{{ if in $usati . }}<li>{{ partial "icona-tappa.html" . }}{{ index $nomi . }}</li>{{ end }}{{ end }}
-  </ul>
-  <ol class="linea">
-    {{ range site.Data.tappe }}
-    <li class="rivela{{ if not .chiave }} tappa-extra{{ end }}">{{ partial "icona-tappa.html" (.tipo | default "personale") }}<time>{{ .quando }}</time><h3>{{ .titolo }}</h3>{{ with .testo }}<p>{{ . }}</p>{{ end }}</li>
-    {{ end }}
-  </ol>
-  <p class="cta centro"><button type="button" class="btn vuoto linea-tutte" hidden aria-expanded="false" data-chiuso="Mostra tutto il percorso ({{ len site.Data.tappe }} tappe)" data-aperto="Mostra solo le tappe principali">Mostra tutto il percorso ({{ len site.Data.tappe }} tappe)</button></p>
 </section>
 
 {{ $cvIt := site.Params.cvIt }}{{ $cvEn := site.Params.cvEn }}

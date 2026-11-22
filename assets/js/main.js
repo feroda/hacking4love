@@ -154,3 +154,50 @@
   if (!t || !s || !('IntersectionObserver' in window)) return;
   new IntersectionObserver(function (es) { t.classList.toggle('nascosto', es[0].boundingClientRect.bottom > 0); }).observe(s);
 })();
+
+/* Il mio percorso: tappe riservate. Nella pagina c'è solo il testo cifrato (data/tappe_cifrate.json,
+   generato da cifra_tappe_riservate.py): con la password giusta si decifra qui, AES-GCM con chiave PBKDF2-SHA256. */
+(function () {
+  var f = document.querySelector('.riservate'), ol = document.querySelector('.linea');
+  if (!f || !ol || !window.crypto || !crypto.subtle) return;
+  var cfg = JSON.parse(f.dataset.cifrato), campo = f.querySelector('input'), esito = f.querySelector('.riservate-esito');
+  var mesi = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+  function bin(s) { return Uint8Array.from(atob(s), function (c) { return c.charCodeAt(0); }); }
+  // ordine cronologico: anno iniziale + mese se c'è (solo l'anno = metà anno)
+  function quando(t) {
+    var a = /\d{4}/.exec(t), m = mesi.indexOf((/[a-z]+/i.exec(t) || [''])[0].toLowerCase());
+    return a ? +a[0] + (m >= 0 ? (m + 1) / 13 : .5) : 0;
+  }
+  function tappa(t) {
+    var li = document.createElement('li'), h = document.createElement('h3'), tm = document.createElement('time');
+    li.className = 'rivela visto tappa-riservata' + (t.chiave ? '' : ' tappa-extra');
+    var ic = document.getElementById('icona-' + t.tipo);
+    if (ic) li.appendChild(ic.content.cloneNode(true));
+    tm.textContent = t.quando; h.textContent = t.titolo; li.appendChild(tm); li.appendChild(h);
+    if (t.testo) { var p = document.createElement('p'); p.textContent = t.testo; li.appendChild(p); }
+    return li;
+  }
+  f.hidden = false;
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    esito.textContent = 'Apro…';
+    crypto.subtle.importKey('raw', new TextEncoder().encode(campo.value), 'PBKDF2', false, ['deriveKey'])
+      .then(function (k) {
+        return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: bin(cfg.salt), iterations: cfg.iter, hash: 'SHA-256' },
+          k, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+      })
+      .then(function (k) { return crypto.subtle.decrypt({ name: 'AES-GCM', iv: bin(cfg.iv) }, k, bin(cfg.dati)); })
+      .then(function (buf) {
+        JSON.parse(new TextDecoder().decode(buf)).forEach(function (t) {
+          var q = quando(t.quando), dopo = [].find.call(ol.children, function (li) {
+            var tm = li.querySelector('time'); return tm && quando(tm.textContent) > q;
+          });
+          ol.insertBefore(tappa(t), dopo || null);
+        });
+        var leg = document.querySelector('.legenda-riservata'); if (leg) leg.hidden = false;
+        var b = document.querySelector('.linea-tutte');
+        if (b && ol.classList.contains('ridotta')) b.click();
+        f.remove();
+      }, function () { esito.textContent = 'Password non corretta'; campo.select(); });
+  });
+})();
