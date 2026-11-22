@@ -5,29 +5,6 @@
   {{ with .Params.sottotitolo }}<p class="lead">{{ . }}</p>{{ end }}
 </section>
 
-<section class="sezione" id="azioni">
-  <header class="sez-testa">
-    <h2>Tre azioni per la nostra società</h2>
-  </header>
-  <div class="carte soluzioni">
-    {{ range site.Data.soluzioni }}
-    <article class="carta rivela">
-      {{ with .ambito }}<p class="occhiello">{{ . }}</p>{{ end }}
-      <h3>{{ .titolo }}</h3>
-      <p>{{ .testo }}</p>
-      {{ with .azioni }}
-      <details class="sol-azioni">
-        <summary>Cosa propongo ({{ len . }} azioni)</summary>
-        <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
-      </details>
-      {{ end }}
-      <p class="sol-link"><a href="{{ .pdf | relURL }}" target="_blank" rel="noopener">Leggi il documento (PDF) ↗</a></p>
-      <p class="sol-credito">{{ .credito }}</p>
-    </article>
-    {{ end }}
-  </div>
-</section>
-
 <section class="sezione" id="tappe">
   <header class="sez-testa">
     <p class="occhiello">La strada</p>
@@ -58,6 +35,29 @@
   </form>
   <template id="icona-maniacale">{{ partial "icona-tappa.html" "maniacale" }}</template>
   {{ end }}
+</section>
+
+<section class="sezione" id="azioni">
+  <header class="sez-testa">
+    <h2>Tre azioni per la nostra società</h2>
+  </header>
+  <div class="carte soluzioni">
+    {{ range site.Data.soluzioni }}
+    <article class="carta rivela">
+      {{ with .ambito }}<p class="occhiello">{{ . }}</p>{{ end }}
+      <h3>{{ .titolo }}</h3>
+      <p>{{ .testo }}</p>
+      {{ with .azioni }}
+      <details class="sol-azioni">
+        <summary>Cosa propongo ({{ len . }} azioni)</summary>
+        <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+      </details>
+      {{ end }}
+      <p class="sol-link"><a href="{{ .pdf | relURL }}" target="_blank" rel="noopener">Leggi il documento (PDF) ↗</a></p>
+      <p class="sol-credito">{{ .credito }}</p>
+    </article>
+    {{ end }}
+  </div>
 </section>
 
 {{ $cvIt := site.Params.cvIt }}{{ $cvEn := site.Params.cvEn }}
