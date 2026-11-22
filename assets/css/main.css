@@ -529,10 +529,12 @@ h3{font-size:clamp(19px,2vw,23px)}
   .analisi-canzone{padding-left:12px}
 }
 /* Tappe riservate (percorso): il modulo per la password */
-.riservate{max-width:760px;margin:0 auto 40px;text-align:center;color:var(--tenue);font:400 16px/1.5 var(--sans)}
-.riservate p{margin:0 0 12px}
+#tappe{padding-bottom:clamp(30px,4vw,50px)}
+#tappe .cta{margin-bottom:0}
+.riservate{max-width:760px;margin:8px auto 0;text-align:center;color:var(--tenue);font:400 16px/1.5 var(--sans)}
+.riservate p{margin:0 0 6px}
 .riservate-campo{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-.riservate input{min-width:0;flex:0 1 260px;padding:13px 20px;border-radius:99px;border:1px solid var(--linea);background:var(--inchiostro);color:var(--testo);font:400 15px var(--sans)}
-.riservate-esito{min-height:1.5em;margin-top:10px;color:#e07a6a}
+.riservate input{min-width:0;flex:1 1 140px;max-width:300px;padding:13px 20px;border-radius:99px;border:1px solid var(--linea);background:var(--inchiostro);color:var(--testo);font:400 15px var(--sans)}
+.riservate-esito{min-height:1.2em;margin:6px 0 0;color:#e07a6a}
 .nascosto-vista{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .linea-legenda li[hidden]{display:none}
