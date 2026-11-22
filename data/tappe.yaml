@@ -34,7 +34,6 @@
 - quando: "2009 - oggi"
   titolo: "Io Libero Professionista"
   tipo: "lavoro"
-  chiave: true
   testo: "beFair, azienda formalmente abbandonata, rimane come (bel) marchio. Io proseguo come Luca Ferroni: sviluppatore nell'ambito delle reti e dei sistemi di monitoraggio, gestore di server GNU/Linux e docente di corsi post diploma ITS sulla CyberSecurity."
 - quando: "2009-2010"
   titolo: "Il Vademecum e il Dossier Scuola: 30.000 copie"
@@ -94,7 +93,6 @@
 - quando: "6 luglio 2021"
   titolo: "Lettera al Papa"
   tipo: "personale"
-  chiave: true
   testo: "Trovo il coraggio di riscrivere al Papa. La Natura disse all'Uomo: «E il Tempo?»."
 - quando: "2022-2025"
   titolo: "Consulente sistemista per Confarsystem srl, gruppo Confartigianato"
@@ -108,5 +106,4 @@
 - quando: "2026"
   titolo: "Preghiera e musica, il Vigintalogo"
   tipo: "personale"
-  chiave: true
-  testo: "Le canzoni come preghiera, i cantanti come sacerdoti. Venti regole pratiche per la nuova era."
+  testo: "Le canzoni come preghiera, i cantanti come sacerdoti, o angeli. Venti regole pratiche per la nuova era."
