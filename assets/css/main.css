@@ -548,3 +548,31 @@ h3{font-size:clamp(19px,2vw,23px)}
 .credenziali li+li::before{content:" · ";color:var(--oro);font-style:normal}
 .credenziali a{color:var(--oro-chiaro);white-space:nowrap;font-style:normal}
 @media (max-width:900px),(orientation:portrait){.credenziali{margin-left:auto;margin-right:auto}}
+/* Home, desktop: la richiesta centrata (scelta voluta) e titolo che si adatta agli schermi bassi, perché i bottoni restino nella prima schermata */
+.lead-chi,.lead-aiuto{display:block}
+.lead-chi{text-align:center}
+.lead-aiuto{margin-top:.45em}
+@media (min-width:901px) and (orientation:landscape){
+  .eroe h1{font-size:clamp(38px,min(6.4vw,8.6vh),78px)}
+}
+/* schermi bassi (portatili 1280x800, 1366x768): eroe più compatto, bottoni nella prima schermata */
+@media (min-width:901px) and (max-height:850px){
+  .eroe{padding-top:84px;padding-bottom:40px}
+  .eroe h1{margin-bottom:18px}
+  .eroe .lead{margin:12px 0}
+  .eroe .cta{margin-top:16px}
+  .eroe-anello{max-width:min(600px,66vh)}
+}
+/* telefono: anello più piccolo e bottoni prima delle credenziali, perché il bottone principale stia nella prima schermata */
+@media (max-width:640px){
+  .eroe{padding-top:76px;padding-bottom:40px;gap:8px}
+  .eroe-anello{max-width:min(58vw,30vh)}
+  .eroe-testo{display:flex;flex-direction:column}
+  .eroe .occhiello{margin-bottom:8px}
+  .eroe h1{margin-bottom:12px}
+  .eroe .lead{margin:0}
+  .eroe .cta{order:1;margin-top:16px}
+  .eroe .credenziali{order:2;margin-top:18px}
+  /* spazio per le linguette laterali fisse, che non devono coprire il testo */
+  .sezione,.eroe,.pagina-testa{padding-left:24px;padding-right:24px}
+}
