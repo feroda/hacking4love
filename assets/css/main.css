@@ -538,3 +538,13 @@ h3{font-size:clamp(19px,2vw,23px)}
 .riservate-esito{min-height:1.2em;margin:6px 0 0;color:#e07a6a}
 .nascosto-vista{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .linea-legenda li[hidden]{display:none}
+/* Home: credenziali sotto la richiesta, sopra la piega */
+.credenziali{list-style:none;margin:12px 0 0;padding:0;max-width:44em;color:var(--tenue);font:italic 400 13.5px/1.5 var(--sans)}
+/* l'eroe ora ha più testo: spaziature un po' più strette perché i bottoni restino nella prima schermata */
+.eroe{padding-top:96px;padding-bottom:64px}
+.eroe h1{margin-bottom:24px}
+.eroe .cta{margin-top:20px}
+.credenziali li{display:inline}
+.credenziali li+li::before{content:" · ";color:var(--oro);font-style:normal}
+.credenziali a{color:var(--oro-chiaro);white-space:nowrap;font-style:normal}
+@media (max-width:900px),(orientation:portrait){.credenziali{margin-left:auto;margin-right:auto}}

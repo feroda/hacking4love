@@ -6,7 +6,7 @@
   tipo: "personale"
   testo: "Conseguo la maturità scientifica con 52/60 e, allo stesso tempo, trionfo superando da privatista l'esame di solfeggio al Conservatorio Rossini di Pesaro."
 - quando: "1999-2004"
-  titolo: "Laurea in Computer Science"
+  titolo: "Laurea in Informatica"
   tipo: "personale"
   chiave: true
   testo: "Mi laureo nel percorso quinquennale di Informatica con 104/110. La tesi è «Studio, progettazione e realizzazione di un filesystem in spazio utente per le distribuzioni GNU/Linux», nata da un'idea di Richard Stallman durante una cena insieme a Modena."
