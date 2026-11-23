@@ -3,3 +3,4 @@ resources/_gen/
 .hugo_build.lock
 *.swp
 static/documenti/cv-*.pdf
+.contatti
