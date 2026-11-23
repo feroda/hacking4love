@@ -160,7 +160,7 @@
 (function () {
   var f = document.querySelector('.riservate'), ol = document.querySelector('.linea');
   if (!f || !ol || !window.crypto || !crypto.subtle) return;
-  var cfg = JSON.parse(f.dataset.cifrato), campo = f.querySelector('input'), esito = f.querySelector('.riservate-esito');
+  var base = f.dataset.base || '/', cfg = JSON.parse(f.dataset.cifrato), campo = f.querySelector('input'), esito = f.querySelector('.riservate-esito');
   var mesi = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
   function bin(s) { return Uint8Array.from(atob(s), function (c) { return c.charCodeAt(0); }); }
   // ordine cronologico: anno iniziale + mese se c'è (solo l'anno = metà anno)
@@ -175,6 +175,16 @@
     if (ic) li.appendChild(ic.content.cloneNode(true));
     tm.textContent = t.quando; h.textContent = t.titolo; li.appendChild(tm); li.appendChild(h);
     if (t.testo) { var p = document.createElement('p'); p.textContent = t.testo; li.appendChild(p); }
+    if (t.link && t.link.length) {
+      var pl = document.createElement('p'); pl.className = 'tappa-link';
+      t.link.forEach(function (l, i) {
+        if (i) pl.appendChild(document.createTextNode(' · '));
+        var a = document.createElement('a'), u = String(l.url || '');
+        a.href = /^https?:\/\//.test(u) ? u : base + u.replace(/^\//, '');
+        a.target = '_blank'; a.rel = 'noopener'; a.textContent = l.testo + ' ↗'; pl.appendChild(a);
+      });
+      li.appendChild(pl);
+    }
     return li;
   }
   f.hidden = false;

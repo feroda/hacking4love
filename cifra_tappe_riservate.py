@@ -40,7 +40,7 @@ def main():
         sys.exit("Manca " + SORGENTE)
     with open(SORGENTE, encoding="utf-8") as f:
         tappe = yaml.safe_load(f) or []
-    campi = ("quando", "titolo", "tipo", "testo", "chiave")
+    campi = ("quando", "titolo", "tipo", "testo", "chiave", "link")
     tappe = [{k: t[k] for k in campi if k in t} for t in tappe]
 
     password = os.environ.get("TAPPE_PASSWORD")
