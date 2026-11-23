@@ -50,6 +50,11 @@
   tipo: "gnu"
   chiave: true
   testo: "Coordino e scrivo, con altri, il Vademecum sul Software Libero (Linux Day 2009, 20.000 copie) e il Dossier Scuola «Liberi di imparare» (Linux Day 2010, 10.000 copie), distribuiti in tutta Italia."
+  link:
+    - testo: "Il Vademecum sul Software Libero (PDF)"
+      url: "/documenti/vademecum-software-libero-2009.pdf"
+    - testo: "Il Dossier Scuola «Liberi di imparare» (PDF)"
+      url: "/documenti/dossier-scuola-liberi-di-imparare-2010.pdf"
 - quando: "2010"
   titolo: "Al tavolo tecnico con Richard Stallman"
   tipo: "gnu"
