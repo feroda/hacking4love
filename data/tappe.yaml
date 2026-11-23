@@ -72,6 +72,9 @@
   tipo: "gnu"
   chiave: true
   testo: "Su mia iniziativa e facilitazione, con il supporto della REES Marche e di Solidarius Italia, rendiamo possibile l'incontro di questi 2 grandi della Terra a Curitiba, in Brasile. Ne esce una dichiarazione di comunione di intenti tra i 2, per le reti del Software Libero e quelle dell'Economia Solidale."
+  link:
+    - testo: "La dichiarazione di intenti"
+      url: "https://stallman.org/solidarity-economy.it.html"
 - quando: "Luglio 2012"
   titolo: "6ª Conferenza Italiana sul Software Libero"
   tipo: "gnu"
