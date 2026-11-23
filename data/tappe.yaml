@@ -34,7 +34,8 @@
 - quando: "2009 - oggi"
   titolo: "Io Libero Professionista"
   tipo: "lavoro"
-  testo: "beFair, azienda formalmente abbandonata, rimane come (bel) marchio. Io proseguo come Luca Ferroni: sviluppatore nell'ambito delle reti e dei sistemi di monitoraggio, gestore di server GNU/Linux e docente di corsi post diploma ITS sulla CyberSecurity."
+  testo: "beFair, azienda formalmente abbandonata, rimane come bel marchio. Io proseguo come Luca Ferroni: sviluppatore nell'ambito delle reti e dei sistemi di monitoraggio, gestore di server GNU/Linux e docente di corsi post diploma ITS sulla CyberSecurity."
+  chiave: true
 - quando: "2009-2010"
   titolo: "Il Vademecum e il Dossier Scuola: 30.000 copie"
   tipo: "gnu"
@@ -65,7 +66,6 @@
 - quando: "2013-2016, 2025"
   titolo: "Docente all'ITIS Merloni Miliani di Fabriano"
   tipo: "lavoro"
-  chiave: true
   testo: "Nell'indirizzo di Informatica, ovviamente. La mia materia è TPSIT, il cui nome è quasi mezzo programma: «Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni». Un bel ricordo dei ragazzi che vi partecipavano e dei colleghi più motivati."
 - quando: "2014-2020"
   titolo: "Il MakerSpace della Biblioteca Multimediale R. Sassi"
