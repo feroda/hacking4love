@@ -580,3 +580,5 @@ h3{font-size:clamp(19px,2vw,23px)}
 /* sezione «Il problema» in /il-mio-percorso/, prima delle Tre azioni */
 .problema .prosa{margin:0 auto}
 .problema .prosa p{font-size:18px;line-height:1.7;color:#d4ccba}
+.linea .tappa-link{margin-top:6px;font-size:14px}
+.linea .tappa-link a{color:var(--oro-chiaro);font-weight:600}

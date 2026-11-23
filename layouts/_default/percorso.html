@@ -18,13 +18,13 @@
   </ul>
   <ol class="linea">
     {{ range site.Data.tappe }}
-    <li class="rivela{{ if not .chiave }} tappa-extra{{ end }}">{{ partial "icona-tappa.html" (.tipo | default "personale") }}<time>{{ .quando }}</time><h3>{{ .titolo }}</h3>{{ with .testo }}<p>{{ . }}</p>{{ end }}</li>
+    <li class="rivela{{ if not .chiave }} tappa-extra{{ end }}">{{ partial "icona-tappa.html" (.tipo | default "personale") }}<time>{{ .quando }}</time><h3>{{ .titolo }}</h3>{{ with .testo }}<p>{{ . }}</p>{{ end }}{{ with .link }}<p class="tappa-link">{{ range $i, $l := . }}{{ if $i }} · {{ end }}<a href="{{ if hasPrefix $l.url "http" }}{{ $l.url }}{{ else }}{{ strings.TrimPrefix "/" $l.url | relURL }}{{ end }}" target="_blank" rel="noopener">{{ $l.testo }} ↗</a>{{ end }}</p>{{ end }}</li>
     {{ end }}
   </ol>
   <p class="cta centro"><button type="button" class="btn vuoto linea-tutte" hidden aria-expanded="false" data-chiuso="Mostra tutto il percorso ({{ len site.Data.tappe }} tappe)" data-aperto="Mostra solo le tappe principali">Mostra tutto il percorso ({{ len site.Data.tappe }} tappe)</button></p>
   {{ with site.Data.tappe_cifrate }}
   {{/* Tappe riservate: qui c'è solo il testo cifrato (cifra_tappe_riservate.py), main.js lo apre con la password */}}
-  <form class="riservate" data-cifrato="{{ . | jsonify }}" hidden>
+  <form class="riservate" data-base="{{ "/" | relURL }}" data-cifrato="{{ . | jsonify }}" hidden>
     <p>Alcune tappe sono riservate: chiedimi la password.</p>
     <div class="riservate-campo">
       <label class="nascosto-vista" for="riservate-password">Password</label>

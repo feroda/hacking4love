@@ -1,5 +1,6 @@
 # Le tappe del percorso (pagina "Il mio percorso"). Modificabili liberamente.
 # chiave: true = tappa sempre visibile; le altre compaiono con «Mostra tutto il percorso».
+# link (facoltativo) = elenco di {testo, url}: url completo (https://...) o file del sito (/documenti/...).
 # tipo = icona sulla linea: personale (omino), lavoro (valigetta), gnu (software libero), maniacale (croce rossa).
 - quando: "1998"
   titolo: "La maturità"
@@ -15,6 +16,11 @@
   tipo: "gnu"
   chiave: true
   testo: "Divento socio di ILS - Italian Linux Society e fondo PDP Free Software User Group, che presiedo fino al 2024. Comincio a raccontare il software libero in pubblico. Prima intuizione: la libertà si condivide, non si compra."
+  link:
+    - testo: "Italian Linux Society"
+      url: "https://linux.it"
+    - testo: "Lo Statuto del PDP (PDF)"
+      url: "/documenti/pdp-statuto.pdf"
 - quando: "2004-2009"
   titolo: "Ai Laboratori Guglielmo Marconi"
   tipo: "lavoro"
@@ -36,6 +42,9 @@
   tipo: "lavoro"
   testo: "beFair, azienda formalmente abbandonata, rimane come bel marchio. Io proseguo come Luca Ferroni: sviluppatore nell'ambito delle reti e dei sistemi di monitoraggio, gestore di server GNU/Linux e docente di corsi post diploma ITS sulla CyberSecurity."
   chiave: true
+  link:
+    - testo: "befair.it"
+      url: "https://befair.it"
 - quando: "2009-2010"
   titolo: "Il Vademecum e il Dossier Scuola: 30.000 copie"
   tipo: "gnu"
@@ -46,6 +55,9 @@
   tipo: "gnu"
   chiave: true
   testo: "Il Software Libero come questione etica, socioeconomica e infine tecnica. Sono co-organizzatore della visita di Richard Stallman, che tiene 2 conferenze: una al Comune di Ancona, l'altra all'Università Politecnica delle Marche. Il tavolo tecnico è pensato per i referenti tecnici di strutture chiave come la Sanità, la Provincia, il Comune e l'Università stessa, e qui ho l'onore di introdurlo con una presentazione preparata a 4 mani con lui."
+  link:
+    - testo: "La presentazione (PDF)"
+      url: "/documenti/tavolo-tecnico-rms-2010.pdf"
 - quando: "2012"
   titolo: "Software libero al MIUR, due anni dopo"
   tipo: "gnu"
@@ -72,6 +84,9 @@
   tipo: "gnu"
   testo: "Gli anni indimenticabili di Passion, Play, Project, Peer (LCL - Learning Creative Learning, dal MIT di Boston). Gli anni della sperimentazione: dalla Maker Faire Rome con l'app per suonare collettivamente, agli ologrammi, al telaio jacquard."
   chiave: true
+  link:
+    - testo: "Il Manifesto dello Spazio Creativo (PDF)"
+      url: "/documenti/manifesto-spazio-creativo-2014.pdf"
 - quando: "2018-2022"
   titolo: "beFair, un network di professionisti"
   tipo: "lavoro"
@@ -81,11 +96,17 @@
   tipo: "lavoro"
   chiave: true
   testo: "Un progetto pedagogico basato sulla Pedagogia del Desiderio di M.C. Carvalho e Cesare de Florio La Rocca, derivata dalla Pedagogia dell'Oppresso di Paulo Freire, poi sull'ArtEducazione e infine, con noi, su LCL. Stupefacente per le reazioni dei ragazzi delle scuole medie che partecipavano. 28 partner, 2 milioni di euro."
+  link:
+    - testo: "A Porte Aperte, progetto DOORS (PDF)"
+      url: "/documenti/doors-a-porte-aperte.pdf"
 - quando: "2020-2021"
   titolo: "IoRestoACasa.work, videoconferenze libere nel lockdown"
   tipo: "gnu"
   chiave: true
   testo: "Pochi giorni dopo l'inizio del lockdown lanciamo, in quattro, un servizio gratuito di videoconferenza basato sul Software Libero Jitsi Meet, insieme alla rete della ricerca GARR, al CINECA e alle università italiane. Nei primi quindici giorni: 20.300 videochiamate su 46 server. Scrivo l'automazione dei server e coordino il team tecnico. Ne parlano il TG1, la Repubblica e l'Huffington Post."
+  link:
+    - testo: "iorestoacasa.work"
+      url: "https://iorestoacasa.work"
 - quando: "Gennaio 2021"
   titolo: "Tana libera tutti"
   tipo: "personale"
