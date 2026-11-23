@@ -11,6 +11,9 @@
   tipo: "personale"
   chiave: true
   testo: "Mi laureo nel percorso quinquennale di Informatica con 104/110. La tesi è «Studio, progettazione e realizzazione di un filesystem in spazio utente per le distribuzioni GNU/Linux», nata da un'idea di Richard Stallman durante una cena insieme a Modena."
+  link:
+    - testo: "La tesi (PDF)"
+      url: "/documenti/tesi-laurea-filesystem-spazio-utente.pdf"
 - quando: "2003"
   titolo: "Socio ILS e fondatore del PDP"
   tipo: "gnu"
