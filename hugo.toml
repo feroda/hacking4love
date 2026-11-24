@@ -21,6 +21,10 @@ disableKinds = ["taxonomy", "term"]
   # Codice GoatCounter: la parte prima di .goatcounter.com (es. "hacking4love").
   # Vuoto = nessuno script di statistiche.
   goatcounter = "feroda"
+  # Messaggio dei bottoni «Condividi» (WhatsApp, Telegram, menu del telefono) in «Aiuta Uroboro».
+  # Il link condivisoUrl viene aggiunto in fondo al testo.
+  condividiTesto = "Luca sta cercando una strada per arrivare a Vasco Rossi, Elisa e Papa Leone XIV, per chiudere insieme il serpente Uroboro. Forse tu conosci qualcuno che conosce qualcuno: guarda qui e passalo ai tuoi contatti 👉"
+  condividiUrl = "https://hacking4love.it/#aiuta"
   # Link ai CV (PDF). Vuoto = pulsante nascosto.
   cvIt = ""
   cvEn = ""

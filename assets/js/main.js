@@ -211,3 +211,12 @@
       }, function () { esito.textContent = 'Password non corretta'; campo.select(); });
   });
 })();
+
+/* Aiuta Uroboro: «Condividi» usa il menu di condivisione del telefono, dove c'è (altrimenti restano WhatsApp e Telegram) */
+(function () {
+  var box = document.querySelector('.condividi'); if (!box || !navigator.share) return;
+  var b = box.querySelector('.condividi-nativo'); b.hidden = false;
+  b.addEventListener('click', function () {
+    navigator.share({ text: box.dataset.testo, url: box.dataset.url }).catch(function () {});
+  });
+})();

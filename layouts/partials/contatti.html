@@ -16,6 +16,9 @@
 .fratelli-svg .fr-oggetto .fr-paletta{stroke-width:6}
 .fratelli-svg .fr-aureola{fill:none;stroke:var(--oro-chiaro);stroke-width:3}
 .fratelli-svg text{fill:var(--pergamena);font:600 17px var(--display);letter-spacing:.06em}
+.condividi-nativo[hidden]{display:none}
+.contatti-anche{margin:22px auto 0;max-width:680px;font:400 16px/1.6 var(--sans);color:var(--tenue)}
+.contatti-anche a{color:var(--oro-chiaro);font-weight:600}
 .contatti .fratelli-chiusa{max-width:680px;margin:30px auto 0}
 .cornice-finale{max-width:520px;margin:40px auto 0;padding-top:12px;border-top:1px solid var(--oro);border-top-color:color-mix(in srgb,var(--oro) 30%,transparent);text-align:center;font-size:11px;line-height:1.5;letter-spacing:.04em;font-style:italic;opacity:.55}
 @media (max-width:720px){.fratelli{grid-template-columns:1fr;justify-items:center}.fratelli-svg{max-width:260px}}
@@ -35,12 +38,18 @@
     </div>
     <p class="sez-lead fratelli-chiusa">Io so che così, tenendoci semplicemente per mano, <strong>possiamo fronteggiare l'ignoranza ed essere noi a chiudere un grande Uroboro</strong>, per elevare il livello di coscienza di chi è di buona volontà.</p>
     <h3 style="margin-top:28px">Ora, tu cosa puoi fare?</h3>
-    <p class="sez-lead" style="margin-top:28px">Se ti fidi di me perché mi conosci, o ti piace il progetto, <strong>scrivi il nome di una persona</strong>, dopo aver avuto la sua autorizzazione, che mi possa avvicinare a Vasco, a Elisa, o al Papa. Tu e questa persona dovreste <strong>unirvi al canale Telegram</strong> per partecipare a questa avvincente sfida!</p>
-    <div class="cta centro">
-      {{ with site.Params.telegramPersonale }}<a class="btn oro" href="{{ . }}" rel="noopener">{{ partial "icona.html" "telegram" }}Scrivimi il nome su Telegram</a>{{ end }}
-      {{ with site.Params.telegram }}<a class="btn oro" href="{{ . }}" rel="noopener">{{ partial "icona.html" "telegram" }}Unisciti al canale Uroboro</a>{{ end }}
+    {{- $url := site.Params.condividiUrl | default (print site.BaseURL "#aiuta") -}}
+    {{- $msg := site.Params.condividiTesto }}
+    <p class="sez-lead" style="margin-top:28px">Tra te e Vasco, Elisa o il Papa ci sono al massimo sei strette di mano. Non serve conoscerli: <strong>basta far arrivare questo messaggio a chi conosci</strong>, e chiedere di fare lo stesso.</p>
+    <div class="cta centro condividi" data-testo="{{ $msg }}" data-url="{{ $url }}">
+      <button type="button" class="btn oro condividi-nativo" data-goatcounter-click="condividi-nativo" hidden>{{ partial "icona.html" "condividi" }}Condividi</button>
+      <a class="btn oro" data-goatcounter-click="condividi-whatsapp" href="https://wa.me/?text={{ print $msg " " $url | urlquery }}" target="_blank" rel="noopener">{{ partial "icona.html" "whatsapp" }}WhatsApp</a>
+      <a class="btn oro" data-goatcounter-click="condividi-telegram" href="https://t.me/share/url?url={{ $url | urlquery }}&amp;text={{ $msg | urlquery }}" target="_blank" rel="noopener">{{ partial "icona.html" "telegram" }}Telegram</a>
     </div>
-    <p class="contatti-privati-tit">Non usi Telegram? Scrivimi qui</p>
+    <p class="contatti-anche">Conosci già qualcuno vicino a loro?
+      {{ with site.Params.telegramPersonale }}<a href="{{ . }}" rel="noopener">Scrivimi il suo nome</a>{{ end }}
+      {{ with site.Params.telegram }}· <a href="{{ . }}" rel="noopener">Unisciti al canale Uroboro</a>{{ end }}</p>
+    <p class="contatti-privati-tit">Oppure scrivimi qui</p>
     <ul class="contatti-privati">
       {{ with site.Params.messenger }}<li><a href="{{ . }}" rel="noopener">{{ partial "icona.html" "messenger" }}<span>Messenger</span></a></li>{{ end }}
       {{ with site.Params.linkedin }}<li><a href="{{ . }}" rel="noopener">{{ partial "icona.html" "linkedin" }}<span>LinkedIn</span></a></li>{{ end }}
