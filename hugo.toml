@@ -18,6 +18,8 @@ disableKinds = ["taxonomy", "term"]
   telegramPersonale = "https://t.me/feroda"
   messenger = "https://m.me/luca.ferroni.75"
   linkedin = "https://www.linkedin.com/in/lucaferroni/"
+  # link wa.me/<numero> per scrivermi su WhatsApp (es. https://wa.me/39NUMERO, prefisso senza + e senza spazi); vuoto = link nascosto
+  whatsappPersonale = ""
   # Codice GoatCounter: la parte prima di .goatcounter.com (es. "hacking4love").
   # Vuoto = nessuno script di statistiche.
   goatcounter = "feroda"
@@ -62,3 +64,7 @@ disableKinds = ["taxonomy", "term"]
     name = "Aiuta Uroboro"
     url = "/#aiuta"
     weight = 50
+
+# I commenti HTML scritti apposta (es. la frase nascosta in «Aiuta Uroboro») restano nel sorgente anche con --minify
+[minify.tdewolff.html]
+  keepComments = true
