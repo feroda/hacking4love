@@ -22,9 +22,9 @@ disableKinds = ["taxonomy", "term"]
   # Vuoto = nessuno script di statistiche.
   goatcounter = "feroda"
   # Messaggio dei bottoni «Condividi» (WhatsApp, Telegram, menu del telefono) in «Aiuta Uroboro».
-  # Il link condivisoUrl viene aggiunto in fondo al testo.
-  condividiTesto = "Luca sta cercando una strada per arrivare a Vasco Rossi, Elisa e Papa Leone XIV, per chiudere insieme il serpente Uroboro. Forse tu conosci qualcuno che conosce qualcuno: guarda qui e passalo ai tuoi contatti 👉"
-  condividiUrl = "https://hacking4love.it/#aiuta"
+  # Il link condividiUrl viene aggiunto in fondo al testo.
+  condividiTesto = "Luca Ferroni cerca qualche ora con Papa Leone XIV, Vasco Rossi ed Elisa, per chiudere insieme il serpente Uroboro e rimettere l'UOMO al centro. Se conosci qualcuno più vicino a loro, inoltragli questo messaggio:"
+  condividiUrl = "https://hacking4love.it"
   # Link ai CV (PDF). Vuoto = pulsante nascosto.
   cvIt = ""
   cvEn = ""
