@@ -16,6 +16,9 @@
 .fratelli-svg .fr-oggetto .fr-paletta{stroke-width:6}
 .fratelli-svg .fr-aureola{fill:none;stroke:var(--oro-chiaro);stroke-width:3}
 .fratelli-svg text{fill:var(--pergamena);font:600 17px var(--display);letter-spacing:.06em}
+.condividi-nativo[hidden]{display:none}
+.contatti-anche{margin:26px auto 14px;max-width:680px;font:400 16px/1.6 var(--sans);color:var(--tenue)}
+.contatti-anche a{color:var(--oro-chiaro);font-weight:600}
 .contatti .fratelli-chiusa{max-width:680px;margin:30px auto 0}
 .cornice-finale{max-width:520px;margin:40px auto 0;padding-top:12px;border-top:1px solid var(--oro);border-top-color:color-mix(in srgb,var(--oro) 30%,transparent);text-align:center;font-size:11px;line-height:1.5;letter-spacing:.04em;font-style:italic;opacity:.55}
 @media (max-width:720px){.fratelli{grid-template-columns:1fr;justify-items:center}.fratelli-svg{max-width:260px}}
@@ -25,7 +28,7 @@
     <p class="occhiello">Aiuta Uroboro</p>
     <h2>Elevare il livello di coscienza</h2>
     <p class="sez-lead">Chi legge mi chiede: ma poi che vuoi fare con questi artisti, o con il Papa?</p>
-    <p class="sez-lead">Immagino quanto sia prezioso il loro tempo. Potrei dire che voglio confrontarmi con loro su quanto ho scritto, in particolare sul progetto <a href="https://github.com/feroda/1/blob/main/README_it.md" target="_blank" rel="noopener">«1 miliardo per la libertà delicata» ↗</a>. Ma il <strong>motivo principale</strong> è un altro: connettersi per inviare un messaggio comune in cui ci si dia fiducia reciproca, e così manifestare che la consapevolezza trascende lo status sociale, la ricchezza e la fama, e sfocia, se non in amicizia, in profondo rispetto. E questo è alla portata di tutti quelli che si applicano <strong>armonizzando pensiero, sentimento e volontà</strong>.</p>
+    <p class="sez-lead">Immagino quanto sia prezioso il loro tempo. Potrei dire che voglio confrontarmi con loro su quanto ho scritto, in particolare sul progetto <a href="https://github.com/feroda/1/blob/main/README_it.md" target="_blank" rel="noopener">«1 miliardo per la libertà delicata» ↗</a>. Ma il <strong>motivo principale</strong> è un altro: connettersi per inviare un messaggio comune di fiducia reciproca. Manifestare che la consapevolezza trascende lo status sociale, la ricchezza e la fama, e sfocia, se non in amicizia, in profondo rispetto. E questo è alla portata di tutti quelli che si applicano <strong>armonizzando pensiero, sentimento e volontà</strong>.</p>
     <div class="fratelli">
       {{ partial "fratelli.html" . }}
       <ul class="destinatari fratelli-lista">
@@ -34,18 +37,25 @@
       </ul>
     </div>
     <p class="sez-lead fratelli-chiusa">Io so che così, tenendoci semplicemente per mano, <strong>possiamo fronteggiare l'ignoranza ed essere noi a chiudere un grande Uroboro</strong>, per elevare il livello di coscienza di chi è di buona volontà.</p>
-    <h3 style="margin-top:28px">Ora, tu cosa puoi fare?</h3>
-    <p class="sez-lead" style="margin-top:28px">Se ti fidi di me perché mi conosci, o ti piace il progetto, <strong>scrivi il nome di una persona</strong>, dopo aver avuto la sua autorizzazione, che mi possa avvicinare a Vasco, a Elisa, o al Papa. Tu e questa persona dovreste <strong>unirvi al canale Telegram</strong> per partecipare a questa avvincente sfida!</p>
-    <div class="cta centro">
-      {{ with site.Params.telegramPersonale }}<a class="btn oro" href="{{ . }}" rel="noopener">{{ partial "icona.html" "telegram" }}Scrivimi il nome su Telegram</a>{{ end }}
-      {{ with site.Params.telegram }}<a class="btn oro" href="{{ . }}" rel="noopener">{{ partial "icona.html" "telegram" }}Unisciti al canale Uroboro</a>{{ end }}
+    {{ with site.Params.telegram }}<div class="cta centro" style="margin-top:32px"><a class="btn vuoto" href="{{ . }}" target="_blank" rel="noopener" data-goatcounter-click="canale-telegram">{{ partial "icona.html" "telegram" }}Iscriviti al canale Uroboro su Telegram</a></div>{{ end }}
+    <h3 style="margin-top:28px">Come posso aiutare?</h3>
+    {{- $url := site.Params.condividiUrl | default (print site.BaseURL "#aiuta") -}}
+    {{- $msg := replace site.Params.condividiTesto "{canale}" (site.Params.telegram | default site.BaseURL) }}
+    <p class="sez-lead" style="margin-top:28px">Per la teoria dei 6 gradi di separazione, tu sei già il primo passo verso Papa Leone XIV, Vasco ed Elisa. Inoltra questo messaggio a <strong>una o due persone che secondo te sono un passo più vicine a loro</strong>, e chiedi di fare lo stesso.</p>
+    <div class="cta centro condividi" data-testo="{{ print $url "\n\n" $msg }}">
+      <button type="button" class="btn oro condividi-nativo" data-goatcounter-click="condividi-nativo" hidden>{{ partial "icona.html" "condividi" }}Condividi</button>
+      <a class="btn oro" data-goatcounter-click="condividi-whatsapp" href="https://wa.me/?text={{ print $url "\n\n" $msg | urlquery }}" target="_blank" rel="noopener">{{ partial "icona.html" "whatsapp" }}Condividi su WhatsApp</a>
+      <a class="btn oro" data-goatcounter-click="condividi-telegram" href="https://t.me/share/url?url={{ $url | urlquery }}&amp;text={{ $msg | urlquery }}" target="_blank" rel="noopener">{{ partial "icona.html" "telegram" }}Condividi su Telegram</a>
     </div>
-    <p class="contatti-privati-tit">Non usi Telegram? Scrivimi qui</p>
+    <p class="contatti-anche">Se sei tu la persona vicina a loro, scrivimi direttamente:</p>
     <ul class="contatti-privati">
+      {{ with site.Params.telegramPersonale }}<li><a href="{{ . }}" rel="noopener">{{ partial "icona.html" "telegram" }}<span>Telegram</span></a></li>{{ end }}
+      {{ with site.Params.whatsappPersonale }}<li><a href="{{ . }}" rel="noopener">{{ partial "icona.html" "whatsapp" }}<span>WhatsApp</span></a></li>{{ end }}
       {{ with site.Params.messenger }}<li><a href="{{ . }}" rel="noopener">{{ partial "icona.html" "messenger" }}<span>Messenger</span></a></li>{{ end }}
       {{ with site.Params.linkedin }}<li><a href="{{ . }}" rel="noopener">{{ partial "icona.html" "linkedin" }}<span>LinkedIn</span></a></li>{{ end }}
       {{ with site.Params.email }}<li><a href="mailto:{{ . }}?subject=%5BUROBORO%5D%20-%20">{{ partial "icona.html" "mail" }}<span>Mail</span></a></li>{{ end }}
     </ul>
-    <p class="cornice-finale">La fine di questa tappa della Storia Infinita? io e Papa, 2 preti, 2 fratelli, 2 donne, 2 "alti", 2 competenti, 2 "bassi".</p>
+    {{/* Nascosto a video ma leggibile nel sorgente della pagina: il commento HTML resta nell'output (minify con keepComments in hugo.toml). Per rimostrarlo togliere i segni di commento. */}}
+    {{ `<!-- <p class="cornice-finale">La fine di questa tappa della Storia Infinita? io e Papa, 2 preti, 2 fratelli, 2 donne, 2 "alti", 2 competenti, 2 "bassi".</p> -->` | safeHTML }}
   </div>
 </section>
