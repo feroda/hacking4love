@@ -26,7 +26,7 @@ disableKinds = ["taxonomy", "term"]
   # Messaggio dei bottoni «Condividi» (WhatsApp, Telegram, menu del telefono) in «Aiuta Uroboro».
   # Il link condividiUrl va in testa al messaggio, poi una riga vuota e il testo.
   # {canale} nel testo diventa il link al canale Telegram (parametro telegram): se cambi canale, il messaggio si aggiorna da solo.
-  condividiTesto = "Scopri la vision di Luca Ferroni: siamo alla fine di un'era. È necessario rimettere l'UOMO al centro. Luca Ferroni dice che si può fare ({canale}) con persone consapevoli come il Papa, Vasco Rossi o Elisa o altri cantanti. Se conosci qualcuno più vicino a loro, inoltragli questo messaggio. Grazie!"
+  condividiTesto = "Scopri la vision di Luca Ferroni: siamo alla fine di un'era. È necessario rimettere l'UOMO al centro. Luca Ferroni dice che si può fare ({canale}) con persone consapevoli come il Papa, Vasco Rossi o Elisa o altri cantanti. Se conosci qualcuno più vicino a loro, inoltragli questo messaggio. Grazie 👍"
   condividiUrl = "https://hacking4love.it"
   # Link ai CV (PDF). Vuoto = pulsante nascosto.
   cvIt = ""
