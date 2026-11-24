@@ -212,11 +212,12 @@
   });
 })();
 
-/* Aiuta Uroboro: «Condividi» usa il menu di condivisione del telefono, dove c'è (altrimenti restano WhatsApp e Telegram) */
+/* Aiuta Uroboro: «Condividi» usa il menu di condivisione del telefono, dove c'è (altrimenti restano WhatsApp e Telegram).
+   Solo text (link del sito in testa + testo), senza url a parte: così il link non compare due volte. */
 (function () {
   var box = document.querySelector('.condividi'); if (!box || !navigator.share) return;
   var b = box.querySelector('.condividi-nativo'); b.hidden = false;
   b.addEventListener('click', function () {
-    navigator.share({ text: box.dataset.testo, url: box.dataset.url }).catch(function () {});
+    navigator.share({ text: box.dataset.testo }).catch(function () {});
   });
 })();

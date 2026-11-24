@@ -40,11 +40,11 @@
     {{ with site.Params.telegram }}<div class="cta centro" style="margin-top:32px"><a class="btn vuoto" href="{{ . }}" target="_blank" rel="noopener" data-goatcounter-click="canale-telegram">{{ partial "icona.html" "telegram" }}Iscriviti al canale Uroboro su Telegram</a></div>{{ end }}
     <h3 style="margin-top:28px">Come posso aiutare?</h3>
     {{- $url := site.Params.condividiUrl | default (print site.BaseURL "#aiuta") -}}
-    {{- $msg := site.Params.condividiTesto }}
+    {{- $msg := replace site.Params.condividiTesto "{canale}" (site.Params.telegram | default site.BaseURL) }}
     <p class="sez-lead" style="margin-top:28px">Per la teoria dei 6 gradi di separazione, tu sei già il primo passo verso Papa Leone XIV, Vasco ed Elisa. Inoltra questo messaggio a <strong>una o due persone che secondo te sono un passo più vicine a loro</strong>, e chiedi di fare lo stesso.</p>
-    <div class="cta centro condividi" data-testo="{{ $msg }}" data-url="{{ $url }}">
+    <div class="cta centro condividi" data-testo="{{ print $url "\n\n" $msg }}">
       <button type="button" class="btn oro condividi-nativo" data-goatcounter-click="condividi-nativo" hidden>{{ partial "icona.html" "condividi" }}Condividi</button>
-      <a class="btn oro" data-goatcounter-click="condividi-whatsapp" href="https://wa.me/?text={{ print $msg " " $url | urlquery }}" target="_blank" rel="noopener">{{ partial "icona.html" "whatsapp" }}Condividi su WhatsApp</a>
+      <a class="btn oro" data-goatcounter-click="condividi-whatsapp" href="https://wa.me/?text={{ print $url "\n\n" $msg | urlquery }}" target="_blank" rel="noopener">{{ partial "icona.html" "whatsapp" }}Condividi su WhatsApp</a>
       <a class="btn oro" data-goatcounter-click="condividi-telegram" href="https://t.me/share/url?url={{ $url | urlquery }}&amp;text={{ $msg | urlquery }}" target="_blank" rel="noopener">{{ partial "icona.html" "telegram" }}Condividi su Telegram</a>
     </div>
     <p class="contatti-anche">Se sei tu la persona vicina a loro, scrivimi direttamente:</p>
