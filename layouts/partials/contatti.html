@@ -37,7 +37,7 @@
       </ul>
     </div>
     <p class="sez-lead fratelli-chiusa">Io so che così, tenendoci semplicemente per mano, <strong>possiamo fronteggiare l'ignoranza ed essere noi a chiudere un grande Uroboro</strong>, per elevare il livello di coscienza di chi è di buona volontà.</p>
-    {{ with site.Params.telegram }}<div class="cta centro" style="margin-top:32px"><a class="btn oro" href="{{ . }}" target="_blank" rel="noopener" data-goatcounter-click="canale-telegram">{{ partial "icona.html" "telegram" }}Iscriviti al canale Uroboro su Telegram</a></div>{{ end }}
+    {{ with site.Params.telegram }}<div class="cta centro" style="margin-top:32px"><a class="btn vuoto" href="{{ . }}" target="_blank" rel="noopener" data-goatcounter-click="canale-telegram">{{ partial "icona.html" "telegram" }}Iscriviti al canale Uroboro su Telegram</a></div>{{ end }}
     <h3 style="margin-top:28px">Come posso aiutare?</h3>
     {{- $url := site.Params.condividiUrl | default (print site.BaseURL "#aiuta") -}}
     {{- $msg := site.Params.condividiTesto }}

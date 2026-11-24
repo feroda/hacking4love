@@ -582,3 +582,9 @@ h3{font-size:clamp(19px,2vw,23px)}
 .problema .prosa p{font-size:18px;line-height:1.7;color:#d4ccba}
 .linea .tappa-link{margin-top:6px;font-size:14px}
 .linea .tappa-link a{color:var(--oro-chiaro);font-weight:600}
+/* hero con due bottoni (aiuto + canale): restano affiancati su desktop e compatti sugli schermi bassi */
+@media (min-width:901px){.eroe .cta{flex-wrap:nowrap}.eroe .cta .btn{padding:14px 20px;white-space:nowrap}}
+@media (min-width:901px) and (max-width:1300px){.eroe .cta .btn{font-size:14px;padding:13px 16px;letter-spacing:.02em}}
+@media (max-width:640px){.eroe .cta{gap:10px}.eroe .cta .btn{padding:11px 22px}}
+@media (max-width:640px) and (max-height:800px){.eroe-anello{max-width:min(50vw,21vh)}.eroe{padding-top:70px}}
+@media (min-width:901px) and (max-height:850px){.eroe h1{font-size:clamp(38px,min(6.4vw,7.4vh),78px)}}

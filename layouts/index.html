@@ -23,7 +23,7 @@
     </ul>
     <div class="cta">
       <a class="btn oro" href="#aiuta">Aiutami ad arrivare a loro</a>
-      <a class="btn vuoto" href="#puzzle">Componi il puzzle</a>
+      {{ with site.Params.telegram }}<a class="btn vuoto" href="{{ . }}" target="_blank" rel="noopener" data-goatcounter-click="canale-telegram-hero">{{ partial "icona.html" "telegram" }}Iscriviti al canale Uroboro</a>{{ end }}
     </div>
   </div>
   <a class="scendi" href="#puzzle" aria-label="Scorri al puzzle"><span></span></a>
